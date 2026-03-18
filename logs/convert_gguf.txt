@@ -1,0 +1,21 @@
+2026-03-17 00:35:43 [INFO] quantize: ============================================================
+2026-03-17 00:35:43 [INFO] quantize: Convertendo (FP16 only): DeepSeek-R1-Distill-Qwen-7b
+2026-03-17 00:35:43 [INFO] quantize: Convertendo DeepSeek-R1-Distill-Qwen-7b → FP16 GGUF ... [local]
+2026-03-17 00:36:50 [INFO] quantize: ✓ FP16 GGUF criado: /mnt/games/projetos/tcc/models/gguf/DeepSeek-R1-Distill-Qwen-7b/DeepSeek-R1-Distill-Qwen-7b-fp16.gguf (14.19 GB)
+2026-03-17 00:36:50 [INFO] quantize: ============================================================
+2026-03-17 00:36:50 [INFO] quantize: Convertendo (FP16 only): Meta-Llama-3.1-8B-Instruct
+2026-03-17 00:36:50 [INFO] quantize: Convertendo Meta-Llama-3.1-8B-Instruct → FP16 GGUF ... [local]
+2026-03-17 00:38:12 [INFO] quantize: ✓ FP16 GGUF criado: /mnt/games/projetos/tcc/models/gguf/Meta-Llama-3.1-8B-Instruct/Meta-Llama-3.1-8B-Instruct-fp16.gguf (14.97 GB)
+2026-03-17 00:38:12 [INFO] quantize: ============================================================
+2026-03-17 00:38:12 [INFO] quantize: Convertendo (FP16 only): Ministral-3-8b
+2026-03-17 00:38:12 [INFO] quantize: Convertendo Ministral-3-8b → FP16 GGUF ... [local]
+2026-03-17 00:39:34 [INFO] quantize: ✓ FP16 GGUF criado: /mnt/games/projetos/tcc/models/gguf/Ministral-3-8b/Ministral-3-8b-fp16.gguf (15.82 GB)
+2026-03-17 00:39:34 [INFO] quantize: ============================================================
+2026-03-17 00:39:34 [INFO] quantize: Convertendo (FP16 only): Qwen3-8b
+2026-03-17 00:39:34 [INFO] quantize: Convertendo Qwen3-8b → FP16 GGUF ... [local]
+2026-03-17 00:40:57 [INFO] quantize: ✓ FP16 GGUF criado: /mnt/games/projetos/tcc/models/gguf/Qwen3-8b/Qwen3-8b-fp16.gguf (15.26 GB)
+2026-03-17 00:40:57 [INFO] quantize: ============================================================
+2026-03-17 00:40:57 [INFO] quantize: Convertendo (FP16 only): Sabia-7b
+2026-03-17 00:40:57 [INFO] quantize: Convertendo Sabia-7b → FP16 GGUF ... [local]
+2026-03-17 00:42:06 [INFO] quantize: ✓ FP16 GGUF criado: /mnt/games/projetos/tcc/models/gguf/Sabia-7b/Sabia-7b-fp16.gguf (12.55 GB)
+2026-03-17 00:42:06 [INFO] quantize: Pipeline concluído.

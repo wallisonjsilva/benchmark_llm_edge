@@ -1,0 +1,41 @@
+ ./llama-cli --model /mnt/games/projetos/tcc/models/gguf/Qwen3-8b/Qwen3-8b-fp16.gguf 
+
+Loading model...  
+
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b8390-b6c83aad5
+model      : Qwen3-8b-fp16.gguf
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read               add a text file
+
+
+> Ola
+
+[Start thinking]
+
+Okay, the user wrote "Ola." That's the Portuguese word for "Hello." I need to respond in a friendly and helpful manner. Since the user might be starting a conversation, I should acknowledge their greeting and offer assistance. Let me check if there's any specific context, but since there's none, a general response should be fine. I'll make sure to keep it welcoming and open-ended. Maybe something like, "Hello! Ho can I assist you today?" That should cover it.
+
+[End thinking]
+
+Hello! How can I assist you today? 😊
+
+[ Prompt: 25,1 t/s | Generation: 2,9 t/s ]
+
+> 
+
+Exiting...
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free     self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - Host               |                 21775 = 15623 +    5760 +     392                |

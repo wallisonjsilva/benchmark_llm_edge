@@ -1,0 +1,51 @@
+# ============================================================================
+# ENGINE — ROCm 6.0 + llama.cpp (hipBLAS) para RX 7600 (gfx1102)
+# ============================================================================
+FROM rocm/dev-ubuntu-24.04:7.1.1-complete
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    HSA_OVERRIDE_GFX_VERSION=11.0.2 \
+    ROCM_PATH=/opt/rocm \
+    GGML_HIPBLAS=1
+
+# Dependências de sistema
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        git cmake make g++ python3 python3-pip python3-venv \
+        rocm-dev hipblas-dev rocblas-dev curl wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# Compilar llama.cpp com suporte hipBLAS (ROCm)
+WORKDIR /opt
+RUN git clone --depth 1 https://github.com/ggerganov/llama.cpp.git && \
+    cd llama.cpp && \
+    cmake -B build \
+        -DGGML_HIP=ON \
+        -DAMDGPU_TARGETS="gfx1102" \
+        -DCMAKE_BUILD_TYPE=Release && \
+    cmake --build build --config Release -j$(nproc) && \
+    # Instalar binários no PATH
+    cp build/bin/llama-* /usr/local/bin/ 2>/dev/null || true && \
+    cp build/bin/gguf-* /usr/local/bin/ 2>/dev/null || true
+
+# PyTorch ROCm — necessário para convert_hf_to_gguf.py
+RUN pip3 install --no-cache-dir --break-system-packages \
+    torch --index-url https://download.pytorch.org/whl/rocm6.2
+
+# Dependências Python para scripts de conversão e benchmark
+RUN pip3 install --no-cache-dir --break-system-packages \
+    huggingface_hub \
+    safetensors \
+    transformers \
+    datasets \
+    mlflow \
+    numpy \
+    pandas \
+    scikit-learn \
+    tqdm \
+    psutil \
+    sentencepiece \
+    protobuf \
+    gguf
+
+WORKDIR /app
+CMD ["tail", "-f", "/dev/null"]

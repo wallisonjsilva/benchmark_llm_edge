@@ -1,0 +1,3 @@
+2026-03-17 01:43:01 [INFO] quantize: Log: /mnt/games/projetos/tcc/logs/convert_Meta-Llama-3.1-8B-Instruct_Q4_K_M.log
+2026-03-17 01:43:01 [INFO] quantize: Quantizando Meta-Llama-3.1-8B-Instruct → Q4_K_M ... [local]
+2026-03-17 01:43:56 [INFO] quantize: ✓ Quantizado: /mnt/games/projetos/tcc/models/gguf/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf (4.58 GB)

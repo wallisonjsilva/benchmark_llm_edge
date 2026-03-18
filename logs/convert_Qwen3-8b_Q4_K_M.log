@@ -1,0 +1,3 @@
+2026-03-17 01:37:38 [INFO] quantize: Log: /mnt/games/projetos/tcc/logs/convert_Qwen3-8b_Q4_K_M.log
+2026-03-17 01:37:38 [INFO] quantize: Quantizando Qwen3-8b → Q4_K_M ... [local]
+2026-03-17 01:38:35 [INFO] quantize: ✓ Quantizado: /mnt/games/projetos/tcc/models/gguf/Qwen3-8b-Q4_K_M.gguf (4.68 GB)

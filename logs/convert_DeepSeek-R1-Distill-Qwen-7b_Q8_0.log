@@ -1,0 +1,9 @@
+2026-03-17 01:28:35 [INFO] quantize: Log: /mnt/games/projetos/tcc/logs/convert_DeepSeek-R1-Distill-Qwen-7b_Q8_0.log
+2026-03-17 01:28:35 [INFO] quantize: Quantizando DeepSeek-R1-Distill-Qwen-7b → Q8_0 ... [local]
+2026-03-17 01:28:35 [ERROR] quantize: Quantização falhou:
+STDOUT: 
+STDERR: /mnt/games/projetos/tcc/llama.cpp/build-cpu/bin/llama-quantize: error while loading shared libraries: libllama.so.0: cannot open shared object file: No such file or directory
+
+2026-03-17 01:30:06 [INFO] quantize: Log: /mnt/games/projetos/tcc/logs/convert_DeepSeek-R1-Distill-Qwen-7b_Q8_0.log
+2026-03-17 01:30:06 [INFO] quantize: Quantizando DeepSeek-R1-Distill-Qwen-7b → Q8_0 ... [local]
+2026-03-17 01:30:32 [INFO] quantize: ✓ Quantizado: /mnt/games/projetos/tcc/models/gguf/DeepSeek-R1-Distill-Qwen-7b-Q8_0.gguf (7.54 GB)

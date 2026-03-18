@@ -1,0 +1,38 @@
+# ============================================================================
+# Laboratório de Benchmarking LLM — llama.cpp + ROCm (RX 7600 / gfx1102)
+# ============================================================================
+
+services:
+  # --------------------------------------------------------------------------
+  # ENGINE: container com ROCm + llama.cpp compilado para GPU AMD
+  # --------------------------------------------------------------------------
+  engine:
+    image: rocm/dev-ubuntu-24.04:7.1.1-complete
+    container_name: bench-engine
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.engine
+    volumes:
+      - ./scripts:/app/scripts
+      - ./models:/models
+      - ./results:/results
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+    group_add:
+      - video
+      - render
+    environment:
+      - HSA_OVERRIDE_GFX_VERSION=11.0.2   # gfx1102 → RX 7600
+      - ROCM_PATH=/opt/rocm
+      - HIP_VISIBLE_DEVICES=0
+      - GGML_HIPBLAS=1
+      - MLFLOW_TRACKING_URI=${MLFLOW_TRACKING_URI:-http://host.docker.internal:5000}
+      - MLFLOW_EXPERIMENT_NAME=${MLFLOW_EXPERIMENT_NAME:-llm-benchmark-rx7600}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    shm_size: "8g"
+    stdin_open: true
+    tty: true
+    command: ["tail", "-f", "/dev/null"]   # mantém o container ativo
+    restart: unless-stopped

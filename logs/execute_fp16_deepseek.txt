@@ -1,0 +1,46 @@
+ ./llama-cli --model /mnt/games/projetos/tcc/models/gguf/DeepSeek-R1-Distill-Qwen-7b/DeepSeek-R1-Distill-Qwen-7b-fp16.gguf 
+
+Loading model...  
+
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b8390-b6c83aad5
+model      : DeepSeek-R1-Distill-Qwen-7b-fp16.gguf
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read               add a text file
+
+
+> Ola
+
+[Start thinking]
+Alright, the user said "Ola." That's Swedish for "Hello." Seems like they're greeting me.
+
+I should respond in a friendly manner. Maybe say "Hello! How can I assist you today?" to keep the conversation going.
+
+Keeping it simple and open-ended should encourage them to share what they need help with.
+
+[End thinking]
+
+
+
+Hello! How can I assist you today?
+
+[ Prompt: 20,1 t/s | Generation: 3,1 t/s ]
+
+> 
+
+Exiting...
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free     self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - Host               |                 22113 = 14526 +    7168 +     419                |
