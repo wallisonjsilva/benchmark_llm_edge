@@ -3,9 +3,9 @@ import pandas as pd
 def create_unified_benchmark_file():
     # Configurações de amostragem
     sampling_config = {
-        "enem": {"n": 45, "path": "enem_data.parquet"},
-        "poeta": {"n": 100, "path": "poeta_v2.parquet"},
-        "bbq": {"n": 200, "path": "bbq_data.parquet"}
+        "enem": {"n": 45, "path": "./dataset/enem/enem_data.parquet"},
+        "poeta": {"n": 100, "path": "./dataset/poetav2/trivia_dataset_infos.parquet"},
+        "bbq": {"n": 200, "path": "./dataset/bbq/bbq_data.parquet"}
     }
     
     test_samples = []
