@@ -21,7 +21,6 @@ try:
         compute_mbu,
         extract_model_answer,
         merge_metric_dicts,
-        parse_llama_metrics,
         score_sample,
     )
 except ImportError:
@@ -32,7 +31,6 @@ except ImportError:
         compute_mbu,
         extract_model_answer,
         merge_metric_dicts,
-        parse_llama_metrics,
         score_sample,
     )
 
@@ -47,7 +45,8 @@ DEFAULT_DATASET_ROOT = PROJECT_ROOT / "datasets"
 class BenchmarkConfig:
     backend_name: str
     experiment_name: str
-    llama_cli_path: Path
+    llama_completion_path: Path
+    llama_bench_path: Path
     llama_perplexity_path: Path | None
     model_paths: list[Path]
     output_json_path: Path
@@ -67,6 +66,9 @@ class BenchmarkConfig:
     inference_timeout_s: int
     stop_tokens: list[str]
     max_repeat_ngram: int
+    bench_repetitions: int
+    bench_n_prompt: int
+    bench_n_gen: int
 
 
 def _split_values(raw: str, delimiter: str) -> list[str]:
@@ -226,6 +228,69 @@ def _extract_gpu_usage_gb(output: str) -> float:
     return peak
 
 
+def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
+    if not config.llama_bench_path.exists():
+        raise FileNotFoundError(f"LLAMA_BENCH_PATH não existe: {config.llama_bench_path}")
+
+    command = [
+        str(config.llama_bench_path),
+        "-m",
+        str(model_path),
+        "-o",
+        "json",
+        "-r",
+        str(config.bench_repetitions),
+        "-p",
+        str(config.bench_n_prompt),
+        "-n",
+        str(config.bench_n_gen),
+        "-t",
+        str(config.threads),
+        "-ngl",
+        str(config.n_gpu_layers),
+        "--no-warmup",
+    ]
+
+    completed = subprocess.run(
+        command,
+        capture_output=True,
+        text=True,
+        timeout=config.inference_timeout_s,
+        check=False,
+    )
+    if completed.returncode != 0:
+        raise RuntimeError(f"llama-bench falhou (exit={completed.returncode}): {completed.stderr.strip()}")
+
+    stdout = completed.stdout.strip()
+    if not stdout:
+        raise RuntimeError("llama-bench não retornou saída JSON.")
+
+    bench_rows = json.loads(stdout)
+    if not isinstance(bench_rows, list) or not bench_rows:
+        raise RuntimeError("llama-bench retornou JSON inválido ou vazio.")
+
+    prompt_rows = [row for row in bench_rows if int(row.get("n_prompt", 0)) > 0 and int(row.get("n_gen", 0)) == 0]
+    gen_rows = [row for row in bench_rows if int(row.get("n_gen", 0)) > 0]
+    all_rows = prompt_rows + gen_rows
+    if not all_rows:
+        all_rows = bench_rows
+
+    prompt_tps_values = [float(row.get("avg_ts", 0.0)) for row in prompt_rows if float(row.get("avg_ts", 0.0)) > 0.0]
+    gen_tps_values = [float(row.get("avg_ts", 0.0)) for row in gen_rows if float(row.get("avg_ts", 0.0)) > 0.0]
+
+    prompt_tps = mean(prompt_tps_values) if prompt_tps_values else 0.0
+    gen_tps = mean(gen_tps_values) if gen_tps_values else 0.0
+    ttft_ms = (1000.0 / prompt_tps) if prompt_tps > 0 else 0.0
+    peak_tps = max(gen_tps_values) if gen_tps_values else gen_tps
+    return {
+        "prompt_tps": float(prompt_tps),
+        "gen_tps": float(gen_tps),
+        "peak_gen_tps": float(peak_tps),
+        "ttft_ms": float(ttft_ms),
+        "rows": bench_rows,
+    }
+
+
 def _has_repeating_ngram(text: str, ngram_size: int) -> bool:
     if ngram_size <= 0:
         return False
@@ -351,7 +416,7 @@ def _build_prompt(dataset_name: str, row: JsonDict) -> str:
 
 def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str) -> JsonDict:
     command = [
-        str(config.llama_cli_path),
+        str(config.llama_completion_path),
         "-m",
         str(model_path),
         "-p",
@@ -372,6 +437,12 @@ def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str) -> Js
         str(config.repeat_last_n),
         "-ngl",
         str(config.n_gpu_layers),
+        "--single-turn",
+        "--simple-io",
+        "--no-display-prompt",
+        "--reasoning",
+        "off",
+        "--log-disable",
     ]
 
     env = os.environ.copy()
@@ -416,7 +487,6 @@ def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str) -> Js
         raw_output = output_temp_path.read_text(encoding="utf-8", errors="ignore")
         clean_output = _sanitize_output(raw_output, config.stop_tokens)
         loop_abort = _has_repeating_ngram(clean_output, config.max_repeat_ngram)
-        tps, ttft_ms = parse_llama_metrics(raw_output)
         peak_vram_gb = _extract_gpu_usage_gb(raw_output)
         thermal_avg = mean(thermal_samples) if thermal_samples else 0.0
 
@@ -437,8 +507,6 @@ def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str) -> Js
             "timed_out": timed_out,
             "loop_abort": loop_abort,
             "error": error,
-            "tps": float(tps),
-            "ttft_ms": float(ttft_ms),
             "peak_ram_gb": float(peak_ram_gb),
             "peak_vram_gb": float(peak_vram_gb),
             "thermal_avg_c": float(thermal_avg),
@@ -548,6 +616,7 @@ def _evaluate_model(
 ) -> JsonDict:
     started = time.perf_counter()
     model_name = model_path.name
+    bench_metrics = _run_llama_bench(config, model_path)
     dataset_metric_chunks: list[JsonDict] = []
     inference_records: list[JsonDict] = []
 
@@ -565,8 +634,6 @@ def _evaluate_model(
 
     total_samples = sum(len(rows) for rows in datasets.values())
     success_records = [record for record in inference_records if record["success"]]
-    valid_tps_values = [float(record["tps"]) for record in success_records if float(record["tps"]) > 0.0]
-    valid_ttft_values = [float(record["ttft_ms"]) for record in success_records if float(record["ttft_ms"]) > 0.0]
     thermal_values = [float(record["thermal_avg_c"]) for record in success_records if float(record["thermal_avg_c"]) > 0.0]
     peak_ram_values = [float(record["peak_ram_gb"]) for record in inference_records]
     peak_vram_values = [float(record["peak_vram_gb"]) for record in inference_records]
@@ -574,9 +641,9 @@ def _evaluate_model(
     merged_metrics = _base_metrics()
     merged_metrics.update(merge_metric_dicts(dataset_metric_chunks))
 
-    avg_tps = mean(valid_tps_values) if valid_tps_values else 0.0
-    peak_tps = max(valid_tps_values) if valid_tps_values else 0.0
-    avg_ttft = mean(valid_ttft_values) if valid_ttft_values else 0.0
+    avg_tps = float(bench_metrics.get("gen_tps", 0.0))
+    peak_tps = float(bench_metrics.get("peak_gen_tps", 0.0))
+    avg_ttft = float(bench_metrics.get("ttft_ms", 0.0))
     ram_peak = max(peak_ram_values) if peak_ram_values else 0.0
     vram_peak = max(peak_vram_values) if peak_vram_values else 0.0
     thermal_avg = mean(thermal_values) if thermal_values else 0.0
@@ -622,7 +689,8 @@ def _evaluate_model(
             "sample_size_enem": str(config.sample_size_enem),
             "sample_size_bbq": str(config.sample_size_bbq),
             "sample_size_poeta": str(config.sample_size_poetav2),
-            "llama_cli_path": str(config.llama_cli_path),
+            "llama_completion_path": str(config.llama_completion_path),
+            "llama_bench_path": str(config.llama_bench_path),
         },
         "benchmark_params": {
             "iteration": total_samples,
@@ -633,6 +701,9 @@ def _evaluate_model(
             "inference_timeout_s": config.inference_timeout_s,
             "max_repeat_ngram": config.max_repeat_ngram,
             "stop_tokens_count": len(config.stop_tokens),
+            "bench_repetitions": config.bench_repetitions,
+            "bench_n_prompt": config.bench_n_prompt,
+            "bench_n_gen": config.bench_n_gen,
         },
         "device_params": device_params,
         "metrics": merged_metrics,
@@ -642,7 +713,9 @@ def _evaluate_model(
             "timeouts": str(timeout_count),
             "loop_aborts": str(loop_count),
             "error_count": str(error_count),
+            "metrics_source": "llama-bench",
         },
+        "bench_raw": bench_metrics.get("rows", []),
     }
 
     return run
@@ -664,8 +737,13 @@ def _apply_cli_overrides(args: argparse.Namespace) -> None:
 
 
 def _build_config(backend_name: str) -> BenchmarkConfig:
-    llama_cli_default = PROJECT_ROOT.parent.parent / "llama.cpp" / "build" / "bin" / "llama-cli"
-    llama_cli_path = _resolve_path(os.getenv("LLAMA_CLI_PATH", str(llama_cli_default)), PROJECT_ROOT)
+    llama_completion_default = PROJECT_ROOT.parent.parent / "llama.cpp" / "build" / "bin" / "llama-completion"
+    llama_completion_path = _resolve_path(
+        os.getenv("LLAMA_COMPLETION_PATH", str(llama_completion_default)),
+        PROJECT_ROOT,
+    )
+    llama_bench_default = PROJECT_ROOT.parent.parent / "llama.cpp" / "build" / "bin" / "llama-bench"
+    llama_bench_path = _resolve_path(os.getenv("LLAMA_BENCH_PATH", str(llama_bench_default)), PROJECT_ROOT)
 
     llama_perplexity_raw = os.getenv("LLAMA_PERPLEXITY_PATH", "").strip()
     llama_perplexity_path = _resolve_path(llama_perplexity_raw, PROJECT_ROOT) if llama_perplexity_raw else None
@@ -679,7 +757,8 @@ def _build_config(backend_name: str) -> BenchmarkConfig:
     return BenchmarkConfig(
         backend_name=backend_name,
         experiment_name=os.getenv("EXPERIMENT_NAME", "ELIB_Edge_Benchmark"),
-        llama_cli_path=llama_cli_path,
+        llama_completion_path=llama_completion_path,
+        llama_bench_path=llama_bench_path,
         llama_perplexity_path=llama_perplexity_path,
         model_paths=model_paths,
         output_json_path=output_path,
@@ -699,13 +778,17 @@ def _build_config(backend_name: str) -> BenchmarkConfig:
         inference_timeout_s=_env_int("INFERENCE_TIMEOUT_S", 180),
         stop_tokens=stop_tokens,
         max_repeat_ngram=_env_int("MAX_REPEAT_NGRAM", 8),
+        bench_repetitions=_env_int("BENCH_REPETITIONS", 3),
+        bench_n_prompt=_env_int("BENCH_N_PROMPT", 256),
+        bench_n_gen=_env_int("BENCH_N_GEN", 128),
     )
 
 
 def _print_dry_run_summary(config: BenchmarkConfig, datasets: dict[str, list[JsonDict]]) -> None:
     print("Dry-run summary:")
     print(f"  backend: {config.backend_name}")
-    print(f"  llama_cli_path: {config.llama_cli_path}")
+    print(f"  llama_completion_path: {config.llama_completion_path}")
+    print(f"  llama_bench_path: {config.llama_bench_path}")
     print(f"  output_json_path: {config.output_json_path}")
     print(f"  models: {len(config.model_paths)}")
     for model in config.model_paths:
@@ -752,8 +835,10 @@ def main_for_backend(
         )
     if not config.dataset_root.exists():
         raise FileNotFoundError(f"DATASET_ROOT não existe: {config.dataset_root}")
-    if not args.dry_run and not config.llama_cli_path.exists():
-        raise FileNotFoundError(f"LLAMA_CLI_PATH não existe: {config.llama_cli_path}")
+    if not args.dry_run and not config.llama_completion_path.exists():
+        raise FileNotFoundError(f"LLAMA_COMPLETION_PATH não existe: {config.llama_completion_path}")
+    if not args.dry_run and not config.llama_bench_path.exists():
+        raise FileNotFoundError(f"LLAMA_BENCH_PATH não existe: {config.llama_bench_path}")
 
     datasets = load_all_datasets(
         dataset_root=config.dataset_root,
