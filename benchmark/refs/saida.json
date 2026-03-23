@@ -1,0 +1,31 @@
+{
+    "run_info": {
+        "experiment_name": "ELIB_TCC_Benchmarking",
+        "run_name": "Llama-3.1-8b_Q4_1_S24"
+    },
+    "params": {
+        "model_name": "Llama-3.1-8b",
+        "quantization": "Q4_1",
+        "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+        "context_window": 4096,
+        "backend": "llama.cpp (Termux)",
+        "sample_size_enem": 45,
+        "sample_size_poeta": 100,
+        "sample_size_bbq": 100
+    },
+    "metrics": {
+        "avg_tps": 14.2,
+        "peak_tps": 18.5,
+        "avg_ttft_ms": 120.5,
+        "vram_peak_gb": 0.0,
+        "ram_peak_gb": 5.4,
+        "thermal_avg_c": 42.5,
+        "accuracy_enem": 0.68,
+        "accuracy_poeta": 0.72,
+        "accuracy_bbq": 0.85
+    },
+    "tags": {
+        "method": "ELIB",
+        "status": "completed"
+    }
+}
