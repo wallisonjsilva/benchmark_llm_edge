@@ -21,6 +21,19 @@ _OPTION_NUMBER_PATTERN = re.compile(
 )
 _INDEX_PATTERN = re.compile(r"\b([0-2])\b")
 _NUMBER_PATTERN = re.compile(r"[-+]?\d+(?:[.,]\d+)?")
+_FINAL_ANSWER_PATTERN = re.compile(
+    r"(?:final_answer|resposta\s+final|final\s+answer)\s*[:\-]\s*([^\n\r]+)",
+    re.IGNORECASE,
+)
+
+
+def _extract_final_answer_tail(candidate: str) -> str:
+    if not candidate:
+        return ""
+    matches = _FINAL_ANSWER_PATTERN.findall(candidate)
+    if matches:
+        return matches[-1].strip()
+    return ""
 
 
 def _normalize_text(value: str) -> str:
@@ -93,37 +106,41 @@ def extract_model_answer(dataset_name: str, raw_output: str) -> str:
         return ""
 
     tail = candidate[-400:]
+    final_answer = _extract_final_answer_tail(tail)
+    source = final_answer if final_answer else tail
 
     if dataset_name.startswith("enem"):
-        answer_matches = _LETTER_AFTER_CUE_PATTERN.findall(tail)
+        answer_matches = _LETTER_AFTER_CUE_PATTERN.findall(source)
         if answer_matches:
             return answer_matches[-1].upper()
 
-        number_matches = _OPTION_NUMBER_PATTERN.findall(tail)
+        number_matches = _OPTION_NUMBER_PATTERN.findall(source)
         if number_matches:
             return chr(ord("A") + int(number_matches[-1]) - 1)
 
-        matches = _LETTER_PATTERN.findall(tail.upper())
+        matches = _LETTER_PATTERN.findall(source.upper())
         return matches[-1].upper() if matches else ""
 
     if dataset_name.startswith("bbq"):
-        matches = _INDEX_PATTERN.findall(tail)
+        matches = _INDEX_PATTERN.findall(source)
         return matches[-1] if matches else ""
 
     if dataset_name == "poetav2_logiqa":
-        letter_matches = _LETTER_PATTERN.findall(tail.upper())
+        letter_matches = _LETTER_PATTERN.findall(source.upper())
         if letter_matches:
             return letter_matches[-1].lower()
-        index_matches = re.findall(r"\b([1-4])\b", tail)
+        index_matches = re.findall(r"\b([1-4])\b", source)
         if index_matches:
             return chr(ord("a") + int(index_matches[-1]) - 1)
         return ""
 
     if dataset_name in {"poetav2_gsm8k", "poetav2_arithmetic"}:
-        matches = _NUMBER_PATTERN.findall(tail)
+        matches = _NUMBER_PATTERN.findall(source)
         return matches[-1].replace(",", ".") if matches else ""
 
     if dataset_name in {"poetav2_coqa", "poetav2_triviaqa"}:
+        if final_answer:
+            return final_answer
         short = tail.splitlines()[-1].strip()
         return short
 

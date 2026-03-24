@@ -149,7 +149,8 @@ def _load_env_file(env_file: Path) -> None:
         value = raw_value.strip()
         if len(value) >= 2 and value[0] == value[-1] and value[0] in {'"', "'"}:
             value = value[1:-1]
-        os.environ[key] = value
+        # Keep already-exported variables (shell/CI/CLI) with higher precedence.
+        os.environ.setdefault(key, value)
 
 
 def _env_int(name: str, default: int) -> int:
@@ -344,23 +345,70 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
     ]
 
     started = time.perf_counter()
-    completed = subprocess.run(
-        command,
-        capture_output=True,
-        text=True,
-        timeout=config.inference_timeout_s,
-        check=False,
-    )
+    try:
+        completed = subprocess.run(
+            command,
+            capture_output=True,
+            text=True,
+            timeout=config.inference_timeout_s,
+            check=False,
+        )
+    except subprocess.TimeoutExpired:
+        return {
+            "prompt_tps": 0.0,
+            "gen_tps": 0.0,
+            "peak_gen_tps": 0.0,
+            "ttft_ms": 0.0,
+            "elapsed_s": float(time.perf_counter() - started),
+            "rows": [],
+            "error": "timeout",
+        }
+
     if completed.returncode != 0:
-        raise RuntimeError(f"llama-bench falhou (exit={completed.returncode}): {completed.stderr.strip()}")
+        return {
+            "prompt_tps": 0.0,
+            "gen_tps": 0.0,
+            "peak_gen_tps": 0.0,
+            "ttft_ms": 0.0,
+            "elapsed_s": float(time.perf_counter() - started),
+            "rows": [],
+            "error": f"exit_code_{completed.returncode}",
+        }
 
     stdout = completed.stdout.strip()
     if not stdout:
-        raise RuntimeError("llama-bench não retornou saída JSON.")
+        return {
+            "prompt_tps": 0.0,
+            "gen_tps": 0.0,
+            "peak_gen_tps": 0.0,
+            "ttft_ms": 0.0,
+            "elapsed_s": float(time.perf_counter() - started),
+            "rows": [],
+            "error": "empty_output",
+        }
 
-    bench_rows = json.loads(stdout)
+    try:
+        bench_rows = json.loads(stdout)
+    except json.JSONDecodeError:
+        return {
+            "prompt_tps": 0.0,
+            "gen_tps": 0.0,
+            "peak_gen_tps": 0.0,
+            "ttft_ms": 0.0,
+            "elapsed_s": float(time.perf_counter() - started),
+            "rows": [],
+            "error": "invalid_json",
+        }
     if not isinstance(bench_rows, list) or not bench_rows:
-        raise RuntimeError("llama-bench retornou JSON inválido ou vazio.")
+        return {
+            "prompt_tps": 0.0,
+            "gen_tps": 0.0,
+            "peak_gen_tps": 0.0,
+            "ttft_ms": 0.0,
+            "elapsed_s": float(time.perf_counter() - started),
+            "rows": [],
+            "error": "empty_rows",
+        }
 
     prompt_rows = [row for row in bench_rows if int(row.get("n_prompt", 0)) > 0 and int(row.get("n_gen", 0)) == 0]
     gen_rows = [row for row in bench_rows if int(row.get("n_gen", 0)) > 0]
@@ -382,6 +430,7 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
         "ttft_ms": float(ttft_ms),
         "elapsed_s": float(time.perf_counter() - started),
         "rows": bench_rows,
+        "error": "",
     }
 
 
@@ -420,6 +469,9 @@ def _sanitize_output(raw_output: str, stop_tokens: list[str]) -> str:
         filtered_lines.append(line)
 
     joined = "\n".join(filtered_lines)
+    joined = re.sub(r"<think>.*?</think>", " ", joined, flags=re.IGNORECASE | re.DOTALL)
+    joined = re.sub(r"<\|im_start\|>.*?<\|im_end\|>", " ", joined, flags=re.IGNORECASE | re.DOTALL)
+    joined = re.sub(r"<\|[^>]+?\|>", " ", joined)
     for marker in ("Resposta final:", "Answer:", "\nA:"):
         position = joined.rfind(marker)
         if position != -1:
@@ -444,15 +496,17 @@ def _build_prompt(dataset_name: str, row: JsonDict) -> str:
         context_text = f"Contexto:\n{context}\n\n" if context else ""
         return (
             "Responda à questão do ENEM.\n"
-            "Retorne SOMENTE uma letra (A, B, C, D ou E).\n"
-            "Não explique, não use <think>, não escreva palavras.\n\n"
+            "Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>\n"
+            "Retorne SOMENTE essa linha final, sem explicações.\n"
+            "Não use <think>.\n\n"
             f"{context_text}Questão:\n{question}\n\nAlternativas:\n{alternatives_text}\n\nResposta final (uma letra):"
         )
 
     if dataset_name.startswith("bbq"):
         return (
             "Read the context and answer the question.\n"
-            "Return exactly one token: 0, 1 or 2.\n\n"
+            "Required output format: FINAL_ANSWER: <0|1|2>\n"
+            "Return only that final line.\n\n"
             f"Context: {row.get('context', '')}\n"
             f"Question: {row.get('question', '')}\n"
             f"0: {row.get('ans0', '')}\n"
@@ -466,7 +520,8 @@ def _build_prompt(dataset_name: str, row: JsonDict) -> str:
         options_text = "\n".join(f"{chr(65 + i)}. {option}" for i, option in enumerate(options))
         return (
             "You are solving a multiple-choice reasoning task.\n"
-            "Return only one option letter: A, B, C or D.\n\n"
+            "Required output format: FINAL_ANSWER: <A|B|C|D>\n"
+            "Return only that final line.\n\n"
             f"Context:\n{row.get('context', '')}\n\n"
             f"Question:\n{row.get('question', '')}\n\n"
             f"Options:\n{options_text}\n\n"
@@ -475,7 +530,8 @@ def _build_prompt(dataset_name: str, row: JsonDict) -> str:
 
     if dataset_name == "poetav2_gsm8k":
         return (
-            "Resolva o problema e devolva apenas o número final.\n\n"
+            "Resolva o problema e devolva apenas o número final.\n"
+            "Formato obrigatório: FINAL_ANSWER: <numero>\n\n"
             f"Problema:\n{row.get('question', '')}\n\n"
             "Resposta final:"
         )
@@ -483,7 +539,8 @@ def _build_prompt(dataset_name: str, row: JsonDict) -> str:
     if dataset_name == "poetav2_coqa":
         return (
             "Read the passage and answer the question briefly.\n"
-            "Return only the answer span.\n\n"
+            "Required output format: FINAL_ANSWER: <short answer span>\n"
+            "Return only that final line.\n\n"
             f"Passage:\n{row.get('story', '')}\n\n"
             f"Question: {row.get('question', '')}\n\n"
             "Answer:"
@@ -491,7 +548,8 @@ def _build_prompt(dataset_name: str, row: JsonDict) -> str:
 
     if dataset_name == "poetav2_triviaqa":
         return (
-            "Answer the trivia question with a short entity answer.\n\n"
+            "Answer the trivia question with a short entity answer.\n"
+            "Required output format: FINAL_ANSWER: <entity>\n\n"
             f"Question: {row.get('Question', '')}\n\n"
             "Answer:"
         )
@@ -499,7 +557,8 @@ def _build_prompt(dataset_name: str, row: JsonDict) -> str:
     if dataset_name == "poetav2_arithmetic":
         context = str(row.get("context", ""))
         return (
-            "Compute the result. Return only the numeric answer.\n\n"
+            "Compute the result. Return only the numeric answer.\n"
+            "Required output format: FINAL_ANSWER: <number>\n\n"
             f"{context}\n"
             "Final answer:"
         )
@@ -854,6 +913,7 @@ def _evaluate_model(
             "loop_aborts": str(loop_count),
             "error_count": str(error_count),
             "metrics_source": "llama-bench",
+            "llama_bench_error": str(bench_metrics.get("error", "")),
         },
         "dataset_counts": {name: len(rows) for name, rows in datasets.items()},
         "bench_raw": bench_metrics.get("rows", []),
