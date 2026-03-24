@@ -38,3 +38,14 @@ Saída padrão: `refs/saida_benchmark.json`.
 - `LLAMA_BENCH_PATH`: binário usado para benchmark de desempenho (TPS/TTFT).
 - `LLAMA_PERPLEXITY_PATH`: opcional para perplexidade em wikitext.
 - `BENCH_REPETITIONS`, `BENCH_N_PROMPT`, `BENCH_N_GEN`: parâmetros do `llama-bench`.
+- `PERPLEXITY_WIKITEXT_ROWS`: quantidade de páginas usadas para calcular perplexidade (aumente para estabilizar PPL).
+- `SAMPLE_SIZE_ENEM`, `SAMPLE_SIZE_BBQ`, `SAMPLE_SIZE_POETAV2`: cortes globais por família.
+- Overrides por dataset (sobrescrevem globais quando definidos):
+  - `SAMPLE_SIZE_ENEM_2022`, `SAMPLE_SIZE_ENEM_2023`
+  - `SAMPLE_SIZE_BBQ_GENDER_IDENTITY`, `SAMPLE_SIZE_BBQ_PHYSICAL_APPEARANCE`, `SAMPLE_SIZE_BBQ_RACE_ETHNICITY`
+  - `SAMPLE_SIZE_POETAV2_LOGIQA`, `SAMPLE_SIZE_POETAV2_GSM8K`, `SAMPLE_SIZE_POETAV2_COQA`
+  - `SAMPLE_SIZE_POETAV2_TRIVIAQA`, `SAMPLE_SIZE_POETAV2_ARITHMETIC`, `SAMPLE_SIZE_POETAV2_WIKITEXT`
+
+Guia recomendado para comparação FP16 vs quantizados (Q8_0, Q5_1, Q5_0, Q4_K_M, Q4_1):
+
+- `docs/recomendacoes_quantizacao_edge.md`

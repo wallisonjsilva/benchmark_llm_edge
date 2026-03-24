@@ -25,20 +25,53 @@ def _slice_records(records: list[JsonDict], sample_size: int) -> list[JsonDict]:
     return records[:sample_size]
 
 
-def load_enem_datasets(dataset_root: Path, sample_size: int) -> dict[str, list[JsonDict]]:
+def _dataset_sample_size(
+    dataset_name: str,
+    default_sample_size: int,
+    sample_size_overrides: dict[str, int] | None,
+) -> int:
+    if sample_size_overrides and dataset_name in sample_size_overrides:
+        return sample_size_overrides[dataset_name]
+    return default_sample_size
+
+
+def load_enem_datasets(
+    dataset_root: Path,
+    sample_size: int,
+    sample_size_overrides: dict[str, int] | None = None,
+) -> dict[str, list[JsonDict]]:
     enem_dir = dataset_root / "enem"
     return {
-        "enem_2022": _slice_records(read_jsonl(enem_dir / "2022.jsonl"), sample_size),
-        "enem_2023": _slice_records(read_jsonl(enem_dir / "2023.jsonl"), sample_size),
+        "enem_2022": _slice_records(
+            read_jsonl(enem_dir / "2022.jsonl"),
+            _dataset_sample_size("enem_2022", sample_size, sample_size_overrides),
+        ),
+        "enem_2023": _slice_records(
+            read_jsonl(enem_dir / "2023.jsonl"),
+            _dataset_sample_size("enem_2023", sample_size, sample_size_overrides),
+        ),
     }
 
 
-def load_bbq_datasets(dataset_root: Path, sample_size: int) -> dict[str, list[JsonDict]]:
+def load_bbq_datasets(
+    dataset_root: Path,
+    sample_size: int,
+    sample_size_overrides: dict[str, int] | None = None,
+) -> dict[str, list[JsonDict]]:
     bbq_dir = dataset_root / "bbq"
     return {
-        "bbq_gender_identity": _slice_records(read_jsonl(bbq_dir / "Gender_identity.jsonl"), sample_size),
-        "bbq_physical_appearance": _slice_records(read_jsonl(bbq_dir / "Physical_appearance.jsonl"), sample_size),
-        "bbq_race_ethnicity": _slice_records(read_jsonl(bbq_dir / "Race_ethnicity.jsonl"), sample_size),
+        "bbq_gender_identity": _slice_records(
+            read_jsonl(bbq_dir / "Gender_identity.jsonl"),
+            _dataset_sample_size("bbq_gender_identity", sample_size, sample_size_overrides),
+        ),
+        "bbq_physical_appearance": _slice_records(
+            read_jsonl(bbq_dir / "Physical_appearance.jsonl"),
+            _dataset_sample_size("bbq_physical_appearance", sample_size, sample_size_overrides),
+        ),
+        "bbq_race_ethnicity": _slice_records(
+            read_jsonl(bbq_dir / "Race_ethnicity.jsonl"),
+            _dataset_sample_size("bbq_race_ethnicity", sample_size, sample_size_overrides),
+        ),
     }
 
 
@@ -104,19 +137,38 @@ def _load_arithmetic_records(arithmetic_dir: Path) -> list[JsonDict]:
     return records
 
 
-def load_poetav2_datasets(dataset_root: Path, sample_size: int) -> dict[str, list[JsonDict]]:
+def load_poetav2_datasets(
+    dataset_root: Path,
+    sample_size: int,
+    sample_size_overrides: dict[str, int] | None = None,
+) -> dict[str, list[JsonDict]]:
     poetav2_root = dataset_root / "poetav2"
     coqa_rows = read_jsonl(poetav2_root / "coqa" / "validation.jsonl")
 
     return {
-        "poetav2_logiqa": _slice_records(read_jsonl(poetav2_root / "logiqa" / "validation.jsonl"), sample_size),
-        "poetav2_gsm8k": _slice_records(read_jsonl(poetav2_root / "gsm8k" / "test.jsonl"), sample_size),
-        "poetav2_coqa": _slice_records(_flatten_coqa_examples(coqa_rows), sample_size),
-        "poetav2_triviaqa": _slice_records(read_jsonl(poetav2_root / "triviaqa" / "validation.jsonl"), sample_size),
-        "poetav2_arithmetic": _slice_records(_load_arithmetic_records(poetav2_root / "arithmetic"), sample_size),
+        "poetav2_logiqa": _slice_records(
+            read_jsonl(poetav2_root / "logiqa" / "validation.jsonl"),
+            _dataset_sample_size("poetav2_logiqa", sample_size, sample_size_overrides),
+        ),
+        "poetav2_gsm8k": _slice_records(
+            read_jsonl(poetav2_root / "gsm8k" / "test.jsonl"),
+            _dataset_sample_size("poetav2_gsm8k", sample_size, sample_size_overrides),
+        ),
+        "poetav2_coqa": _slice_records(
+            _flatten_coqa_examples(coqa_rows),
+            _dataset_sample_size("poetav2_coqa", sample_size, sample_size_overrides),
+        ),
+        "poetav2_triviaqa": _slice_records(
+            read_jsonl(poetav2_root / "triviaqa" / "validation.jsonl"),
+            _dataset_sample_size("poetav2_triviaqa", sample_size, sample_size_overrides),
+        ),
+        "poetav2_arithmetic": _slice_records(
+            _load_arithmetic_records(poetav2_root / "arithmetic"),
+            _dataset_sample_size("poetav2_arithmetic", sample_size, sample_size_overrides),
+        ),
         "poetav2_wikitext": _slice_records(
             read_jsonl(poetav2_root / "wikitext" / "wikitext-2-raw-v1" / "validation.jsonl"),
-            sample_size,
+            _dataset_sample_size("poetav2_wikitext", sample_size, sample_size_overrides),
         ),
     }
 
@@ -126,10 +178,10 @@ def load_all_datasets(
     sample_size_enem: int,
     sample_size_bbq: int,
     sample_size_poetav2: int,
+    sample_size_overrides: dict[str, int] | None = None,
 ) -> dict[str, list[JsonDict]]:
     datasets: dict[str, list[JsonDict]] = {}
-    datasets.update(load_enem_datasets(dataset_root, sample_size_enem))
-    datasets.update(load_bbq_datasets(dataset_root, sample_size_bbq))
-    datasets.update(load_poetav2_datasets(dataset_root, sample_size_poetav2))
+    datasets.update(load_enem_datasets(dataset_root, sample_size_enem, sample_size_overrides))
+    datasets.update(load_bbq_datasets(dataset_root, sample_size_bbq, sample_size_overrides))
+    datasets.update(load_poetav2_datasets(dataset_root, sample_size_poetav2, sample_size_overrides))
     return datasets
-

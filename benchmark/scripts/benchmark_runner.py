@@ -54,6 +54,7 @@ class BenchmarkConfig:
     sample_size_enem: int
     sample_size_bbq: int
     sample_size_poetav2: int
+    sample_size_overrides: dict[str, int]
     ctx_size: int
     n_predict: int
     threads: int
@@ -69,10 +70,34 @@ class BenchmarkConfig:
     bench_repetitions: int
     bench_n_prompt: int
     bench_n_gen: int
+    perplexity_wikitext_rows: int
 
 
 def _split_values(raw: str, delimiter: str) -> list[str]:
     return [piece.strip() for piece in raw.split(delimiter) if piece.strip()]
+
+
+def _dataset_sample_overrides_from_env() -> dict[str, int]:
+    mappings = {
+        "SAMPLE_SIZE_ENEM_2022": "enem_2022",
+        "SAMPLE_SIZE_ENEM_2023": "enem_2023",
+        "SAMPLE_SIZE_BBQ_GENDER_IDENTITY": "bbq_gender_identity",
+        "SAMPLE_SIZE_BBQ_PHYSICAL_APPEARANCE": "bbq_physical_appearance",
+        "SAMPLE_SIZE_BBQ_RACE_ETHNICITY": "bbq_race_ethnicity",
+        "SAMPLE_SIZE_POETAV2_LOGIQA": "poetav2_logiqa",
+        "SAMPLE_SIZE_POETAV2_GSM8K": "poetav2_gsm8k",
+        "SAMPLE_SIZE_POETAV2_COQA": "poetav2_coqa",
+        "SAMPLE_SIZE_POETAV2_TRIVIAQA": "poetav2_triviaqa",
+        "SAMPLE_SIZE_POETAV2_ARITHMETIC": "poetav2_arithmetic",
+        "SAMPLE_SIZE_POETAV2_WIKITEXT": "poetav2_wikitext",
+    }
+    overrides: dict[str, int] = {}
+    for env_name, dataset_name in mappings.items():
+        raw = os.getenv(env_name, "").strip()
+        if not raw:
+            continue
+        overrides[dataset_name] = int(raw)
+    return overrides
 
 
 def _resolve_path(path_str: str, root: Path) -> Path:
@@ -212,6 +237,34 @@ def _read_cpu_temp_c() -> float:
             continue
         return raw / 1000.0 if raw > 200.0 else raw
 
+    return 0.0
+
+
+def _read_gpu_temp_c() -> float:
+    try:
+        completed = subprocess.run(
+            ["nvidia-smi", "--query-gpu=temperature.gpu", "--format=csv,noheader,nounits"],
+            capture_output=True,
+            text=True,
+            timeout=2,
+            check=False,
+        )
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        return 0.0
+
+    if completed.returncode != 0:
+        return 0.0
+
+    for line in completed.stdout.splitlines():
+        cleaned = line.strip()
+        if not cleaned:
+            continue
+        try:
+            value = float(cleaned)
+        except ValueError:
+            continue
+        if value > 0:
+            return value
     return 0.0
 
 
@@ -475,6 +528,8 @@ def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str) -> Js
 
                 peak_ram_gb = max(peak_ram_gb, _read_process_rss_gb(process.pid))
                 temp = _read_cpu_temp_c()
+                if temp <= 0:
+                    temp = _read_gpu_temp_c()
                 if temp > 0:
                     thermal_samples.append(temp)
                 time.sleep(0.2)
@@ -528,7 +583,10 @@ def _run_perplexity(config: BenchmarkConfig, model_path: Path, wikitext_rows: li
     if not wikitext_rows:
         return 0.0
 
-    corpus = "\n\n".join(str(row.get("page", "")) for row in wikitext_rows if row.get("page"))
+    corpus_rows = [row for row in wikitext_rows if row.get("page")]
+    if config.perplexity_wikitext_rows > 0:
+        corpus_rows = corpus_rows[: config.perplexity_wikitext_rows]
+    corpus = "\n\n".join(str(row.get("page", "")) for row in corpus_rows)
     if not corpus.strip():
         return 0.0
 
@@ -538,6 +596,8 @@ def _run_perplexity(config: BenchmarkConfig, model_path: Path, wikitext_rows: li
             handle.write(corpus)
             temp_file = Path(handle.name)
 
+        effective_ctx = max(32, min(config.ctx_size, max(256, len(corpus.split()))))
+
         command = [
             str(config.llama_perplexity_path),
             "-m",
@@ -545,7 +605,7 @@ def _run_perplexity(config: BenchmarkConfig, model_path: Path, wikitext_rows: li
             "-f",
             str(temp_file),
             "-c",
-            str(config.ctx_size),
+            str(effective_ctx),
             "-t",
             str(config.threads),
             "-ngl",
@@ -568,6 +628,25 @@ def _run_perplexity(config: BenchmarkConfig, model_path: Path, wikitext_rows: li
         fallback = re.search(r"\bppl\b[^0-9]*([\d.]+)", joined_output, flags=re.IGNORECASE)
         if fallback:
             return float(fallback.group(1))
+
+        if "you need at least" in joined_output.lower() and effective_ctx > 64:
+            retry_ctx = max(32, effective_ctx // 2)
+            retry_command = command.copy()
+            retry_command[retry_command.index("-c") + 1] = str(retry_ctx)
+            retry = subprocess.run(
+                retry_command,
+                capture_output=True,
+                text=True,
+                timeout=config.inference_timeout_s,
+                check=False,
+            )
+            retry_output = f"{retry.stdout}\n{retry.stderr}"
+            retry_match = re.search(r"Final estimate:\s*PPL\s*=\s*([\d.]+)", retry_output, flags=re.IGNORECASE)
+            if retry_match:
+                return float(retry_match.group(1))
+            retry_fallback = re.search(r"\bppl\b[^0-9]*([\d.]+)", retry_output, flags=re.IGNORECASE)
+            if retry_fallback:
+                return float(retry_fallback.group(1))
 
         return 0.0
     except subprocess.TimeoutExpired:
@@ -689,6 +768,7 @@ def _evaluate_model(
             "sample_size_enem": str(config.sample_size_enem),
             "sample_size_bbq": str(config.sample_size_bbq),
             "sample_size_poeta": str(config.sample_size_poetav2),
+            "sample_size_overrides": {k: str(v) for k, v in config.sample_size_overrides.items()},
             "llama_completion_path": str(config.llama_completion_path),
             "llama_bench_path": str(config.llama_bench_path),
         },
@@ -715,6 +795,7 @@ def _evaluate_model(
             "error_count": str(error_count),
             "metrics_source": "llama-bench",
         },
+        "dataset_counts": {name: len(rows) for name, rows in datasets.items()},
         "bench_raw": bench_metrics.get("rows", []),
     }
 
@@ -766,6 +847,7 @@ def _build_config(backend_name: str) -> BenchmarkConfig:
         sample_size_enem=_env_int("SAMPLE_SIZE_ENEM", 5),
         sample_size_bbq=_env_int("SAMPLE_SIZE_BBQ", 5),
         sample_size_poetav2=_env_int("SAMPLE_SIZE_POETAV2", 5),
+        sample_size_overrides=_dataset_sample_overrides_from_env(),
         ctx_size=_env_int("CTX_SIZE", 2048),
         n_predict=_env_int("N_PREDICT", 64),
         threads=_env_int("THREADS", max(1, int(os.cpu_count() or 1))),
@@ -781,6 +863,7 @@ def _build_config(backend_name: str) -> BenchmarkConfig:
         bench_repetitions=_env_int("BENCH_REPETITIONS", 3),
         bench_n_prompt=_env_int("BENCH_N_PROMPT", 256),
         bench_n_gen=_env_int("BENCH_N_GEN", 128),
+        perplexity_wikitext_rows=_env_int("PERPLEXITY_WIKITEXT_ROWS", 16),
     )
 
 
@@ -790,6 +873,11 @@ def _print_dry_run_summary(config: BenchmarkConfig, datasets: dict[str, list[Jso
     print(f"  llama_completion_path: {config.llama_completion_path}")
     print(f"  llama_bench_path: {config.llama_bench_path}")
     print(f"  output_json_path: {config.output_json_path}")
+    print(f"  perplexity_wikitext_rows: {config.perplexity_wikitext_rows}")
+    if config.sample_size_overrides:
+        print("  sample_size_overrides:")
+        for name in sorted(config.sample_size_overrides):
+            print(f"    - {name}: {config.sample_size_overrides[name]}")
     print(f"  models: {len(config.model_paths)}")
     for model in config.model_paths:
         print(f"    - {model}")
@@ -845,6 +933,7 @@ def main_for_backend(
         sample_size_enem=config.sample_size_enem,
         sample_size_bbq=config.sample_size_bbq,
         sample_size_poetav2=config.sample_size_poetav2,
+        sample_size_overrides=config.sample_size_overrides,
     )
     if args.dry_run:
         _print_dry_run_summary(config, datasets)
