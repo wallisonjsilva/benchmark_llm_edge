@@ -37,7 +37,7 @@ except ImportError:
 
 JsonDict = dict[str, Any]
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "output" / "saida_benchmark.json"
+DEFAULT_OUTPUT_JSON = PROJECT_ROOT / "output" / "saida_benchmark_poetav2.json"
 DEFAULT_DATASET_ROOT = PROJECT_ROOT / "datasets"
 
 
@@ -82,6 +82,7 @@ def _dataset_sample_overrides_from_env() -> dict[str, int]:
     mappings = {
         "SAMPLE_SIZE_ENEM_2022": "enem_2022",
         "SAMPLE_SIZE_ENEM_2023": "enem_2023",
+        "SAMPLE_SIZE_ENEM_2024": "enem_2024",
         "SAMPLE_SIZE_BBQ_GENDER_IDENTITY": "bbq_gender_identity",
         "SAMPLE_SIZE_BBQ_PHYSICAL_APPEARANCE": "bbq_physical_appearance",
         "SAMPLE_SIZE_BBQ_RACE_ETHNICITY": "bbq_race_ethnicity",
@@ -98,6 +99,17 @@ def _dataset_sample_overrides_from_env() -> dict[str, int]:
         if not raw:
             continue
         overrides[dataset_name] = int(raw)
+
+    for env_name, raw in os.environ.items():
+        if not env_name.startswith("SAMPLE_SIZE_ENEM_"):
+            continue
+        suffix = env_name.removeprefix("SAMPLE_SIZE_ENEM_")
+        if len(suffix) != 4 or not suffix.isdigit():
+            continue
+        raw_value = raw.strip()
+        if not raw_value:
+            continue
+        overrides[f"enem_{suffix}"] = int(raw_value)
     return overrides
 
 
@@ -423,15 +435,18 @@ def _sanitize_output(raw_output: str, stop_tokens: list[str]) -> str:
 
 def _build_prompt(dataset_name: str, row: JsonDict) -> str:
     if dataset_name.startswith("enem"):
+        context = str(row.get("context", "")).strip()
         question = str(row.get("question", ""))
-        alternatives = row.get("alternatives", [])
+        alternatives = row.get("options", row.get("alternatives", []))
         alternatives_text = "\n".join(
             f"{chr(65 + index)}) {alternative}" for index, alternative in enumerate(alternatives)
         )
+        context_text = f"Contexto:\n{context}\n\n" if context else ""
         return (
             "Responda à questão do ENEM.\n"
-            "Retorne somente a letra da alternativa correta (A, B, C, D ou E).\n\n"
-            f"Questão:\n{question}\n\nAlternativas:\n{alternatives_text}\n\nResposta final:"
+            "Retorne SOMENTE uma letra (A, B, C, D ou E).\n"
+            "Não explique, não use <think>, não escreva palavras.\n\n"
+            f"{context_text}Questão:\n{question}\n\nAlternativas:\n{alternatives_text}\n\nResposta final (uma letra):"
         )
 
     if dataset_name.startswith("bbq"):
@@ -524,7 +539,6 @@ def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str, stop_
         "--no-display-prompt",
         "--reasoning",
         "off",
-        "--log-disable",
     ]
 
     env = os.environ.copy()
@@ -704,6 +718,7 @@ def _base_metrics() -> JsonDict:
         "perplexity": 0.0,
         "accuracy_enem_2022": 0.0,
         "accuracy_enem_2023": 0.0,
+        "accuracy_enem_2024": 0.0,
         "accuracy_enem_macro": 0.0,
         "invalid_answer_rate_enem": 0.0,
         "accuracy_bbq_gender_identity": 0.0,

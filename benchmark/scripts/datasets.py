@@ -40,17 +40,16 @@ def load_enem_datasets(
     sample_size: int,
     sample_size_overrides: dict[str, int] | None = None,
 ) -> dict[str, list[JsonDict]]:
-    enem_dir = dataset_root / "enem"
-    return {
-        "enem_2022": _slice_records(
-            read_jsonl(enem_dir / "2022.jsonl"),
-            _dataset_sample_size("enem_2022", sample_size, sample_size_overrides),
-        ),
-        "enem_2023": _slice_records(
-            read_jsonl(enem_dir / "2023.jsonl"),
-            _dataset_sample_size("enem_2023", sample_size, sample_size_overrides),
-        ),
-    }
+    enem_dir = dataset_root / "poetav2" / "enem"
+    datasets: dict[str, list[JsonDict]] = {}
+    for year_file in sorted(enem_dir.glob("[0-9][0-9][0-9][0-9].jsonl")):
+        year = year_file.stem
+        dataset_name = f"enem_{year}"
+        datasets[dataset_name] = _slice_records(
+            read_jsonl(year_file),
+            _dataset_sample_size(dataset_name, sample_size, sample_size_overrides),
+        )
+    return datasets
 
 
 def load_bbq_datasets(

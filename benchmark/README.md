@@ -32,7 +32,7 @@ Para executar benchmark real (sem `--dry-run`), ajuste antes os caminhos em:
 - `.env.cuda`
 - `.env.amd`
 
-Saída padrão: `refs/saida_benchmark.json`.
+Saída padrão: `output/saida_benchmark_poetav2.json`.
 
 ## Variáveis importantes no `.env`
 
@@ -47,7 +47,7 @@ Saída padrão: `refs/saida_benchmark.json`.
   - `never`: não aplica.
 - `SAMPLE_SIZE_ENEM`, `SAMPLE_SIZE_BBQ`, `SAMPLE_SIZE_POETAV2`: cortes globais por família.
 - Overrides por dataset (sobrescrevem globais quando definidos):
-  - `SAMPLE_SIZE_ENEM_2022`, `SAMPLE_SIZE_ENEM_2023`
+  - `SAMPLE_SIZE_ENEM_2022`, `SAMPLE_SIZE_ENEM_2023`, `SAMPLE_SIZE_ENEM_2024`
   - `SAMPLE_SIZE_BBQ_GENDER_IDENTITY`, `SAMPLE_SIZE_BBQ_PHYSICAL_APPEARANCE`, `SAMPLE_SIZE_BBQ_RACE_ETHNICITY`
   - `SAMPLE_SIZE_POETAV2_LOGIQA`, `SAMPLE_SIZE_POETAV2_GSM8K`, `SAMPLE_SIZE_POETAV2_COQA`
   - `SAMPLE_SIZE_POETAV2_TRIVIAQA`, `SAMPLE_SIZE_POETAV2_ARITHMETIC`, `SAMPLE_SIZE_POETAV2_WIKITEXT`

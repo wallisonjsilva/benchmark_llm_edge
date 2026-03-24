@@ -11,6 +11,14 @@ JsonDict = dict[str, Any]
 
 
 _LETTER_PATTERN = re.compile(r"\b([A-E])\b", re.IGNORECASE)
+_LETTER_AFTER_CUE_PATTERN = re.compile(
+    r"(?:resposta(?:\s+final)?|alternativa|op[cç][aã]o|opcao|answer)\s*[:\-]?\s*\(?\s*([A-E])\b",
+    re.IGNORECASE,
+)
+_OPTION_NUMBER_PATTERN = re.compile(
+    r"(?:alternativa|op[cç][aã]o|opcao|option)\s*[:\-]?\s*([1-5])\b",
+    re.IGNORECASE,
+)
 _INDEX_PATTERN = re.compile(r"\b([0-2])\b")
 _NUMBER_PATTERN = re.compile(r"[-+]?\d+(?:[.,]\d+)?")
 
@@ -87,6 +95,14 @@ def extract_model_answer(dataset_name: str, raw_output: str) -> str:
     tail = candidate[-400:]
 
     if dataset_name.startswith("enem"):
+        answer_matches = _LETTER_AFTER_CUE_PATTERN.findall(tail)
+        if answer_matches:
+            return answer_matches[-1].upper()
+
+        number_matches = _OPTION_NUMBER_PATTERN.findall(tail)
+        if number_matches:
+            return chr(ord("A") + int(number_matches[-1]) - 1)
+
         matches = _LETTER_PATTERN.findall(tail.upper())
         return matches[-1].upper() if matches else ""
 
@@ -213,15 +229,11 @@ def aggregate_dataset_metrics(dataset_name: str, results: list[JsonDict]) -> Jso
 
     valid_rate = _safe_mean([float(r.get("valid", 0.0)) for r in results])
 
-    if dataset_name == "enem_2022":
+    if dataset_name.startswith("enem_"):
+        year = dataset_name.removeprefix("enem_")
         accuracy = _aggregate_accuracy(results)
         invalid = 1.0 - valid_rate
-        return {"accuracy_enem_2022": accuracy, "invalid_answer_rate_enem": invalid}
-
-    if dataset_name == "enem_2023":
-        accuracy = _aggregate_accuracy(results)
-        invalid = 1.0 - valid_rate
-        return {"accuracy_enem_2023": accuracy, "invalid_answer_rate_enem": invalid}
+        return {f"accuracy_enem_{year}": accuracy, "invalid_answer_rate_enem": invalid}
 
     if dataset_name == "bbq_gender_identity":
         ambig = [r for r in results if r.get("is_ambig", 0.0) == 1.0]
@@ -284,7 +296,7 @@ def merge_metric_dicts(dicts: list[JsonDict]) -> JsonDict:
 
 
 def compute_macro_metrics(metrics: JsonDict) -> JsonDict:
-    enem_values = [metrics.get("accuracy_enem_2022"), metrics.get("accuracy_enem_2023")]
+    enem_values = [value for key, value in metrics.items() if key.startswith("accuracy_enem_") and key != "accuracy_enem_macro"]
     enem_values = [float(x) for x in enem_values if isinstance(x, (int, float))]
     if enem_values:
         metrics["accuracy_enem_macro"] = _safe_mean(enem_values)
