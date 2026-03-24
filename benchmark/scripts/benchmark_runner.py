@@ -72,6 +72,7 @@ class BenchmarkConfig:
     bench_n_prompt: int
     bench_n_gen: int
     perplexity_wikitext_rows: int
+    flash_attn: bool
 
 
 def _split_values(raw: str, delimiter: str) -> list[str]:
@@ -230,17 +231,90 @@ def _infer_quantization(model_name: str) -> str:
     return "unknown"
 
 
+def _detect_model_family(model_path: Path) -> str:
+    name = model_path.name.casefold()
+    if "deepseek" in name:
+        return "deepseek"
+    if "qwen" in name:
+        return "qwen"
+    if "llama" in name:
+        return "llama3"
+    if "sabia" in name:
+        return "sabia"
+    return "generic"
+
+def _model_stop_tokens(model_family: str) -> list[str]:
+    # Tokens universais que evitam alucinação de chat
+    base_stops = ["User:", "Instruction:", "###"]
+
+    if model_family in ("qwen", "deepseek"):
+        return ["<|im_end|>", "<|endoftext|>", "<|im_start|>"] + base_stops
+        
+    if model_family in ("llama3", "llama3.1", "llama4"):
+        return ["<|eot_id|>", "<|end_of_text|>", "<|start_header_id|>", "<|eom_id|>"] + base_stops
+        
+    if model_family == "sabia":
+        # Sabiá costuma ser sensível a esses marcadores de turno
+        return ["</s>", "### Instrução:", "### Resposta:", "###"]
+        
+    return ["</s>"] + base_stops
+
+
+def _apply_chat_template(prompt: str, model_family: str) -> str:
+    system_msg = (
+        "You are a helpful assistant that follows instructions precisely. "
+        "Answer concisely. Do not explain your reasoning."
+    )
+
+    if model_family in ("qwen", "deepseek"):
+        return (
+            f"<|im_start|>system\n{system_msg}<|im_end|>\n"
+            f"<|im_start|>user\n{prompt}<|im_end|>\n"
+            f"<|im_start|>assistant\n"
+        )
+
+    if model_family == "llama3":
+        return (
+            f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n"
+            f"{system_msg}<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n"
+            f"{prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+        )
+
+    if model_family == "sabia":
+        # O Sabiá-1 baseado em Llama-1 responde melhor ao formato Alpaca/Classic
+        return (
+            f"Abaixo está uma instrução que descreve uma tarefa. "
+            f"Escreva uma resposta que complete adequadamente o pedido.\n\n"
+            f"### Instrução:\n{system_msg}\n\n{prompt}\n\n"
+            f"### Resposta:\n"
+        )
+
+    return prompt
+
+
 def _is_sabia7_model(model_path: Path) -> bool:
     return "sabia" in model_path.name.casefold()
 
 
 def _effective_stop_tokens(config: BenchmarkConfig, model_path: Path) -> list[str]:
+    model_family = _detect_model_family(model_path)
+    model_tokens = _model_stop_tokens(model_family)
+
     mode = config.stop_tokens_mode.casefold().strip()
     if mode == "always":
-        return config.stop_tokens
-    if mode == "never":
-        return []
-    return config.stop_tokens if _is_sabia7_model(model_path) else []
+        base = list(config.stop_tokens)
+    elif mode == "never":
+        base = []
+    else:
+        base = list(config.stop_tokens) if _is_sabia7_model(model_path) else []
+
+    seen = set(base)
+    for token in model_tokens:
+        if token not in seen:
+            base.append(token)
+            seen.add(token)
+
+    return base
 
 
 def _read_process_rss_gb(pid: int) -> float:
@@ -343,6 +417,9 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
         str(config.n_gpu_layers),
         "--no-warmup",
     ]
+
+    if config.flash_attn:
+        command.append("-fa")
 
     started = time.perf_counter()
     try:
@@ -497,8 +574,7 @@ def _build_prompt(dataset_name: str, row: JsonDict) -> str:
         return (
             "Responda à questão do ENEM.\n"
             "Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>\n"
-            "Retorne SOMENTE essa linha final, sem explicações.\n"
-            "Não use <think>.\n\n"
+            "Retorne SOMENTE essa linha final, sem explicações.\n\n"
             f"{context_text}Questão:\n{question}\n\nAlternativas:\n{alternatives_text}\n\nResposta final (uma letra):"
         )
 
@@ -596,9 +672,14 @@ def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str, stop_
         "--single-turn",
         "--simple-io",
         "--no-display-prompt",
-        "--reasoning",
-        "off",
     ]
+
+    # parametro abaixo removido do comando acima.
+    #"--reasoning",
+    #    "off",
+
+    if config.flash_attn:
+        command.append("-fa")
 
     env = os.environ.copy()
     output_temp_path: Path | None = None
@@ -804,6 +885,7 @@ def _evaluate_model(
 ) -> JsonDict:
     started = time.perf_counter()
     model_name = model_path.name
+    model_family = _detect_model_family(model_path)
     effective_stop_tokens = _effective_stop_tokens(config, model_path)
     bench_metrics = _run_llama_bench(config, model_path)
     dataset_metric_chunks: list[JsonDict] = []
@@ -813,6 +895,7 @@ def _evaluate_model(
         sample_scores: list[JsonDict] = []
         for row in rows:
             prompt = _build_prompt(dataset_name, row)
+            prompt = _apply_chat_template(prompt, model_family)
             inference = _run_inference(config, model_path, prompt, effective_stop_tokens)
             inference_records.append(inference)
 
@@ -988,6 +1071,7 @@ def _build_config(backend_name: str) -> BenchmarkConfig:
         bench_n_prompt=_env_int("BENCH_N_PROMPT", 256),
         bench_n_gen=_env_int("BENCH_N_GEN", 128),
         perplexity_wikitext_rows=_env_int("PERPLEXITY_WIKITEXT_ROWS", 16),
+        flash_attn=os.getenv("FLASH_ATTN", "").strip().lower() in ("true", "1", "yes"),
     )
 
 
