@@ -15,6 +15,8 @@ Todos usam o runner comum `scripts/benchmark_runner.py` e carregam `.env` espec�
 - **Métricas de desempenho (TPS/TTFT)**: coletadas via `llama-bench` (saída JSON).
 - **Qualidade por dataset (acurácia/F1/EM)**: calculada no runner a partir das respostas inferidas.
 - A saída interativa do `llama-cli` não é usada para métricas.
+- **Tempo de execução**: disponível em `total_benchmark_time_s`, `inference_avg_time_s`,
+  `inference_p95_time_s`, `inference_total_time_s`, `llama_bench_time_s` e `perplexity_time_s`.
 
 ## Execução
 
@@ -39,6 +41,10 @@ Saída padrão: `refs/saida_benchmark.json`.
 - `LLAMA_PERPLEXITY_PATH`: opcional para perplexidade em wikitext.
 - `BENCH_REPETITIONS`, `BENCH_N_PROMPT`, `BENCH_N_GEN`: parâmetros do `llama-bench`.
 - `PERPLEXITY_WIKITEXT_ROWS`: quantidade de páginas usadas para calcular perplexidade (aumente para estabilizar PPL).
+- `STOP_TOKENS_MODE`: controla quando aplicar `STOP_TOKENS`:
+  - `sabia7` (padrão): aplica só para modelos Sabiá.
+  - `always`: aplica para todos os modelos.
+  - `never`: não aplica.
 - `SAMPLE_SIZE_ENEM`, `SAMPLE_SIZE_BBQ`, `SAMPLE_SIZE_POETAV2`: cortes globais por família.
 - Overrides por dataset (sobrescrevem globais quando definidos):
   - `SAMPLE_SIZE_ENEM_2022`, `SAMPLE_SIZE_ENEM_2023`

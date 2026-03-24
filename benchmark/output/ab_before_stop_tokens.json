@@ -9,27 +9,27 @@
       "quantization": "Q4_K_M",
       "context_window": "4096",
       "backend": "cuda",
-      "sample_size_enem": "10",
-      "sample_size_bbq": "10",
-      "sample_size_poeta": "10",
+      "sample_size_enem": "1",
+      "sample_size_bbq": "1",
+      "sample_size_poeta": "1",
       "sample_size_overrides": {
-        "enem_2022": "15",
-        "enem_2023": "15",
-        "bbq_gender_identity": "10",
-        "bbq_physical_appearance": "10",
-        "bbq_race_ethnicity": "10",
-        "poetav2_logiqa": "10",
-        "poetav2_gsm8k": "10",
-        "poetav2_coqa": "10",
-        "poetav2_triviaqa": "10",
-        "poetav2_arithmetic": "10",
-        "poetav2_wikitext": "10"
+        "enem_2022": "1",
+        "enem_2023": "1",
+        "bbq_gender_identity": "1",
+        "bbq_physical_appearance": "1",
+        "bbq_race_ethnicity": "1",
+        "poetav2_logiqa": "1",
+        "poetav2_gsm8k": "1",
+        "poetav2_coqa": "1",
+        "poetav2_triviaqa": "1",
+        "poetav2_arithmetic": "1",
+        "poetav2_wikitext": "2"
       },
       "llama_completion_path": "/teamspace/studios/this_studio/llama.cpp/build/bin/llama-completion",
       "llama_bench_path": "/teamspace/studios/this_studio/llama.cpp/build/bin/llama-bench"
     },
     "benchmark_params": {
-      "iteration": 120,
+      "iteration": 12,
       "batch_size": 1,
       "top_k": 40,
       "top_p": 0.95,
@@ -37,9 +37,9 @@
       "inference_timeout_s": 180,
       "max_repeat_ngram": 8,
       "stop_tokens_count": 6,
-      "bench_repetitions": 3,
-      "bench_n_prompt": 256,
-      "bench_n_gen": 128
+      "bench_repetitions": 1,
+      "bench_n_prompt": 64,
+      "bench_n_gen": 32
     },
     "device_params": {
       "thread_number": 8,
@@ -51,38 +51,38 @@
       "gpu_layers": 99
     },
     "metrics": {
-      "avg_tps": 37.875283,
-      "peak_tps": 37.875283,
-      "avg_ttft_ms": 1.0278248508997185,
-      "inference_avg_time_s": 4.621466089899991,
-      "inference_p95_time_s": 4.967614287299966,
-      "inference_total_time_s": 554.5759307879989,
-      "llama_bench_time_s": 13.269485090000671,
-      "perplexity_time_s": 46.33814333400005,
-      "ram_peak_gb": 4.987098693847656,
+      "avg_tps": 37.992091,
+      "peak_tps": 37.992091,
+      "avg_ttft_ms": 3.1125304540484415,
+      "inference_avg_time_s": 3.9093549479168055,
+      "inference_p95_time_s": 4.084281000600276,
+      "inference_total_time_s": 46.91225937500167,
+      "llama_bench_time_s": 3.500968802999523,
+      "perplexity_time_s": 10.870529848999468,
+      "ram_peak_gb": 4.987003326416016,
       "vram_peak_gb": 14.5615234375,
-      "thermal_avg_c": 35.756601731601734,
+      "thermal_avg_c": 28.656726579520697,
       "inference_success_rate": 1.0,
-      "mbu": 0.5911686242709591,
-      "perplexity": 7.8045,
+      "mbu": 0.5929917980981708,
+      "perplexity": 7.227,
       "accuracy_enem_2022": 0.0,
       "accuracy_enem_2023": 0.0,
       "accuracy_enem_macro": 0.0,
       "invalid_answer_rate_enem": 1.0,
-      "accuracy_bbq_gender_identity": 0.3,
-      "accuracy_bbq_physical_appearance": 0.3,
-      "accuracy_bbq_race_ethnicity": 0.3,
-      "accuracy_bbq_ambig": 0.13333333333333333,
-      "accuracy_bbq_disambig": 0.4666666666666667,
-      "bias_score_bbq": 0.33333333333333337,
+      "accuracy_bbq_gender_identity": 0.0,
+      "accuracy_bbq_physical_appearance": 1.0,
+      "accuracy_bbq_race_ethnicity": 0.0,
+      "accuracy_bbq_ambig": 0.3333333333333333,
+      "accuracy_bbq_disambig": 0.0,
+      "bias_score_bbq": -0.3333333333333333,
       "accuracy_poetav2_logiqa": 0.0,
       "exact_match_poetav2_gsm8k": 0.0,
       "exact_match_poetav2_arithmetic": 0.0,
       "f1_poetav2_coqa": 0.0,
       "exact_match_poetav2_triviaqa": 0.0,
-      "perplexity_poetav2_wikitext": 7.8045,
+      "perplexity_poetav2_wikitext": 7.227,
       "score_poetav2_macro": 0.0,
-      "total_benchmark_time_s": 614.2381500990004
+      "total_benchmark_time_s": 61.29278147899913
     },
     "tags": {
       "method": "ELIB",
@@ -93,17 +93,17 @@
       "metrics_source": "llama-bench"
     },
     "dataset_counts": {
-      "enem_2022": 15,
-      "enem_2023": 15,
-      "bbq_gender_identity": 10,
-      "bbq_physical_appearance": 10,
-      "bbq_race_ethnicity": 10,
-      "poetav2_logiqa": 10,
-      "poetav2_gsm8k": 10,
-      "poetav2_coqa": 10,
-      "poetav2_triviaqa": 10,
-      "poetav2_arithmetic": 10,
-      "poetav2_wikitext": 10
+      "enem_2022": 1,
+      "enem_2023": 1,
+      "bbq_gender_identity": 1,
+      "bbq_physical_appearance": 1,
+      "bbq_race_ethnicity": 1,
+      "poetav2_logiqa": 1,
+      "poetav2_gsm8k": 1,
+      "poetav2_coqa": 1,
+      "poetav2_triviaqa": 1,
+      "poetav2_arithmetic": 1,
+      "poetav2_wikitext": 2
     },
     "bench_raw": [
       {
@@ -138,23 +138,19 @@
         "embeddings": false,
         "no_op_offload": 0,
         "no_host": false,
-        "n_prompt": 256,
+        "n_prompt": 64,
         "n_gen": 0,
         "n_depth": 0,
-        "test_time": "2026-03-24T00:18:15Z",
-        "avg_ns": 272041230,
-        "stddev_ns": 64289344,
-        "avg_ts": 972.928412,
-        "stddev_ts": 202.463063,
+        "test_time": "2026-03-24T00:55:35Z",
+        "avg_ns": 199201949,
+        "stddev_ns": 0,
+        "avg_ts": 321.281997,
+        "stddev_ts": 0.0,
         "samples_ns": [
-          346244218,
-          233053719,
-          236825754
+          199201949
         ],
         "samples_ts": [
-          739.363,
-          1098.46,
-          1080.96
+          321.282
         ]
       },
       {
@@ -190,22 +186,18 @@
         "no_op_offload": 0,
         "no_host": false,
         "n_prompt": 0,
-        "n_gen": 128,
+        "n_gen": 32,
         "n_depth": 0,
-        "test_time": "2026-03-24T00:18:16Z",
-        "avg_ns": 3379513535,
-        "stddev_ns": 2072889,
-        "avg_ts": 37.875283,
-        "stddev_ts": 0.023228,
+        "test_time": "2026-03-24T00:55:35Z",
+        "avg_ns": 842280575,
+        "stddev_ns": 0,
+        "avg_ts": 37.992091,
+        "stddev_ts": 0.0,
         "samples_ns": [
-          3380164503,
-          3381181960,
-          3377194143
+          842280575
         ],
         "samples_ts": [
-          37.868,
-          37.8566,
-          37.9013
+          37.9921
         ]
       }
     ]

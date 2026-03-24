@@ -66,6 +66,7 @@ class BenchmarkConfig:
     hardware_bandwidth_gbs: float
     inference_timeout_s: int
     stop_tokens: list[str]
+    stop_tokens_mode: str
     max_repeat_ngram: int
     bench_repetitions: int
     bench_n_prompt: int
@@ -98,6 +99,19 @@ def _dataset_sample_overrides_from_env() -> dict[str, int]:
             continue
         overrides[dataset_name] = int(raw)
     return overrides
+
+
+def _percentile(values: list[float], percentile: float) -> float:
+    if not values:
+        return 0.0
+    ordered = sorted(values)
+    if len(ordered) == 1:
+        return float(ordered[0])
+    rank = max(0.0, min(100.0, percentile)) / 100.0 * (len(ordered) - 1)
+    lower = int(rank)
+    upper = min(lower + 1, len(ordered) - 1)
+    weight = rank - lower
+    return float(ordered[lower] * (1.0 - weight) + ordered[upper] * weight)
 
 
 def _resolve_path(path_str: str, root: Path) -> Path:
@@ -203,6 +217,19 @@ def _infer_quantization(model_name: str) -> str:
     return "unknown"
 
 
+def _is_sabia7_model(model_path: Path) -> bool:
+    return "sabia" in model_path.name.casefold()
+
+
+def _effective_stop_tokens(config: BenchmarkConfig, model_path: Path) -> list[str]:
+    mode = config.stop_tokens_mode.casefold().strip()
+    if mode == "always":
+        return config.stop_tokens
+    if mode == "never":
+        return []
+    return config.stop_tokens if _is_sabia7_model(model_path) else []
+
+
 def _read_process_rss_gb(pid: int) -> float:
     status_path = Path(f"/proc/{pid}/status")
     if not status_path.exists():
@@ -304,6 +331,7 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
         "--no-warmup",
     ]
 
+    started = time.perf_counter()
     completed = subprocess.run(
         command,
         capture_output=True,
@@ -340,6 +368,7 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
         "gen_tps": float(gen_tps),
         "peak_gen_tps": float(peak_tps),
         "ttft_ms": float(ttft_ms),
+        "elapsed_s": float(time.perf_counter() - started),
         "rows": bench_rows,
     }
 
@@ -467,7 +496,7 @@ def _build_prompt(dataset_name: str, row: JsonDict) -> str:
     return str(row)
 
 
-def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str) -> JsonDict:
+def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str, stop_tokens: list[str]) -> JsonDict:
     command = [
         str(config.llama_completion_path),
         "-m",
@@ -540,7 +569,7 @@ def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str) -> Js
             process.wait(timeout=5)
 
         raw_output = output_temp_path.read_text(encoding="utf-8", errors="ignore")
-        clean_output = _sanitize_output(raw_output, config.stop_tokens)
+        clean_output = _sanitize_output(raw_output, stop_tokens)
         loop_abort = _has_repeating_ngram(clean_output, config.max_repeat_ngram)
         peak_vram_gb = _extract_gpu_usage_gb(raw_output)
         thermal_avg = mean(thermal_samples) if thermal_samples else 0.0
@@ -575,20 +604,21 @@ def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str) -> Js
             output_temp_path.unlink()
 
 
-def _run_perplexity(config: BenchmarkConfig, model_path: Path, wikitext_rows: list[JsonDict]) -> float:
+def _run_perplexity(config: BenchmarkConfig, model_path: Path, wikitext_rows: list[JsonDict]) -> tuple[float, float]:
+    started = time.perf_counter()
     if not config.llama_perplexity_path:
-        return 0.0
+        return 0.0, 0.0
     if not config.llama_perplexity_path.exists():
-        return 0.0
+        return 0.0, 0.0
     if not wikitext_rows:
-        return 0.0
+        return 0.0, 0.0
 
     corpus_rows = [row for row in wikitext_rows if row.get("page")]
     if config.perplexity_wikitext_rows > 0:
         corpus_rows = corpus_rows[: config.perplexity_wikitext_rows]
     corpus = "\n\n".join(str(row.get("page", "")) for row in corpus_rows)
     if not corpus.strip():
-        return 0.0
+        return 0.0, 0.0
 
     temp_file: Path | None = None
     try:
@@ -623,11 +653,11 @@ def _run_perplexity(config: BenchmarkConfig, model_path: Path, wikitext_rows: li
 
         match = re.search(r"Final estimate:\s*PPL\s*=\s*([\d.]+)", joined_output, flags=re.IGNORECASE)
         if match:
-            return float(match.group(1))
+            return float(match.group(1)), float(time.perf_counter() - started)
 
         fallback = re.search(r"\bppl\b[^0-9]*([\d.]+)", joined_output, flags=re.IGNORECASE)
         if fallback:
-            return float(fallback.group(1))
+            return float(fallback.group(1)), float(time.perf_counter() - started)
 
         if "you need at least" in joined_output.lower() and effective_ctx > 64:
             retry_ctx = max(32, effective_ctx // 2)
@@ -643,14 +673,14 @@ def _run_perplexity(config: BenchmarkConfig, model_path: Path, wikitext_rows: li
             retry_output = f"{retry.stdout}\n{retry.stderr}"
             retry_match = re.search(r"Final estimate:\s*PPL\s*=\s*([\d.]+)", retry_output, flags=re.IGNORECASE)
             if retry_match:
-                return float(retry_match.group(1))
+                return float(retry_match.group(1)), float(time.perf_counter() - started)
             retry_fallback = re.search(r"\bppl\b[^0-9]*([\d.]+)", retry_output, flags=re.IGNORECASE)
             if retry_fallback:
-                return float(retry_fallback.group(1))
+                return float(retry_fallback.group(1)), float(time.perf_counter() - started)
 
-        return 0.0
+        return 0.0, float(time.perf_counter() - started)
     except subprocess.TimeoutExpired:
-        return 0.0
+        return 0.0, float(time.perf_counter() - started)
     finally:
         if temp_file and temp_file.exists():
             temp_file.unlink()
@@ -661,6 +691,11 @@ def _base_metrics() -> JsonDict:
         "avg_tps": 0.0,
         "peak_tps": 0.0,
         "avg_ttft_ms": 0.0,
+        "inference_avg_time_s": 0.0,
+        "inference_p95_time_s": 0.0,
+        "inference_total_time_s": 0.0,
+        "llama_bench_time_s": 0.0,
+        "perplexity_time_s": 0.0,
         "ram_peak_gb": 0.0,
         "vram_peak_gb": 0.0,
         "thermal_avg_c": 0.0,
@@ -695,6 +730,7 @@ def _evaluate_model(
 ) -> JsonDict:
     started = time.perf_counter()
     model_name = model_path.name
+    effective_stop_tokens = _effective_stop_tokens(config, model_path)
     bench_metrics = _run_llama_bench(config, model_path)
     dataset_metric_chunks: list[JsonDict] = []
     inference_records: list[JsonDict] = []
@@ -703,7 +739,7 @@ def _evaluate_model(
         sample_scores: list[JsonDict] = []
         for row in rows:
             prompt = _build_prompt(dataset_name, row)
-            inference = _run_inference(config, model_path, prompt)
+            inference = _run_inference(config, model_path, prompt, effective_stop_tokens)
             inference_records.append(inference)
 
             prediction = extract_model_answer(dataset_name, inference["output"])
@@ -716,6 +752,7 @@ def _evaluate_model(
     thermal_values = [float(record["thermal_avg_c"]) for record in success_records if float(record["thermal_avg_c"]) > 0.0]
     peak_ram_values = [float(record["peak_ram_gb"]) for record in inference_records]
     peak_vram_values = [float(record["peak_vram_gb"]) for record in inference_records]
+    inference_time_values = [float(record["total_time_s"]) for record in inference_records if float(record["total_time_s"]) > 0.0]
 
     merged_metrics = _base_metrics()
     merged_metrics.update(merge_metric_dicts(dataset_metric_chunks))
@@ -726,6 +763,9 @@ def _evaluate_model(
     ram_peak = max(peak_ram_values) if peak_ram_values else 0.0
     vram_peak = max(peak_vram_values) if peak_vram_values else 0.0
     thermal_avg = mean(thermal_values) if thermal_values else 0.0
+    inference_avg_time = mean(inference_time_values) if inference_time_values else 0.0
+    inference_p95_time = _percentile(inference_time_values, 95.0) if inference_time_values else 0.0
+    inference_total_time = sum(inference_time_values)
     success_rate = (len(success_records) / total_samples) if total_samples else 0.0
     model_size_gb = model_path.stat().st_size / (1024.0**3)
     mbu = compute_mbu(model_size_gb, avg_tps, config.hardware_bandwidth_gbs)
@@ -733,13 +773,18 @@ def _evaluate_model(
     merged_metrics["avg_tps"] = float(avg_tps)
     merged_metrics["peak_tps"] = float(peak_tps)
     merged_metrics["avg_ttft_ms"] = float(avg_ttft)
+    merged_metrics["inference_avg_time_s"] = float(inference_avg_time)
+    merged_metrics["inference_p95_time_s"] = float(inference_p95_time)
+    merged_metrics["inference_total_time_s"] = float(inference_total_time)
+    merged_metrics["llama_bench_time_s"] = float(bench_metrics.get("elapsed_s", 0.0))
     merged_metrics["ram_peak_gb"] = float(ram_peak)
     merged_metrics["vram_peak_gb"] = float(vram_peak)
     merged_metrics["thermal_avg_c"] = float(thermal_avg)
     merged_metrics["inference_success_rate"] = float(success_rate)
     merged_metrics["mbu"] = float(mbu)
 
-    ppl = _run_perplexity(config, model_path, datasets.get("poetav2_wikitext", []))
+    ppl, ppl_time_s = _run_perplexity(config, model_path, datasets.get("poetav2_wikitext", []))
+    merged_metrics["perplexity_time_s"] = float(ppl_time_s)
     if ppl > 0.0:
         merged_metrics["perplexity"] = float(ppl)
         merged_metrics["perplexity_poetav2_wikitext"] = float(ppl)
@@ -780,7 +825,7 @@ def _evaluate_model(
             "repeat_last_n": config.repeat_last_n,
             "inference_timeout_s": config.inference_timeout_s,
             "max_repeat_ngram": config.max_repeat_ngram,
-            "stop_tokens_count": len(config.stop_tokens),
+            "stop_tokens_count": len(effective_stop_tokens),
             "bench_repetitions": config.bench_repetitions,
             "bench_n_prompt": config.bench_n_prompt,
             "bench_n_gen": config.bench_n_gen,
@@ -834,6 +879,9 @@ def _build_config(backend_name: str) -> BenchmarkConfig:
     output_path = _resolve_path(os.getenv("OUTPUT_JSON_PATH", str(DEFAULT_OUTPUT_JSON)), PROJECT_ROOT)
 
     stop_tokens = _split_values(os.getenv("STOP_TOKENS", ""), "|")
+    stop_tokens_mode = os.getenv("STOP_TOKENS_MODE", "sabia7").strip().lower()
+    if stop_tokens_mode not in {"always", "sabia7", "never"}:
+        stop_tokens_mode = "sabia7"
 
     return BenchmarkConfig(
         backend_name=backend_name,
@@ -859,6 +907,7 @@ def _build_config(backend_name: str) -> BenchmarkConfig:
         hardware_bandwidth_gbs=_env_float("HARDWARE_BANDWIDTH_GBS", 45.0),
         inference_timeout_s=_env_int("INFERENCE_TIMEOUT_S", 180),
         stop_tokens=stop_tokens,
+        stop_tokens_mode=stop_tokens_mode,
         max_repeat_ngram=_env_int("MAX_REPEAT_NGRAM", 8),
         bench_repetitions=_env_int("BENCH_REPETITIONS", 3),
         bench_n_prompt=_env_int("BENCH_N_PROMPT", 256),
@@ -874,6 +923,7 @@ def _print_dry_run_summary(config: BenchmarkConfig, datasets: dict[str, list[Jso
     print(f"  llama_bench_path: {config.llama_bench_path}")
     print(f"  output_json_path: {config.output_json_path}")
     print(f"  perplexity_wikitext_rows: {config.perplexity_wikitext_rows}")
+    print(f"  stop_tokens_mode: {config.stop_tokens_mode}")
     if config.sample_size_overrides:
         print("  sample_size_overrides:")
         for name in sorted(config.sample_size_overrides):
