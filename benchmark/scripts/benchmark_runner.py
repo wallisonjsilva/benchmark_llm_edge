@@ -436,7 +436,7 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
     ]
 
     if config.flash_attn:
-        command.extend(["-fa", "on"])
+        command.extend(["-fa", "1"])
 
     started = time.perf_counter()
     try:
@@ -703,7 +703,7 @@ def _run_inference(
 
     # Ajuste para o padrão novo do llama.cpp que pede valor no -fa
     if config.flash_attn:
-        command.extend(["-fa", "on"])
+        command.extend(["-fa", "1"])
 
     env = os.environ.copy()
     output_temp_path: Path | None = None

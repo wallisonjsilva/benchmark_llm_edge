@@ -8,7 +8,7 @@ from typing import Any
 JsonDict = dict[str, Any]
 
 # Semente padrão para garantir reprodutibilidade em todos os hardware/softwares
-DEFAULT_SEED = 42
+DEFAULT_SEED = 75
 
 def read_jsonl(path: Path) -> list[JsonDict]:
     records: list[JsonDict] = []
