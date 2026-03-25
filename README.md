@@ -122,4 +122,4 @@ A documentação detalhada está em [`benchmark/docs/`](benchmark/docs/):
 
 ## Licença
 
-Projeto de pesquisa acadêmica / uso interno.
+MIT
