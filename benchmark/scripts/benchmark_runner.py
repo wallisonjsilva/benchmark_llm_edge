@@ -14,7 +14,7 @@ from statistics import mean
 from typing import Any
 
 try:
-    from .datasets import load_all_datasets
+    from .datasets import load_all_datasets, load_wikitext_for_perplexity
     from .metrics import (
         aggregate_dataset_metrics,
         compute_macro_metrics,
@@ -24,7 +24,7 @@ try:
         score_sample,
     )
 except ImportError:
-    from datasets import load_all_datasets
+    from datasets import load_all_datasets, load_wikitext_for_perplexity
     from metrics import (
         aggregate_dataset_metrics,
         compute_macro_metrics,
@@ -87,11 +87,7 @@ def _dataset_sample_overrides_from_env() -> dict[str, int]:
         "SAMPLE_SIZE_BBQ_GENDER_IDENTITY": "bbq_gender_identity",
         "SAMPLE_SIZE_BBQ_PHYSICAL_APPEARANCE": "bbq_physical_appearance",
         "SAMPLE_SIZE_BBQ_RACE_ETHNICITY": "bbq_race_ethnicity",
-        "SAMPLE_SIZE_POETAV2_LOGIQA": "poetav2_logiqa",
         "SAMPLE_SIZE_POETAV2_GSM8K": "poetav2_gsm8k",
-        "SAMPLE_SIZE_POETAV2_COQA": "poetav2_coqa",
-        "SAMPLE_SIZE_POETAV2_TRIVIAQA": "poetav2_triviaqa",
-        "SAMPLE_SIZE_POETAV2_ARITHMETIC": "poetav2_arithmetic",
         "SAMPLE_SIZE_POETAV2_WIKITEXT": "poetav2_wikitext",
     }
     overrides: dict[str, int] = {}
@@ -256,6 +252,14 @@ def _model_stop_tokens(model_family: str) -> list[str]:
     if model_family == "sabia":
         # Sabiá costuma ser sensível a esses marcadores de turno
         return ["</s>", "### Instrução:", "### Resposta:", "###"]
+
+    if model_family == "mistral":
+        return [
+            "</s>",          # Token oficial de fim de string (EOS)
+            "[INST]",        # Evita que ele invente uma nova pergunta do usuário
+            "[/INST]",       # Caso ele tente repetir a instrução
+            "[TOOL_CALLS]"   # Específico da v0.3 (evita alucinação de funções)
+        ] + base_stops
         
     return ["</s>"] + base_stops
 
@@ -266,7 +270,20 @@ def _apply_chat_template(prompt: str, model_family: str) -> str:
         "Answer concisely. Do not explain your reasoning."
     )
 
-    if model_family in ("qwen", "deepseek"):
+    if model_family == "mistral":
+        # Mistral v0.3 usa [INST] [/INST] e precisa do <s> inicial
+        return f"<s>[INST] {system_msg}\n\n{prompt} [/INST]"
+
+    if model_family == "deepseek-r1":
+        # DeepSeek-R1 Distill (baseado em Qwen) usa ChatML, 
+        # mas se você quiser forçar o raciocínio dele:
+        return (
+            f"<|im_start|>system\n{system_msg}<|im_end|>\n"
+            f"<|im_start|>user\n{prompt}<|im_end|>\n"
+            f"<|im_start|>assistant\n<think>\n" # Forçamos ele a começar a pensar
+        )
+
+    if model_family == "qwen":
         return (
             f"<|im_start|>system\n{system_msg}<|im_end|>\n"
             f"<|im_start|>user\n{prompt}<|im_end|>\n"
@@ -419,7 +436,7 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
     ]
 
     if config.flash_attn:
-        command.append("-fa")
+        command.extend(["-fa", "on"])
 
     started = time.perf_counter()
     try:
@@ -436,6 +453,7 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
             "gen_tps": 0.0,
             "peak_gen_tps": 0.0,
             "ttft_ms": 0.0,
+            "tbt_ms": 0.0,
             "elapsed_s": float(time.perf_counter() - started),
             "rows": [],
             "error": "timeout",
@@ -447,6 +465,7 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
             "gen_tps": 0.0,
             "peak_gen_tps": 0.0,
             "ttft_ms": 0.0,
+            "tbt_ms": 0.0,
             "elapsed_s": float(time.perf_counter() - started),
             "rows": [],
             "error": f"exit_code_{completed.returncode}",
@@ -459,6 +478,7 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
             "gen_tps": 0.0,
             "peak_gen_tps": 0.0,
             "ttft_ms": 0.0,
+            "tbt_ms": 0.0,
             "elapsed_s": float(time.perf_counter() - started),
             "rows": [],
             "error": "empty_output",
@@ -472,6 +492,7 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
             "gen_tps": 0.0,
             "peak_gen_tps": 0.0,
             "ttft_ms": 0.0,
+            "tbt_ms": 0.0,
             "elapsed_s": float(time.perf_counter() - started),
             "rows": [],
             "error": "invalid_json",
@@ -482,6 +503,7 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
             "gen_tps": 0.0,
             "peak_gen_tps": 0.0,
             "ttft_ms": 0.0,
+            "tbt_ms": 0.0,
             "elapsed_s": float(time.perf_counter() - started),
             "rows": [],
             "error": "empty_rows",
@@ -493,18 +515,46 @@ def _run_llama_bench(config: BenchmarkConfig, model_path: Path) -> JsonDict:
     if not all_rows:
         all_rows = bench_rows
 
+    ttft_ms = 0.0
+    tbt_ms = 0.0
+
+    # --- CÁLCULO TTFT OFICIAL LLAMA-BENCH ---
+    if prompt_rows:
+        # Pegamos o avg_ns (nanossegundos) da primeira linha de prompt encontrada
+        # Convertemos para milissegundos dividindo por 1.000.000
+        avg_ns = float(prompt_rows[0].get("avg_ns", 0.0))
+        ttft_ms = avg_ns / 1_000_000.0
+        
+        # TPS de prompt (Prefill Throughput)
+        prompt_tps = float(prompt_rows[0].get("avg_ts", 0.0))
+    else:
+        ttft_ms = 0.0
+        prompt_tps = 0.0
+
+    # --- CÁLCULO DE GERAÇÃO (Throughput) ---
+    gen_tps = mean([float(r["avg_ts"]) for r in gen_rows]) if gen_rows else 0.0
+    peak_tps = max([float(r["avg_ts"]) for r in gen_rows]) if gen_rows else gen_tps
+
+    if gen_rows:
+        avg_ns_gen = float(gen_rows[0].get("avg_ns", 0.0))
+        n_gen = float(gen_rows[0].get("n_gen", 1.0)) # evita divisão por zero
+        
+        # TBT em milissegundos
+        tbt_ms = (avg_ns_gen / n_gen) / 1_000_000.0
+
     prompt_tps_values = [float(row.get("avg_ts", 0.0)) for row in prompt_rows if float(row.get("avg_ts", 0.0)) > 0.0]
-    gen_tps_values = [float(row.get("avg_ts", 0.0)) for row in gen_rows if float(row.get("avg_ts", 0.0)) > 0.0]
+    #gen_tps_values = [float(row.get("avg_ts", 0.0)) for row in gen_rows if float(row.get("avg_ts", 0.0)) > 0.0]
 
     prompt_tps = mean(prompt_tps_values) if prompt_tps_values else 0.0
-    gen_tps = mean(gen_tps_values) if gen_tps_values else 0.0
-    ttft_ms = (1000.0 / prompt_tps) if prompt_tps > 0 else 0.0
-    peak_tps = max(gen_tps_values) if gen_tps_values else gen_tps
+    #gen_tps = mean(gen_tps_values) if gen_tps_values else 0.0
+    #ttft_ms = (1000.0 / prompt_tps) if prompt_tps > 0 else 0.0
+    #peak_tps = max(gen_tps_values) if gen_tps_values else gen_tps
     return {
         "prompt_tps": float(prompt_tps),
         "gen_tps": float(gen_tps),
         "peak_gen_tps": float(peak_tps),
         "ttft_ms": float(ttft_ms),
+        "tbt_ms": float(tbt_ms),
         "elapsed_s": float(time.perf_counter() - started),
         "rows": bench_rows,
         "error": "",
@@ -527,39 +577,62 @@ def _has_repeating_ngram(text: str, ngram_size: int) -> bool:
             return True
     return False
 
-
 def _sanitize_output(raw_output: str, stop_tokens: list[str]) -> str:
-    filtered_lines: list[str] = []
-    for line in raw_output.splitlines():
-        lower = line.lower()
-        if any(
-            marker in lower
-            for marker in (
-                "llama_perf_context_print",
-                "llama_print_timings",
-                "system_info:",
-                "build:",
-                "ggml",
-            )
-        ):
-            continue
-        filtered_lines.append(line)
-
-    joined = "\n".join(filtered_lines)
-    joined = re.sub(r"<think>.*?</think>", " ", joined, flags=re.IGNORECASE | re.DOTALL)
-    joined = re.sub(r"<\|im_start\|>.*?<\|im_end\|>", " ", joined, flags=re.IGNORECASE | re.DOTALL)
-    joined = re.sub(r"<\|[^>]+?\|>", " ", joined)
-    for marker in ("Resposta final:", "Answer:", "\nA:"):
-        position = joined.rfind(marker)
-        if position != -1:
-            joined = joined[position + len(marker) :]
+    # 1. ÂNCORA DO ASSISTENTE:
+    # Em vez de filtrar linhas, vamos direto para onde o Assistente começa.
+    # Isso elimina de uma vez todos os logs de VRAM, CUDA e Inicialização.
+    assistant_markers = ["<|im_start|>assistant", "<|start_header_id|>assistant", "### Resposta:"]
+    
+    content = raw_output
+    for marker in assistant_markers:
+        if marker in content:
+            # Pega apenas o que vem depois do ÚLTIMO marcador de assistente encontrado
+            content = content.split(marker)[-1]
             break
 
-    cutoff_positions = [joined.find(token) for token in stop_tokens if token and token in joined]
-    if cutoff_positions:
-        joined = joined[: min(cutoff_positions)]
+    # 2. TRATAMENTO DO PENSAMENTO (<think>):
+    # Se o modelo terminou de pensar, removemos o bloco completo.
+    content = re.sub(r"<think>.*?</think>", " ", content, flags=re.IGNORECASE | re.DOTALL)
+    
+    # Se o modelo foi CORTADO (N_PREDICT baixo) e o </think> não apareceu,
+    # removemos tudo o que estiver depois da tag de abertura <think>.
+    if "<think>" in content.lower():
+        pos = content.lower().find("<think>")
+        content = content[:pos]
 
-    return joined.strip()
+    # 3. LIMPEZA DE TOKENS RESIDUAIS (Tags de chat que sobraram)
+    content = re.sub(r"<\|im_(start|end)\|>\w*", " ", content)
+    content = re.sub(r"<\|[^>]+?\|>", " ", content)
+
+    # 4. REMOÇÃO DE LOGS DE SISTEMA RESTANTES (Caso a âncora falhe)
+    junk_patterns = [
+        r"llama_perf_context_print.*",
+        r"llama_print_timings.*",
+        r"system_info:.*",
+        r"build:.*",
+        r"main:.*",
+        r"common_.*",
+        r"llama_.*",
+        r"ggml_.*"
+    ]
+    for pattern in junk_patterns:
+        content = re.sub(pattern, "", content, flags=re.IGNORECASE)
+
+    # 5. BUSCA POR MARCADORES DE RESPOSTA (Opcional, mas ajuda a focar)
+    # Cuidado: Não corte o texto se o marcador for o que você quer extrair!
+    # Se você quer o "FINAL_ANSWER:", não adicione ele aqui.
+    for marker in ("Resposta final:", "Answer:", "\nA:"):
+        position = content.rfind(marker)
+        if position != -1:
+            content = content[position + len(marker) :]
+            break
+
+    # 6. STOP TOKENS (Corte forçado)
+    cutoff_positions = [content.find(token) for token in stop_tokens if token and token in content]
+    if cutoff_positions:
+        content = content[: min(cutoff_positions)]
+
+    return content.strip()
 
 
 def _build_prompt(dataset_name: str, row: JsonDict) -> str:
@@ -591,19 +664,6 @@ def _build_prompt(dataset_name: str, row: JsonDict) -> str:
             "Answer:"
         )
 
-    if dataset_name == "poetav2_logiqa":
-        options = row.get("options", [])
-        options_text = "\n".join(f"{chr(65 + i)}. {option}" for i, option in enumerate(options))
-        return (
-            "You are solving a multiple-choice reasoning task.\n"
-            "Required output format: FINAL_ANSWER: <A|B|C|D>\n"
-            "Return only that final line.\n\n"
-            f"Context:\n{row.get('context', '')}\n\n"
-            f"Question:\n{row.get('question', '')}\n\n"
-            f"Options:\n{options_text}\n\n"
-            "Answer:"
-        )
-
     if dataset_name == "poetav2_gsm8k":
         return (
             "Resolva o problema e devolva apenas o número final.\n"
@@ -612,74 +672,38 @@ def _build_prompt(dataset_name: str, row: JsonDict) -> str:
             "Resposta final:"
         )
 
-    if dataset_name == "poetav2_coqa":
-        return (
-            "Read the passage and answer the question briefly.\n"
-            "Required output format: FINAL_ANSWER: <short answer span>\n"
-            "Return only that final line.\n\n"
-            f"Passage:\n{row.get('story', '')}\n\n"
-            f"Question: {row.get('question', '')}\n\n"
-            "Answer:"
-        )
-
-    if dataset_name == "poetav2_triviaqa":
-        return (
-            "Answer the trivia question with a short entity answer.\n"
-            "Required output format: FINAL_ANSWER: <entity>\n\n"
-            f"Question: {row.get('Question', '')}\n\n"
-            "Answer:"
-        )
-
-    if dataset_name == "poetav2_arithmetic":
-        context = str(row.get("context", ""))
-        return (
-            "Compute the result. Return only the numeric answer.\n"
-            "Required output format: FINAL_ANSWER: <number>\n\n"
-            f"{context}\n"
-            "Final answer:"
-        )
-
-    if dataset_name == "poetav2_wikitext":
-        page = str(row.get("page", ""))[:900]
-        return f"Continue this text naturally:\n\n{page}\n\nContinuation:"
-
     return str(row)
 
+def _run_inference(
+    config: BenchmarkConfig, 
+    model_path: Path, 
+    prompt: str, 
+    stop_tokens: list[str], 
+    n_predict: int | None = None  # <-- Adicionado parâmetro opcional
+) -> JsonDict:
+    # Define qual valor de n_predict usar (o do config ou o override)
+    actual_n_predict = n_predict if n_predict is not None else config.n_predict
 
-def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str, stop_tokens: list[str]) -> JsonDict:
     command = [
         str(config.llama_completion_path),
-        "-m",
-        str(model_path),
-        "-p",
-        prompt,
-        "-n",
-        str(config.n_predict),
-        "-c",
-        str(config.ctx_size),
-        "-t",
-        str(config.threads),
-        "--temp",
-        str(config.temp),
-        "--top-k",
-        str(config.top_k),
-        "--top-p",
-        str(config.top_p),
-        "--repeat-last-n",
-        str(config.repeat_last_n),
-        "-ngl",
-        str(config.n_gpu_layers),
+        "-m", str(model_path),
+        "-p", prompt,
+        "-n", str(actual_n_predict), # <-- Agora usa o valor dinâmico
+        "-c", str(config.ctx_size),
+        "-t", str(config.threads),
+        "--temp", str(config.temp),
+        "--top-k", str(config.top_k),
+        "--top-p", str(config.top_p),
+        "--repeat-last-n", str(config.repeat_last_n),
+        "-ngl", str(config.n_gpu_layers),
         "--single-turn",
         "--simple-io",
         "--no-display-prompt",
     ]
 
-    # parametro abaixo removido do comando acima.
-    #"--reasoning",
-    #    "off",
-
+    # Ajuste para o padrão novo do llama.cpp que pede valor no -fa
     if config.flash_attn:
-        command.append("-fa")
+        command.extend(["-fa", "on"])
 
     env = os.environ.copy()
     output_temp_path: Path | None = None
@@ -697,7 +721,7 @@ def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str, stop_
             process = subprocess.Popen(
                 command,
                 stdout=output_handle,
-                stderr=subprocess.STDOUT,
+                stderr=subprocess.DEVNULL, # <-- IMPORTANTE: Limpa logs de hardware da saída
                 env=env,
                 text=True,
             )
@@ -725,26 +749,22 @@ def _run_inference(config: BenchmarkConfig, model_path: Path, prompt: str, stop_
         raw_output = output_temp_path.read_text(encoding="utf-8", errors="ignore")
         clean_output = _sanitize_output(raw_output, stop_tokens)
         loop_abort = _has_repeating_ngram(clean_output, config.max_repeat_ngram)
-        peak_vram_gb = _extract_gpu_usage_gb(raw_output)
+        
+        # Como o stderr foi para DEVNULL, o vram_peak_gb pode precisar de 
+        # atenção se o binário não cuspir isso no stdout (geralmente não cospe).
+        peak_vram_gb = _extract_gpu_usage_gb(raw_output) 
         thermal_avg = mean(thermal_samples) if thermal_samples else 0.0
 
         return_code = process.returncode if process else -1
         success = return_code == 0 and not timed_out and not loop_abort
-        error = ""
-        if timed_out:
-            error = "timeout"
-        elif loop_abort:
-            error = "repeat_ngram_detected"
-        elif return_code != 0:
-            error = f"exit_code_{return_code}"
-
+        
         return {
             "output": clean_output,
             "raw_output": raw_output,
             "success": success,
             "timed_out": timed_out,
             "loop_abort": loop_abort,
-            "error": error,
+            "error": "timeout" if timed_out else ("repeat_ngram_detected" if loop_abort else (f"exit_code_{return_code}" if return_code != 0 else "")),
             "peak_ram_gb": float(peak_ram_gb),
             "peak_vram_gb": float(peak_vram_gb),
             "thermal_avg_c": float(thermal_avg),
@@ -780,7 +800,8 @@ def _run_perplexity(config: BenchmarkConfig, model_path: Path, wikitext_rows: li
             handle.write(corpus)
             temp_file = Path(handle.name)
 
-        effective_ctx = max(32, min(config.ctx_size, max(256, len(corpus.split()))))
+        #effective_ctx = max(32, min(config.ctx_size, max(256, len(corpus.split()))))
+        effective_ctx = config.ctx_size
 
         command = [
             str(config.llama_perplexity_path),
@@ -794,6 +815,7 @@ def _run_perplexity(config: BenchmarkConfig, model_path: Path, wikitext_rows: li
             str(config.threads),
             "-ngl",
             str(config.n_gpu_layers),
+            "-s", str(effective_ctx // 2), # Opcional: dobra a velocidade (--stripe)
         ]
 
         completed = subprocess.run(
@@ -845,6 +867,7 @@ def _base_metrics() -> JsonDict:
         "avg_tps": 0.0,
         "peak_tps": 0.0,
         "avg_ttft_ms": 0.0,
+        "avg_tbt_ms": 0.0,
         "inference_avg_time_s": 0.0,
         "inference_p95_time_s": 0.0,
         "inference_total_time_s": 0.0,
@@ -867,13 +890,7 @@ def _base_metrics() -> JsonDict:
         "accuracy_bbq_ambig": 0.0,
         "accuracy_bbq_disambig": 0.0,
         "bias_score_bbq": 0.0,
-        "accuracy_poetav2_logiqa": 0.0,
         "exact_match_poetav2_gsm8k": 0.0,
-        "exact_match_poetav2_arithmetic": 0.0,
-        "f1_poetav2_coqa": 0.0,
-        "exact_match_poetav2_triviaqa": 0.0,
-        "perplexity_poetav2_wikitext": 0.0,
-        "score_poetav2_macro": 0.0,
     }
 
 
@@ -881,25 +898,53 @@ def _evaluate_model(
     config: BenchmarkConfig,
     model_path: Path,
     datasets: dict[str, list[JsonDict]],
+    wikitext_rows: list[JsonDict],
     device_params: JsonDict,
 ) -> JsonDict:
     started = time.perf_counter()
     model_name = model_path.name
     model_family = _detect_model_family(model_path)
     effective_stop_tokens = _effective_stop_tokens(config, model_path)
+    
+    # 1. AJUSTE DE N_PREDICT DINÂMICO
+    # Modelos de reasoning precisam de espaço para o <think>
+    effective_n_predict = config.n_predict
+    if model_family in ("qwen", "deepseek-r1"):
+        effective_n_predict = 1024  # Espaço para o pensamento + resposta
+        print(f" -> Modelo de reasoning detectado ({model_family}). Aumentando n_predict para {effective_n_predict}")
+
     bench_metrics = _run_llama_bench(config, model_path)
     dataset_metric_chunks: list[JsonDict] = []
     inference_records: list[JsonDict] = []
 
+    # Configuração do diretório de debug
+    debug_dir = config.output_json_path.parent / "debug_logs"
+    debug_dir.mkdir(parents=True, exist_ok=True)
+
     for dataset_name, rows in datasets.items():
         sample_scores: list[JsonDict] = []
         for row in rows:
-            prompt = _build_prompt(dataset_name, row)
-            prompt = _apply_chat_template(prompt, model_family)
-            inference = _run_inference(config, model_path, prompt, effective_stop_tokens)
+            # 2. PROMPT ÚNICO (Sem redundância)
+            prompt_raw = _build_prompt(dataset_name, row)
+            prompt_templated = _apply_chat_template(prompt_raw, model_family)
+            
+            # Aqui passamos o effective_n_predict (ajuste sua _run_inference para aceitar esse parâmetro se necessário)
+            inference = _run_inference(config, model_path, prompt_templated, effective_stop_tokens, n_predict=effective_n_predict)
             inference_records.append(inference)
 
             prediction = extract_model_answer(dataset_name, inference["output"])
+
+            # 3. LÓGICA DE DEBUG DE FALHA (Simplificada)
+            if not prediction or prediction.strip() == "":
+                timestamp = int(time.perf_counter() * 1000)
+                log_file = debug_dir / f"FAIL_{dataset_name}_{model_path.stem}_{timestamp}.txt"
+                with log_file.open("w", encoding="utf-8") as f:
+                    f.write(f"MODEL: {model_name} | FAMILY: {model_family}\n")
+                    f.write(f"DATASET: {dataset_name}\n")
+                    f.write("="*50 + "\nPROMPT:\n" + prompt_templated + "\n")
+                    f.write("="*50 + "\nRAW OUTPUT:\n" + inference.get('raw_output', '') + "\n")
+                    f.write("="*50 + "\nCLEAN OUTPUT:\n" + inference.get('output', '') + "\n")
+
             sample_scores.append(score_sample(dataset_name, row, prediction))
 
         dataset_metric_chunks.append(aggregate_dataset_metrics(dataset_name, sample_scores))
@@ -917,6 +962,7 @@ def _evaluate_model(
     avg_tps = float(bench_metrics.get("gen_tps", 0.0))
     peak_tps = float(bench_metrics.get("peak_gen_tps", 0.0))
     avg_ttft = float(bench_metrics.get("ttft_ms", 0.0))
+    avg_tbt = float(bench_metrics.get("tbt_ms", 0.0))
     ram_peak = max(peak_ram_values) if peak_ram_values else 0.0
     vram_peak = max(peak_vram_values) if peak_vram_values else 0.0
     thermal_avg = mean(thermal_values) if thermal_values else 0.0
@@ -930,6 +976,7 @@ def _evaluate_model(
     merged_metrics["avg_tps"] = float(avg_tps)
     merged_metrics["peak_tps"] = float(peak_tps)
     merged_metrics["avg_ttft_ms"] = float(avg_ttft)
+    merged_metrics["avg_tbt_ms"] = float(avg_tbt)
     merged_metrics["inference_avg_time_s"] = float(inference_avg_time)
     merged_metrics["inference_p95_time_s"] = float(inference_p95_time)
     merged_metrics["inference_total_time_s"] = float(inference_total_time)
@@ -940,11 +987,10 @@ def _evaluate_model(
     merged_metrics["inference_success_rate"] = float(success_rate)
     merged_metrics["mbu"] = float(mbu)
 
-    ppl, ppl_time_s = _run_perplexity(config, model_path, datasets.get("poetav2_wikitext", []))
+    ppl, ppl_time_s = _run_perplexity(config, model_path, wikitext_rows)
     merged_metrics["perplexity_time_s"] = float(ppl_time_s)
     if ppl > 0.0:
         merged_metrics["perplexity"] = float(ppl)
-        merged_metrics["perplexity_poetav2_wikitext"] = float(ppl)
 
     merged_metrics = compute_macro_metrics(merged_metrics)
     merged_metrics["bias_score_bbq"] = float(
@@ -1144,12 +1190,17 @@ def main_for_backend(
         sample_size_poetav2=config.sample_size_poetav2,
         sample_size_overrides=config.sample_size_overrides,
     )
+    wikitext_rows = load_wikitext_for_perplexity(
+        dataset_root=config.dataset_root,
+        sample_size=config.sample_size_poetav2,
+        sample_size_overrides=config.sample_size_overrides,
+    )
     if args.dry_run:
         _print_dry_run_summary(config, datasets)
         return 0
 
     device_params = _probe_device_params(config)
-    runs = [_evaluate_model(config, model_path, datasets, device_params) for model_path in config.model_paths]
+    runs = [_evaluate_model(config, model_path, datasets, wikitext_rows, device_params) for model_path in config.model_paths]
 
     config.output_json_path.parent.mkdir(parents=True, exist_ok=True)
     config.output_json_path.write_text(json.dumps(runs, indent=2, ensure_ascii=False), encoding="utf-8")

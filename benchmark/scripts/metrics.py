@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import math
 import re
-from collections import Counter
 from statistics import mean
 from typing import Any
 
@@ -35,35 +34,6 @@ def _extract_final_answer_tail(candidate: str) -> str:
         return matches[-1].strip()
     return ""
 
-
-def _normalize_text(value: str) -> str:
-    cleaned = value.strip().lower()
-    cleaned = re.sub(r"\s+", " ", cleaned)
-    return cleaned
-
-
-def _tokenize(value: str) -> list[str]:
-    normalized = _normalize_text(value)
-    if not normalized:
-        return []
-    return normalized.split(" ")
-
-
-def _f1_score(prediction: str, reference: str) -> float:
-    pred_tokens = _tokenize(prediction)
-    ref_tokens = _tokenize(reference)
-    if not pred_tokens or not ref_tokens:
-        return 0.0
-
-    pred_counter = Counter(pred_tokens)
-    ref_counter = Counter(ref_tokens)
-    overlap = sum((pred_counter & ref_counter).values())
-    if overlap == 0:
-        return 0.0
-
-    precision = overlap / len(pred_tokens)
-    recall = overlap / len(ref_tokens)
-    return 2.0 * precision * recall / (precision + recall)
 
 
 def parse_llama_metrics(output: str) -> tuple[float, float]:
@@ -125,27 +95,9 @@ def extract_model_answer(dataset_name: str, raw_output: str) -> str:
         matches = _INDEX_PATTERN.findall(source)
         return matches[-1] if matches else ""
 
-    if dataset_name == "poetav2_logiqa":
-        letter_matches = _LETTER_PATTERN.findall(source.upper())
-        if letter_matches:
-            return letter_matches[-1].lower()
-        index_matches = re.findall(r"\b([1-4])\b", source)
-        if index_matches:
-            return chr(ord("a") + int(index_matches[-1]) - 1)
-        return ""
-
-    if dataset_name in {"poetav2_gsm8k", "poetav2_arithmetic"}:
+    if dataset_name == "poetav2_gsm8k":
         matches = _NUMBER_PATTERN.findall(source)
         return matches[-1].replace(",", ".") if matches else ""
-
-    if dataset_name in {"poetav2_coqa", "poetav2_triviaqa"}:
-        if final_answer:
-            return final_answer
-        short = tail.splitlines()[-1].strip()
-        return short
-
-    if dataset_name == "poetav2_wikitext":
-        return candidate
 
     return tail.splitlines()[-1].strip()
 
@@ -167,15 +119,6 @@ def _safe_mean(values: list[float]) -> float:
     return float(mean(values))
 
 
-def _safe_exact_match(prediction: str, references: list[str]) -> float:
-    normalized_prediction = _normalize_text(prediction)
-    if not normalized_prediction:
-        return 0.0
-    for ref in references:
-        if normalized_prediction == _normalize_text(ref):
-            return 1.0
-    return 0.0
-
 
 def score_sample(dataset_name: str, row: JsonDict, prediction: str) -> JsonDict:
     if dataset_name.startswith("enem"):
@@ -194,43 +137,12 @@ def score_sample(dataset_name: str, row: JsonDict, prediction: str) -> JsonDict:
             "is_disambig": float(context_condition == "disambig"),
         }
 
-    if dataset_name == "poetav2_logiqa":
-        expected = str(row.get("label", "")).strip().lower()
-        return {"correct": float(prediction.lower() == expected), "valid": float(bool(prediction))}
-
     if dataset_name == "poetav2_gsm8k":
         answer = str(row.get("answer", ""))
         expected = _parse_expected_numeric(answer)
         predicted = _parse_expected_numeric(prediction)
         is_correct = float(expected is not None and predicted is not None and math.isclose(expected, predicted, rel_tol=1e-9))
         return {"exact": is_correct, "valid": float(predicted is not None)}
-
-    if dataset_name == "poetav2_arithmetic":
-        expected = _parse_expected_numeric(str(row.get("completion", "")))
-        predicted = _parse_expected_numeric(prediction)
-        is_correct = float(expected is not None and predicted is not None and math.isclose(expected, predicted, rel_tol=1e-9))
-        return {"exact": is_correct, "valid": float(predicted is not None)}
-
-    if dataset_name == "poetav2_coqa":
-        references = [str(x) for x in row.get("references", []) if str(x).strip()]
-        f1 = max((_f1_score(prediction, ref) for ref in references), default=0.0)
-        return {"f1": f1, "valid": float(bool(prediction.strip()))}
-
-    if dataset_name == "poetav2_triviaqa":
-        answer_blob = row.get("Answer", {})
-        aliases = []
-        if isinstance(answer_blob, dict):
-            aliases.extend(str(x) for x in answer_blob.get("Aliases", []))
-            aliases.append(str(answer_blob.get("Value", "")))
-        aliases = [x for x in aliases if x.strip()]
-        exact = _safe_exact_match(prediction, aliases)
-        return {"exact": exact, "valid": float(bool(prediction.strip()))}
-
-    if dataset_name == "poetav2_wikitext":
-        token_count = max(1, len(_tokenize(prediction)))
-        # lightweight proxy to expose a numeric signal when llama-perplexity isn't configured
-        pseudo_ppl = float(min(10_000.0, 5_000.0 / token_count))
-        return {"perplexity_proxy": pseudo_ppl, "valid": float(bool(prediction.strip()))}
 
     return {"valid": float(bool(prediction.strip()))}
 
@@ -279,24 +191,8 @@ def aggregate_dataset_metrics(dataset_name: str, results: list[JsonDict]) -> Jso
             "accuracy_bbq_disambig": _aggregate_accuracy(disambig) if disambig else 0.0,
         }
 
-    if dataset_name == "poetav2_logiqa":
-        return {"accuracy_poetav2_logiqa": _aggregate_accuracy(results)}
-
     if dataset_name == "poetav2_gsm8k":
         return {"exact_match_poetav2_gsm8k": _aggregate_accuracy(results, "exact")}
-
-    if dataset_name == "poetav2_arithmetic":
-        return {"exact_match_poetav2_arithmetic": _aggregate_accuracy(results, "exact")}
-
-    if dataset_name == "poetav2_coqa":
-        return {"f1_poetav2_coqa": _safe_mean([float(r.get("f1", 0.0)) for r in results])}
-
-    if dataset_name == "poetav2_triviaqa":
-        return {"exact_match_poetav2_triviaqa": _aggregate_accuracy(results, "exact")}
-
-    if dataset_name == "poetav2_wikitext":
-        values = [float(r.get("perplexity_proxy", 0.0)) for r in results if "perplexity_proxy" in r]
-        return {"perplexity_poetav2_wikitext": _safe_mean(values)}
 
     return {"valid_rate": valid_rate}
 
@@ -317,17 +213,6 @@ def compute_macro_metrics(metrics: JsonDict) -> JsonDict:
     enem_values = [float(x) for x in enem_values if isinstance(x, (int, float))]
     if enem_values:
         metrics["accuracy_enem_macro"] = _safe_mean(enem_values)
-
-    poetav2_components = [
-        metrics.get("accuracy_poetav2_logiqa"),
-        metrics.get("exact_match_poetav2_gsm8k"),
-        metrics.get("exact_match_poetav2_arithmetic"),
-        metrics.get("f1_poetav2_coqa"),
-        metrics.get("exact_match_poetav2_triviaqa"),
-    ]
-    poetav2_values = [float(x) for x in poetav2_components if isinstance(x, (int, float))]
-    if poetav2_values:
-        metrics["score_poetav2_macro"] = _safe_mean(poetav2_values)
 
     return metrics
 
