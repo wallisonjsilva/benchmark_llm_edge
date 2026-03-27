@@ -10,12 +10,12 @@ except ImportError:
 
 def main() -> int:
     backend_defaults = {
-        "N_GPU_LAYERS": "99",
+        "N_GPU_LAYERS": "24",
         "THREADS": "8",
         "HARDWARE_BANDWIDTH_GBS": "256.0",
         "CTX_SIZE": "4096",
-        "N_PREDICT": "64",
-        "TEMP": "0.2",
+        "N_PREDICT": "512",
+        "TEMP": "0.0",
         "TOP_K": "40",
         "TOP_P": "0.95",
         "REPEAT_LAST_N": "64",

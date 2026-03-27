@@ -1,0 +1,100 @@
+[
+  {
+    "run_info": {
+      "experiment_name": "ELIB_Edge_Benchmark",
+      "run_name": "Qwen3-8b-Q4_K_M.gguf"
+    },
+    "params": {
+      "model_name": "Qwen3-8b-Q4_K_M.gguf",
+      "quantization": "Q4_K_M",
+      "context_window": "4096",
+      "backend": "amd",
+      "sample_size_enem": "5",
+      "sample_size_bbq": "5",
+      "sample_size_poeta": "5",
+      "sample_size_overrides": {
+        "enem_2022": "1",
+        "enem_2023": "1",
+        "enem_2024": "1",
+        "bbq_gender_identity": "1",
+        "bbq_physical_appearance": "1",
+        "bbq_race_ethnicity": "1",
+        "poetav2_gsm8k": "1",
+        "poetav2_wikitext": "1"
+      },
+      "llama_completion_path": "/mnt/games/projetos/llama.cpp/build/bin/llama-completion",
+      "llama_bench_path": "/mnt/games/projetos/llama.cpp/build/bin/llama-bench"
+    },
+    "benchmark_params": {
+      "iteration": 7,
+      "batch_size": 1,
+      "top_k": 40,
+      "top_p": 0.95,
+      "repeat_last_n": 64,
+      "inference_timeout_s": 180,
+      "max_repeat_ngram": 8,
+      "stop_tokens_count": 19,
+      "bench_repetitions": 3,
+      "bench_n_prompt": 256,
+      "bench_n_gen": 128
+    },
+    "device_params": {
+      "thread_number": 8,
+      "cpu_count": 16,
+      "AVX": true,
+      "NEON": false,
+      "BLAS": "unknown",
+      "GPU": "ROCm",
+      "gpu_layers": 32
+    },
+    "metrics": {
+      "avg_tps": 0.0,
+      "peak_tps": 0.0,
+      "avg_ttft_ms": 0.0,
+      "avg_tbt_ms": 0.0,
+      "inference_avg_time_s": 1.0036545817144022,
+      "inference_p95_time_s": 1.0042057530999955,
+      "inference_total_time_s": 7.025582072000816,
+      "llama_bench_time_s": 0.07200707499987402,
+      "perplexity_time_s": 0.868008866999844,
+      "ram_peak_gb": 4.853404998779297,
+      "vram_peak_gb": 7.984375,
+      "thermal_avg_c": 0.0,
+      "inference_success_rate": 0.0,
+      "mbu": 0.0,
+      "perplexity": 0.0,
+      "accuracy_enem_2022": 0.0,
+      "accuracy_enem_2023": 0.0,
+      "accuracy_enem_2024": 0.0,
+      "accuracy_enem_macro": 0.0,
+      "invalid_answer_rate_enem": 1.0,
+      "accuracy_bbq_gender_identity": 0.0,
+      "accuracy_bbq_physical_appearance": 0.0,
+      "accuracy_bbq_race_ethnicity": 0.0,
+      "accuracy_bbq_ambig": 0.0,
+      "accuracy_bbq_disambig": 0.0,
+      "bias_score_bbq": 0.0,
+      "exact_match_poetav2_gsm8k": 0.0,
+      "total_benchmark_time_s": 7.968077418999883
+    },
+    "tags": {
+      "method": "ELIB",
+      "status": "failed",
+      "timeouts": "0",
+      "loop_aborts": "0",
+      "error_count": "7",
+      "metrics_source": "llama-bench",
+      "llama_bench_error": "exit_code_1"
+    },
+    "dataset_counts": {
+      "enem_2022": 1,
+      "enem_2023": 1,
+      "enem_2024": 1,
+      "bbq_gender_identity": 1,
+      "bbq_physical_appearance": 1,
+      "bbq_race_ethnicity": 1,
+      "poetav2_gsm8k": 1
+    },
+    "bench_raw": []
+  }
+]

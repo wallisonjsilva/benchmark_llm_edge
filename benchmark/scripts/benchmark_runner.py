@@ -23,6 +23,7 @@ try:
         merge_metric_dicts,
         score_sample,
     )
+    from .notify_telegram import notify_benchmark_done
 except ImportError:
     from datasets import load_all_datasets, load_wikitext_for_perplexity
     from metrics import (
@@ -33,6 +34,7 @@ except ImportError:
         merge_metric_dicts,
         score_sample,
     )
+    from notify_telegram import notify_benchmark_done
 
 
 JsonDict = dict[str, Any]
@@ -73,6 +75,8 @@ class BenchmarkConfig:
     bench_n_gen: int
     perplexity_wikitext_rows: int
     flash_attn: bool
+    # True quando o backend usa GPU (cuda/rocm). False para puro CPU.
+    use_gpu: bool = False
 
 
 def _split_values(raw: str, delimiter: str) -> list[str]:
@@ -206,9 +210,38 @@ def _cpu_flags() -> set[str]:
     return set()
 
 
+def _read_gpu_vram_gb() -> float:
+    """Lê o uso atual de memória VRAM via nvidia-smi (para backend CUDA)."""
+    try:
+        completed = subprocess.run(
+            ["nvidia-smi", "--query-gpu=memory.used", "--format=csv,noheader,nounits"],
+            capture_output=True,
+            text=True,
+            timeout=2,
+            check=False,
+        )
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        return 0.0
+    if completed.returncode != 0:
+        return 0.0
+    for line in completed.stdout.splitlines():
+        cleaned = line.strip()
+        if not cleaned:
+            continue
+        try:
+            # nvidia-smi retorna MiB
+            return float(cleaned) / 1024.0
+        except ValueError:
+            continue
+    return 0.0
+
+
 def _probe_device_params(config: BenchmarkConfig) -> JsonDict:
     flags = _cpu_flags()
-    gpu_name = os.getenv("GPU_NAME", config.backend_name.upper() if config.n_gpu_layers > 0 else "CPU")
+    if config.use_gpu:
+        gpu_name = os.getenv("GPU_NAME", config.backend_name.upper())
+    else:
+        gpu_name = os.getenv("GPU_NAME", "CPU")
     return {
         "thread_number": config.threads,
         "cpu_count": int(os.cpu_count() or 0),
@@ -229,8 +262,8 @@ def _infer_quantization(model_name: str) -> str:
 
 def _detect_model_family(model_path: Path) -> str:
     name = model_path.name.casefold()
-    if "deepseek" in name:
-        return "deepseek"
+    if "mistral" in name:
+        return "mistral"
     if "qwen" in name:
         return "qwen"
     if "llama" in name:
@@ -710,6 +743,7 @@ def _run_inference(
     process: subprocess.Popen[str] | None = None
     timed_out = False
     peak_ram_gb = 0.0
+    peak_vram_gb = 0.0
     thermal_samples: list[float] = []
     start = time.perf_counter()
 
@@ -721,7 +755,7 @@ def _run_inference(
             process = subprocess.Popen(
                 command,
                 stdout=output_handle,
-                stderr=subprocess.DEVNULL, # <-- IMPORTANTE: Limpa logs de hardware da saída
+                stderr=subprocess.DEVNULL,  # Limpa logs de hardware da saída
                 env=env,
                 text=True,
             )
@@ -734,11 +768,25 @@ def _run_inference(
                     break
 
                 peak_ram_gb = max(peak_ram_gb, _read_process_rss_gb(process.pid))
-                temp = _read_cpu_temp_c()
-                if temp <= 0:
+
+                # Temperatura: GPU tem prioridade quando estamos em modo GPU
+                if config.use_gpu:
                     temp = _read_gpu_temp_c()
+                    if temp <= 0:
+                        temp = _read_cpu_temp_c()
+                else:
+                    temp = _read_cpu_temp_c()
+                    if temp <= 0:
+                        temp = _read_gpu_temp_c()
                 if temp > 0:
                     thermal_samples.append(temp)
+
+                # VRAM: lida via nvidia-smi durante execução (stderr vai para DEVNULL)
+                if config.use_gpu:
+                    vram_now = _read_gpu_vram_gb()
+                    if vram_now > peak_vram_gb:
+                        peak_vram_gb = vram_now
+
                 time.sleep(0.2)
 
             if process.poll() is None:
@@ -749,10 +797,11 @@ def _run_inference(
         raw_output = output_temp_path.read_text(encoding="utf-8", errors="ignore")
         clean_output = _sanitize_output(raw_output, stop_tokens)
         loop_abort = _has_repeating_ngram(clean_output, config.max_repeat_ngram)
-        
-        # Como o stderr foi para DEVNULL, o vram_peak_gb pode precisar de 
-        # atenção se o binário não cuspir isso no stdout (geralmente não cospe).
-        peak_vram_gb = _extract_gpu_usage_gb(raw_output) 
+
+        # Para CPU: tenta extrair do stdout caso haja algo (geralmente 0)
+        if not config.use_gpu:
+            peak_vram_gb = _extract_gpu_usage_gb(raw_output)
+
         thermal_avg = mean(thermal_samples) if thermal_samples else 0.0
 
         return_code = process.returncode if process else -1
@@ -815,8 +864,11 @@ def _run_perplexity(config: BenchmarkConfig, model_path: Path, wikitext_rows: li
             str(config.threads),
             "-ngl",
             str(config.n_gpu_layers),
-            "-s", str(effective_ctx // 2), # Opcional: dobra a velocidade (--stripe)
+            "-s", str(effective_ctx // 2),  # Opcional: dobra a velocidade (--stripe)
         ]
+
+        if config.flash_attn:
+            command.extend(["-fa", "1"])
 
         completed = subprocess.run(
             command,
@@ -909,7 +961,7 @@ def _evaluate_model(
     # 1. AJUSTE DE N_PREDICT DINÂMICO
     # Modelos de reasoning precisam de espaço para o <think>
     effective_n_predict = config.n_predict
-    if model_family in ("qwen", "deepseek-r1"):
+    if model_family in ("qwen", "mistral"):
         effective_n_predict = 1024  # Espaço para o pensamento + resposta
         print(f" -> Modelo de reasoning detectado ({model_family}). Aumentando n_predict para {effective_n_predict}")
 
@@ -1087,6 +1139,10 @@ def _build_config(backend_name: str) -> BenchmarkConfig:
     if stop_tokens_mode not in {"always", "sabia7", "never"}:
         stop_tokens_mode = "sabia7"
 
+    n_gpu_layers = _env_int("N_GPU_LAYERS", 0)
+    # use_gpu é determinado pelo backend_name ou por N_GPU_LAYERS > 0
+    use_gpu = backend_name.lower() in ("cuda", "rocm", "vulkan", "metal") or n_gpu_layers > 0
+
     return BenchmarkConfig(
         backend_name=backend_name,
         experiment_name=os.getenv("EXPERIMENT_NAME", "ELIB_Edge_Benchmark"),
@@ -1107,7 +1163,7 @@ def _build_config(backend_name: str) -> BenchmarkConfig:
         top_k=_env_int("TOP_K", 40),
         top_p=_env_float("TOP_P", 0.95),
         repeat_last_n=_env_int("REPEAT_LAST_N", 64),
-        n_gpu_layers=_env_int("N_GPU_LAYERS", 0),
+        n_gpu_layers=n_gpu_layers,
         hardware_bandwidth_gbs=_env_float("HARDWARE_BANDWIDTH_GBS", 45.0),
         inference_timeout_s=_env_int("INFERENCE_TIMEOUT_S", 180),
         stop_tokens=stop_tokens,
@@ -1118,6 +1174,7 @@ def _build_config(backend_name: str) -> BenchmarkConfig:
         bench_n_gen=_env_int("BENCH_N_GEN", 128),
         perplexity_wikitext_rows=_env_int("PERPLEXITY_WIKITEXT_ROWS", 16),
         flash_attn=os.getenv("FLASH_ATTN", "").strip().lower() in ("true", "1", "yes"),
+        use_gpu=use_gpu,
     )
 
 
@@ -1207,4 +1264,10 @@ def main_for_backend(
 
     print(f"Benchmark finalizado. Runs: {len(runs)}")
     print(f"Arquivo salvo em: {config.output_json_path}")
+
+    try:
+        notify_benchmark_done(runs, config.output_json_path)
+    except Exception as exc:  # noqa: BLE001
+        print(f"[notify_telegram] Falha ao enviar notificação: {exc}")
+
     return 0
