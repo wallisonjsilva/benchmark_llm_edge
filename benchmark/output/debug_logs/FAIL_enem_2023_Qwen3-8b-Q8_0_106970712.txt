@@ -1,0 +1,45 @@
+MODEL: Qwen3-8b-Q8_0.gguf | FAMILY: qwen
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um pescador tem um custo fixo diário de 900 reais com combustível, iscas, manutenção de seu barco e outras pequenas despesas. Ele vende cada quilograma de peixe por 5 reais. Sua meta é obter um lucro mínimo de 800 reais por dia. Sozinho, ele consegue, ao final de um dia de trabalho, pescar 180 quilogramas de peixe, o que é suficiente apenas para cobrir o custo fixo diário. Portanto, precisa contratar ajudantes, pagando para cada um 250 reais por dia de trabalho. Além desse valor, 4 por cento da receita obtida pela venda de peixe é repartida igualmente entre os ajudantes. Considerando o tamanho de seu barco, ele pode contratar até 5 ajudantes. Ele sabe que com um ajudante a pesca diária é de 300 quilogramas e que, a partir do segundo ajudante contratado, aumenta-se em 100 quilogramas a quantidade de peixe pescada por ajudante em um dia de trabalho. A quantidade mínima de ajudantes que esse pescador precisa contratar para conseguir o lucro diário pretendido é
+
+Alternativas:
+A) 1.
+B) 2.
+C) 3.
+D) 4.
+E) 5.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Okay, let's try to figure out this problem step by step. So, the fisherman has fixed daily costs of 900 reais. He sells each kilogram of fish for 5 reais. His goal is to make a minimum profit of 800 reais per day. Alone, he can catch 180 kg, which only covers his fixed costs. So, he needs to hire helpers. Each helper costs 250 reais per day. Additionally, 4% of the revenue from selling fish is split equally among the helpers. The boat can take up to 5 helpers. With one helper, he catches 300 kg. From the second helper onward, each additional helper adds 100 kg more per helper. We need to find the minimum number of helpers required to achieve his profit goal.
+
+First, let's understand the variables. Let's denote the number of helpers as n. The total cost includes the fixed cost (900) plus the cost of helpers (250*n). The revenue comes from selling the fish. The total fish caught depends on the number of helpers. 
+
+For n=1: He catches 300 kg. Revenue is 300*5=1500. Then, 4% of 1500 is 60 reais, which is split among 1 helper, so the helper gets 60. But wait, the problem says that 4% of the revenue is split equally among the helpers. So, for n helpers, the total 4% is divided by n. So, each helper gets (0.04 * revenue)/n. But this amount is part of the revenue, so the total revenue is (fish sold * 5), and then 4% of that is distributed to helpers. So, the total cost is fixed cost + helper wages + 4% of revenue. Wait, no. Wait, the 4% is part of the revenue, so the total amount the fisherman gets is revenue minus 4% (which goes to helpers). Wait, no. Let me re-read the problem.
+
+"Além desse valor, 4 por cento da receita obtida pela venda de peixe é repartida igualmente entre os ajudantes." So, in addition to paying the helpers 250 per day, 4% of the revenue is split among the helpers. So, the total cost is fixed cost (900) + helper wages (250*n) + 4% of revenue. Wait, no. Wait, the 4% is part of the revenue. So, the fisherman's revenue is (fish sold * 5). Then, 4% of that is given to the helpers. So, the fisherman's net revenue is (fish sold * 5) - (0.04 * fish sold * 5). But the helpers are paid 250 each, so the total cost is fixed cost + helper wages + 4% of revenue? Or is the 4% part of the revenue that the fisherman has to give to the helpers, so the fisherman's profit is revenue minus 4% of revenue minus fixed cost minus helper wages?
+
+Wait, the problem says: "4 por cento da receita obtida pela venda de peixe é repartida igualmente entre os ajudantes." So, the fisherman's revenue is (fish sold * 5). Then, 4% of that is given to the helpers. So, the fisherman's profit would be (revenue - 4% of revenue) - fixed cost - helper wages. Because the 4% is taken out of the revenue as payment to helpers. So, the fisherman's profit is (revenue * 0.96) - fixed cost - helper wages. Wait, but the helpers are also paid 250 per day. So, the total cost is fixed cost + helper wages + 4% of revenue? Or is the 4% part of the revenue that the fisherman has to give to the helpers, so the fisherman's profit is (revenue - 4% of revenue) - fixed cost - helper wages. Let me think again.
+
+Let me structure it:
+
+Total Revenue = (kg of fish * 5)
+
+Then, 4% of that revenue is given to the helpers. So, the fisherman's share is 96% of
+==================================================
+CLEAN OUTPUT:
+

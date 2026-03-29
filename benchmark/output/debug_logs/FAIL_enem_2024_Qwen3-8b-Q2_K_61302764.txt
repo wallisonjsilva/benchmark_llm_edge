@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+A Solar Cell that is Triggered by Sun and Rain Placas solares comuns dependem de dias ensolarados para gerar energia. Mas podemos gerar eletricidade com a ajuda de gotas de chuva, revestindo placas solares com uma fina camada de grafeno. Os íons dissociados a partir da água da chuva (A de carga positiva e B de carga negativa) tornam a combinação grafeno e água da chuva um par perfeito para geração de energia. O processo requer apenas uma camada de grafeno para que grande quantidade de elétrons (e de carga negativa) se movimente ao longo da superfície. Descrição da figura: Nuvem projetando chuva sobre uma placa solar. É destacada uma região da superfície da placa, com uma camada fina da borda de uma gota de água sobre uma camada fina de grafeno. A camada fina de água contém íons B de carga negativa afastados de íons A de carga positiva. Esses íons A de carga positiva estão alinhados na interface com elétrons (e de carga negativa) localizados na camada fina de grafeno. A camada fina de água indica alto potencial elétrico e a camada fina de grafeno indica baixo potencial elétrico. Ao produzir eletricidade em dias chuvosos, o grafeno
+
+Alternativas:
+A) oxida os cátions dissolvidos na água da chuva.
+B) impede a difusão da água através das placas solares.
+C) diminui a energia de ativação da reação no pseudocapacitor.
+D) forma um compósito não metálico com os íons na água da chuva.
+E) gera uma diferença de potencial pela interação dos elétrons com os cátions.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

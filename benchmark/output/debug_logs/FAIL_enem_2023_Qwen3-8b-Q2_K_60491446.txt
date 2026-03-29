@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+As figuras pintadas no quadro da sala de estar de uma residência representam as silhuetas de parte das torres de um castelo e, ao fundo, a de uma lua cheia. A lua foi pintada na forma de um círculo, e o telhado da torre mais alta, na forma de triângulo equilátero, foi pintado sobrepondo parte da lua. O centro da lua coincide com um dos vértices do telhado da torre mais alta. Descrição do quadro: Quadro com três figuras que representam as silhuetas de parte de três torres de um castelo em frente à lua cheia. As torres têm a forma de um retângulo com um triângulo equilátero no topo. O triângulo que representa o telhado da torre mais alta está sobreposto ao círculo, tem um vértice coincidente com o centro do círculo e o lado oposto a esse vértice é um segmento de reta externo ao círculo. Nesse quadro, a parte da lua escondida atrás da torre mais alta do castelo pode ser representada por um
+
+Alternativas:
+A) cone.
+B) setor circular.
+C) segmento circular.
+D) triângulo isósceles.
+E) arco de circunferência.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

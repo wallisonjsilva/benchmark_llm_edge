@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Uma empresa de engenharia projetou uma casa com a forma de um retângulo para um de seus clientes. Esse cliente solicitou a inclusão de uma varanda em forma de L. A figura apresenta a planta baixa desenhada pela empresa, já com a varanda incluída, cujas medidas, indicadas em centímetro, representam os valores das dimensões da varanda na escala de 1 para 50. Descrição da imagem: Figura representa uma planta baixa de uma casa na escala de 1 para 50. Essa planta tem o formato de um retângulo, disposto com a maior dimensão na horizontal e a menor, na vertical. Na parte externa do retângulo que representa a casa, há uma região hexagonal em formato de L, representando a varanda, na qual quaisquer dois de seus lados adjacentes são perpendiculares, com quatro de seus lados medindo, consecutivamente, 4 centímetros, 18,4 centímetros, 16 centímetros e 5 centímetros. Os dois lados cujas medidas não estão fornecidas estão justapostos ao contorno da planta, na sua lateral esquerda e em parte do seu lado superior. O lado de medida 18,4 centímetros é paralelo à lateral esquerda da planta, enquanto o lado de medida 16 centímetros é paralelo ao lado superior da planta. O lado de 5 centímetros é perpendicular ao lado de 16 centímetros, e o lado de 4 centímetros é perpendicular ao lado de 18,4 centímetros. A medida real da área da varanda, em metro quadrado, é
+
+Alternativas:
+A) 33,40.
+B) 66,80.
+C) 89,24.
+D) 133,60.
+E) 534,40.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

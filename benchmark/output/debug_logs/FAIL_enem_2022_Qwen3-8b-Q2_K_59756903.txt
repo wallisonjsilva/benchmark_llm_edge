@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Em um autódromo, os carros podem derrapar em uma curva e bater na parede de proteção. Para diminuir o impacto de uma batida, pode-se colocar na parede uma barreira de pneus, isso faz com que a colisão seja mais demorada e o carro retorne com velocidade reduzida. Outra opção é colocar uma barreira de blocos de um material que se deforma, tornando-a tão demorada quanto a colisão com os pneus, mas que não permite a volta do carro após a colisão. Comparando as duas situações, como ficam a força média exercida sobre o carro e a energia mecânica dissipada?
+
+Alternativas:
+A) A força é maior na colisão com a barreira de pneus, e a energia dissipada é maior na colisão com a barreira de blocos.
+B) A força é maior na colisão com a barreira de blocos, e a energia dissipada é maior na colisão com a barreira de pneus.
+C) A força é maior na colisão com a barreira de blocos, e a energia dissipada é a mesma nas duas situações.
+D) A força é maior na colisão com a barreira de pneus, e a energia dissipada é maior na colisão com a barreira de pneus.
+E) A força é maior na colisão com a barreira de blocos, e a energia dissipada é maior na colisão com a barreira de blocos.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

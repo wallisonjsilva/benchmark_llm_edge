@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Os riscos apresentados pelos produtos dependem de suas propriedades e da reatividade quando em contato com outras substâncias. Para prevenir os riscos devido à natureza química dos produtos, devemos conhecer a lista de substâncias incompatíveis e de uso cotidiano em fábricas, hospitais e laboratórios, a fim de observar cuidados na estocagem, manipulação e descarte. O quadro elenca algumas dessas incompatibilidades, que podem levar à ocorrência de acidentes. | Substância | Incompatibilidade | Riscos associados | |:------------------------------------|:-------------------------------------------|:---------------------| | Ácidos minerais fortes concentrados | Bases fortes, Cianetos, Hipoclorito de sódio | Reação enérgica, explosão, produção de oxidante forte e produto tóxico | | Ácido nítrico concentrado | Matéria orgânica | Reação enérgica, explosão e produto tóxico | Considere que houve o descarte indevido de dois conjuntos de substâncias: (1) ácido clorídrico concentrado com cianeto de potássio; (2) ácido nítrico concentrado com sacarose. O descarte dos conjuntos (1) e (2) resultará, respectivamente, em
+
+Alternativas:
+A) liberação de gás tóxico e reação oxidativa forte.
+B) reação oxidativa forte e liberação de gás tóxico.
+C) formação de sais tóxicos e reação oxidativa forte.
+D) liberação de gás tóxico e liberação de gás oxidante.
+E) formação de sais tóxicos e liberação de gás oxidante.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <B> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

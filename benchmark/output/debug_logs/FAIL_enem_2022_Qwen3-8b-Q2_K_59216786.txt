@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Descrição da imagem: Peça publicitária que apresenta duas imagens, uma ao lado da outra. A da esquerda é a fotografia de uma mulher que está cobrindo o rosto com as mãos. Sobre suas mãos está escrito: “Arrependimento”. A imagem da direita é uma via de asfalto onde está escrito: “Causar um acidente é algo que você leva para o resto da vida. Não beba se for dirigir.”. Abaixo, o logotipo do Detran do Espírito Santo. Para convencer o público-alvo sobre a necessidade de um trânsito mais seguro, essa peça publicitária apela para o(a)
+
+Alternativas:
+A) sentimento de culpa provocado no condutor causador de acidentes.
+B) dano psicológico causado nas vítimas da violência nas estradas.
+C) importância do monitoramento do trânsito pelas autoridades competentes.
+D) necessidade de punição a motoristas alcoolizados envolvidos em acidentes.
+E) sofrimento decorrente da perda de entes queridos em acidentes automobilísticos.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

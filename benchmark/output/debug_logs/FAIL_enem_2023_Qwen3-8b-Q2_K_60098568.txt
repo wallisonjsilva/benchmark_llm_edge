@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+O mastro de uma bandeira foi instalado perpendicularmente ao solo em uma região plana. Devido aos fortes ventos, três cabos de aço, de mesmo comprimento, serão instalados para dar sustentação ao mastro. Cada cabo de aço ficará perfeitamente esticado, com uma extremidade num ponto P do mastro, a uma altura h do solo, e a outra extremidade, num ponto no chão, como mostra a figura. Descrição da figura: A figura representa o mastro de uma bandeira instalado perpendicularmente ao solo de uma região plana. No mastro há um ponto P, a uma altura h do solo, que é vértice comum a três triângulos; os outros dois vértices de cada triângulo são: o ponto de fixação do mastro no chão e o ponto de fixação de um cabo no chão. Em cada triângulo, o ângulo oposto ao lado que contém parte do mastro mede alfa. Os cabos de aço formam um ângulo alfa com o plano do chão. Por medida de segurança, há apenas três opções de instalação: • opção 1: h = 11 metros e alfa = 30 graus • opção 2: h = 12 metros e alfa = 45 graus • opção 3: h = 18 metros e alfa = 60 graus. A opção a ser escolhida é aquela em que a medida dos cabos seja a menor possível. Qual será a medida, em metro, de cada um dos cabos a serem instalados?
+
+Alternativas:
+A) 22 x sqrt(3)/3.
+B) 11 x sqrt(2).
+C) 12 x sqrt(2).
+D) 12 x sqrt(3).
+E) 22
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

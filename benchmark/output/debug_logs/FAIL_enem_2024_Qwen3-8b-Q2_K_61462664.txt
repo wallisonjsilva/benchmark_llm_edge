@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## A saúde do professor: acústica arquitetônica Dentre os parâmetros acústicos que afetam a inteligibilidade dos sons emitidos em ambientes fechados, destacam-se o ruído de fundo do ambiente e o decréscimo do nível sonoro com a distância da fonte emissora. Assim, sentar-se no fundo da sala de aula pode prejudicar a aprendizagem dos estudantes, por impedir que eles distingam, com precisão, os sons emitidos, diminuindo a inteligibilidade da fala de seus professores. Considere a situação exemplificada pelo infográfico: à distância de 1 metro, o nível sonoro da fala de um professor é de 60 decibéis e diminui com a distância. Considere, ainda, que o ruído de fundo nessa sala de aula pode chegar a 45 decibéis e que, para ser compreendida, o nível sonoro da fala do professor deve estar 5 decibéis acima desse ruído. Descrição do infográfico: Ilustração de uma sala de aula com professor à frente e cinco estudantes sentados em suas carteiras enfileiradas. No eixo horizontal, a distância entre o professor e os estudantes, em metro. No eixo vertical, o nível sonoro, em decibel. A curva do gráfico passa pelos seguintes pares de pontos: 1 metro: 60 decibéis; 2 metros: 55 decibéis; 3 metros: 50 decibéis; 4 metros: 48 decibéis; 5 metros: 47 decibéis; 6 metros: 45 decibéis; 7 metros: 43 decibéis; 8 metros: 41 decibéis; 9 metros: 40 decibéis; 10 metros: 38 decibéis. Para um valor máximo do ruído de fundo, a maior distância que um estudante pode estar do professor para que ainda consiga compreender sua fala é mais próxima de
+
+Alternativas:
+A) 3,0 metros.
+B) 4,5 metros.
+C) 6,5 metros.
+D) 8,0 metros.
+E) 9,5 metros.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

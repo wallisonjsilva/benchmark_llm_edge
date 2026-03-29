@@ -1,0 +1,85 @@
+MODEL: Qwen3-8b-Q8_0.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um parque tem dois circuitos de tamanhos diferentes para corridas. Um corredor treina nesse parque e, no primeiro dia, inicia seu treino percorrendo 3 voltas em torno do circuito maior e 2 voltas em torno do menor, perfazendo um total de 1 800 metros. Em seguida, dando continuidade a seu treino, corre mais 2 voltas em torno do circuito maior e 1 volta em torno do menor, percorrendo mais 1 100 metros. No segundo dia, ele pretende percorrer 5 000 metros nos circuitos do parque, fazendo um número inteiro de voltas em torno deles e de modo que o número de voltas seja o maior possível. A soma do número de voltas em torno dos dois circuitos, no segundo dia, será
+
+Alternativas:
+A) 10.
+B) 13.
+C) 14.
+D) 15.
+E) 16.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Okay, let's tackle this ENEM question. So, there's a park with two different circuits. A runner trains there, and on the first day, he does 3 laps on the bigger circuit and 2 on the smaller, totaling 1800 meters. Then he does 2 more laps on the bigger and 1 on the smaller, adding 1100 meters. On the second day, he wants to run 5000 meters, making whole laps on both circuits, and wants the number of laps to be as high as possible. We need to find the sum of the laps on both circuits that day.
+
+First, I need to find the lengths of the two circuits. Let me denote the length of the bigger circuit as B and the smaller as S. 
+
+From the first day: 3B + 2S = 1800 meters.
+From the second part of the first day: 2B + 1S = 1100 meters.
+
+So, we have two equations:
+1) 3B + 2S = 1800
+2) 2B + S = 1100
+
+I can solve this system of equations. Let me use substitution or elimination. Maybe elimination is easier here. Let's multiply the second equation by 2 to make the coefficients of S match:
+
+2*(2B + S) = 2*1100 → 4B + 2S = 2200
+
+Now subtract the first equation from this new equation:
+
+(4B + 2S) - (3B + 2S) = 2200 - 1800
+Which simplifies to B = 400 meters.
+
+Now plug B = 400 back into equation 2: 2*400 + S = 1100 → 800 + S = 1100 → S = 300 meters.
+
+So the bigger circuit is 400m, smaller is 300m.
+
+Now, on the second day, he wants to run 5000 meters, using whole laps on both circuits, and maximize the total number of laps. So, we need to find integers x and y such that 400x + 300y = 5000, and x + y is as large as possible.
+
+To maximize x + y, we need to use as many laps as possible. Since 300m is smaller than 400m, using more smaller laps would give more total laps. But we need to check the combination that gives the maximum sum.
+
+Let me express the equation:
+
+400x + 300y = 5000. Let's divide all terms by 100 to simplify: 4x + 3y = 50.
+
+We need integer solutions for x and y where x and y are non-negative integers, and x + y is maximized.
+
+To maximize x + y, we can think of it as maximizing (x + y) given 4x + 3y = 50.
+
+Let me express y in terms of x: 3y = 50 - 4x → y = (50 - 4x)/3. Since y must be an integer, (50 - 4x) must be divisible by 3.
+
+Alternatively, we can think of possible values of x and find corresponding y.
+
+Let me try different x values starting from 0 upwards and see which gives integer y and maximum x + y.
+
+Start with x=0: 4*0 +3y=50 → y=50/3 ≈16.666, not integer.
+
+x=1: 4 +3y=50 →3y=46 → y≈15.333, nope.
+
+x=2: 8 +3y=50 →3y=42 → y=14. So x+y=16.
+
+x=3: 12 +3y=50 →3y=38 → nope.
+
+x=4: 16 +3y=50 →3y=34 → nope.
+
+x=5: 20 +3y=50 →3y=30 → y=10. x+y=15. Less than 16.
+
+x=6: 24 +
+==================================================
+CLEAN OUTPUT:
+

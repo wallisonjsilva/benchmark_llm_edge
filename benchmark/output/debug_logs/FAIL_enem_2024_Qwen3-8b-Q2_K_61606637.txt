@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+A umidade relativa do ar é um dos indicadores utilizados na meteorologia para fazer previsões sobre o clima. O quadro apresenta as médias mensais, em porcentagem, da umidade relativa do ar em um período de seis meses consecutivos em uma cidade. | Meses | Maio | Jun. | Jul. | Ago. | Set. | Out. | |:-------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:| | Média mensal da umidade relativa do ar (%) | 66 | 64 | 54 | 46 | 60 | 64 | Nessa cidade, a mediana desses dados, em porcentagem, da umidade relativa do ar no período considerado foi
+
+Alternativas:
+A) 56.
+B) 58.
+C) 59.
+D) 60.
+E) 62.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:
