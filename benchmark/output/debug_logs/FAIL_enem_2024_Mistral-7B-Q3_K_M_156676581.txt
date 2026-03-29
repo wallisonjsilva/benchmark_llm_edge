@@ -1,0 +1,30 @@
+MODEL: Mistral-7B-Q3_K_M.gguf | FAMILY: mistral
+DATASET: enem_2024
+==================================================
+PROMPT:
+<s>[INST] You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Contratos de vários serviços disponíveis na internet apresentam uma quantidade excessiva de informações. Isso faz com que o tempo necessário para a leitura desses contratos possa ser longo. O quadro apresenta uma amostra do tempo considerado necessário para a leitura completa do contrato de alguns serviços digitais. | Tipo de serviço | Tempo necessário para a leitura completa do contrato (em minuto) | |:-------------------|--------------------------------------------------------------------:| | A | 36 | | B | 17 | | C | 27 | | D | 13 | | E | 13 | | F | 13 | O tempo médio, em minuto, necessário para a leitura completa de um contrato de serviço dentre os listados no quadro é, com uma casa decimal, aproximadamente,
+
+Alternativas:
+A) 13,0.
+B) 15,0.
+C) 19,8.
+D) 20,0.
+E) 23,3.
+
+Resposta final (uma letra): [/INST]
+==================================================
+RAW OUTPUT:
+ FINAL_ANSWER: 13,0 [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER: 13,0 [end of text]
