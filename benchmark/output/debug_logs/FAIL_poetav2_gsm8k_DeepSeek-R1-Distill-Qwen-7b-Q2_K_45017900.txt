@@ -1,0 +1,35 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+John arm wrestles 20 people.  He beats 80%.  How many people did he lose to?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+John arremessa 20 pessoas. Ele vence 80% dos casos. Queremos descobrir quantas pessoas ele perdeu.
+
+Primeiro, calculamos o número de vencer: 20 x 0,80 = 16 vencer.
+
+Subtraindo do total, 20 - 16 = 4 perda.
+
+Portanto, o número de pessoas que ele perdeu é 4.
+</think>
+
+FINAL_ANSWER: <4> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

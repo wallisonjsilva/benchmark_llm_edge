@@ -1,0 +1,59 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+No alojamento de uma universidade, há alguns quartos com o padrão superior ao dos demais. Um desses quartos ficou disponível, e muitos estudantes se candidataram para morar no local. Para escolher quem ficará com o quarto, um sorteio será realizado. Para esse sorteio, cartões individuais com os nomes de todos os estudantes inscritos serão depositados em uma urna, sendo que, para cada estudante de primeiro ano, será depositado um único cartão com seu nome; para cada estudante de segundo ano, dois cartões com seu nome; e, para cada estudante de terceiro ano, três cartões com seu nome. Foram inscritos 200 estudantes de primeiro ano, 150 de segundo ano e 100 de terceiro ano. Todos os cartões têm a mesma probabilidade de serem sorteados. Qual a probabilidade de o vencedor do sorteio ser um estudante de terceiro ano?
+
+Alternativas:
+A) 1/2.
+B) 1/3.
+C) 1/8.
+D) 2/9.
+E) 3/8.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Primeiro, identifico que o problema é sobre cálculos de probabilidades em um sistema de sorteio. Precisamos calcular a probabilidade de um estudante de terceiro ano ser sortado.
+
+Temos 200 estudantes de primeiro ano, cada um com 1 cartão, o que totaliza 200 cartões. Para os 150 de segundo ano, cada tem 2 cartões, resultando em 300 cartões. E os 100 de terceiro ano, com 3 cartões cada, resultando em 300 cartões. 
+
+Total cartões = 200 + 300 + 300 = 800.
+
+A probabilidade de um estudante de terceiro ano ser sortado é o número de cartões deles divididos pelo total. Portanto, 300/800 = 3/8.
+</think>
+
+The probability of selecting a third-year student is calculated by dividing the number of their cards by the total number of cards. 
+
+Total cards: 200 (1st year) + 300 (2nd year) + 300 (3rd year) = 800.
+
+Probability for third-year: 300/800 = 3/8.
+
+FINAL_ANSWER: 3/8.
+
+E) 3/8. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+The probability of selecting a third-year student is calculated by dividing the number of their cards by the total number of cards. 
+
+Total cards: 200 (1st year) + 300 (2nd year) + 300 (3rd year) = 800.
+
+Probability for third-year: 300/800 = 3/8.
+
+FINAL_ANSWER: 3/8.
+
+E) 3/8. [end of text]

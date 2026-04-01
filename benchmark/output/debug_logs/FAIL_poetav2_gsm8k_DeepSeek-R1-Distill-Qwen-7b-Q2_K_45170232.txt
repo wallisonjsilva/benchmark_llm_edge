@@ -1,0 +1,35 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+A three-ounce box of flavored jello makes 10 small jello cups.  Greg wants to make small jello cups for his son's outdoor birthday party.  There will be 30 kids and he wants to have enough so that each kid can have 4 jello cups.  Jello is currently on sale for $1.25.  How much will he spend on jello?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+First, I need to determine how many jello cups are required for the party. There are 30 kids, and each will have 4 cups, so I multiply 30 by 4 to get 120 cups needed.
+
+Next, I know that each box makes 10 cups. To find out how many boxes Greg needs to buy, I divide the total cups by the number each box provides: 120 divided by 10 equals 12 boxes.
+
+Since each box costs $1.25, I multiply the number of boxes by the cost per box: 12 times $1.25 equals $15.00.
+
+Therefore, Greg will spend $15.00 on jello.
+</think>
+
+FINAL_ANSWER: <15.00> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

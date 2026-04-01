@@ -1,0 +1,29 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Claire makes a 3 egg omelet every morning for breakfast.  How many dozens of eggs will she eat in 4 weeks?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Claire makes a 3-egg omelette every day for breakfast. Each week has 7 days, so in one week, she eats 3 eggs per day ×7 days =21 eggs. For 4 weeks, that's 21 eggs/week ×4 weeks =84 eggs. To find the number of dozens, divide by 12: 84 ÷12 =7 dozens.
+</think>
+
+FINAL_ANSWER: <7> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

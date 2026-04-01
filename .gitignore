@@ -1,1 +1,3 @@
 benchmark/model/*
+benchmark/.env
+benchmark/other/*

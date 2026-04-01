@@ -1,0 +1,29 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Goldy bought 20 sacks of rice and gave 3 sacks to her cousin and 4 sacks to her brother, if there are 25 kilograms of rice per sack, how many kilograms does she gave to her cousin and brother?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Primeiro, Goldy comprou 20 sacos de arroz. Fora distribuídos, ela deu 3 sacos para seu cônigo e 4 sacos para seu irmão. Totalmente, ela deu 7 sacos. Cada saco tem 25 kilos. Portanto, o total de arroz que ela coubeu é 7 sacos multiplicados por 25 kilos, o que resulta em 175 kilos.
+</think>
+
+FINAL_ANSWER: <175> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

@@ -1,0 +1,33 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+George, a grade six teacher, ordered 600 burritos for the sixth-grade class picnic. If there were 50 students at the picnic, and each student was given ten burritos, with Mr. George eating 20 of them, calculate the total number of leftover burritos from the picnic?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Primeiro, calculo quantos burritos cada aluno recebeu. Com 600 burritos e 50 alunos, cada um recebe 12 burritos (600 dividido por 50).
+
+Em seguida, somo os burritos que os alunos esgatinham. 50 alunos vezes 10 dá 500, mais os 20 que o professor George come, totalizando 520.
+
+Por fim, subtrao os burritos galtos do total inicial. 600 menos 520 resulta em 80 burritos restantes.
+</think>
+
+FINAL_ANSWER: <80> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

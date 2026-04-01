@@ -1,0 +1,107 @@
+MODEL: Sabia-7b-Q8_0.gguf | FAMILY: sabia
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Abaixo está uma instrução que descreve uma tarefa. Escreva uma resposta que complete adequadamente o pedido.
+
+### Instrução:
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.
+
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Randy has 9 oatmeal cookies, 4 chocolate chip cookies, and 5 sugar cookies. He ate 3 cookies for an early day snack, one of each flavor. He ate 2 oatmeal cookies for lunch. He gives 2 sugar cookies to his friends. Then, he bakes 4 of each flavor for dinner. How many cookies does he have now?
+
+Resposta final:
+
+### Resposta:
+
+==================================================
+RAW OUTPUT:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+FINAL_ANSWER: 15
+
+### Resposta:
+
+
+==================================================
+CLEAN OUTPUT:
+

@@ -1,0 +1,29 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Jennifer bought 12 oranges from the market, she gave her three daughters 2 oranges each, and her only boy got 3 oranges. How many oranges did she remain with?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Jennifer initially bought 12 oranges. She gave 2 oranges to each of her three daughters, which totals 6 oranges. Additionally, her son received 3 oranges. So, she gave away a total of 6 + 3 = 9 oranges. Subtracting this from the initial 12, Jennifer has 12 - 9 = 3 oranges remaining.
+</think>
+
+FINAL_ANSWER: <3> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

@@ -1,0 +1,37 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Melissa is summoned to jury duty. She spends 6 hours a day for 3 days listening to a court case. If Melissa is paid $15 per day but also has to pay $3 for parking each day, how much jury pay does she make per hour after expenses?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Primeiro, preciso determinar quantos horas Melissa tem Disponível ao longo de 3 dias. Como ela é summons para 6 horas diariamente, o total de horas é 6 horas/dia por 3 dias, o que resulta em 18 horas.
+
+Em seguida, calculo o total de dinheiro que ela recebeu. Cada dia, ela ganha $15, então em 3 dias ela terá 15 * 3 = $45.
+
+Depois, considero os custos de parqueamento. Cada dia, ela paga $3, então em 3 dias o custo total é 3 * 3 = $9.
+
+Subtraindo os custos de parqueamento do salário total, temos 45 - 9 = $36.
+
+ por fim, dividindo o total de money pay ($36) pelo número total de horas (18), o salário por hora após os despesgos é 36 / 18 = $2.
+</think>
+
+FINAL_ANSWER: <2> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:
