@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Efficacy of Selective Serotonin-Reuptake Inhibitors in Premenstrual Syndrome Muitas mulheres sofrem com desconfortos nos dias que antecedem a menstruação, a chamada tensão pré-menstrual. Entre outros sintomas, podem ocorrer alterações de humor. Atualmente, acredita-se que os sintomas são resultado da queda na concentração do neurotransmissor serotonina, que, por sua vez, está relacionado com a diminuição na produção dos hormônios ovarianos estrógeno e progesterona, observada nessa fase do ciclo feminino. A redução da produção desses hormônios nessa fase está relacionada com o(a)
+
+Alternativas:
+A) regressão do corpo lúteo ovariano.
+B) diminuição na produção de ocitocina.
+C) liberação do gameta feminino na ovulação.
+D) aumento nos níveis dos hormônios LH e FSH.
+E) elevação nos níveis sorológicos de adrenalina.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Erra [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Erra [end of text]

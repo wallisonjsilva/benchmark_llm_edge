@@ -1,0 +1,29 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Impacto dos catalisadores automotivos no controle da qualidade do ar Um dos agentes que mais contribui para a poluição do ar é o automóvel a combustão interna. Em áreas urbanas, isso é demonstrado dramaticamente pela fumaça fotoquímica, resultante da interação entre óxidos de nitrogênio, hidrocarbonetos e luz solar, para formar produtos de oxidação, que causam irritação aos olhos, ao aparelho respiratório e danos às plantas. As condições de operação de motores a combustão, como a razão da mistura ar/combustível no cilindro, influenciam na composição dos gases lançados pelo escapamento na atmosfera. O gráfico ilustra a variação nas composições dos principais gases, dióxido de carbono (CO2), hidrocarbonetos (HC), monóxido de carbono (CO), monóxido de nitrogênio (NO) e oxigênio molecular (O2), emitidos por um motor a gasolina, em diferentes razões ar/combustível, em massa. Descrição do gráfico: Gráfico com um eixo horizontal e dois verticais. O eixo horizontal apresenta a razão ar/combustível (em massa/massa), variando de 10 a 20. A razão estequiométrica ar/combustível está próxima a 15. O deslocamento dos valores da razão estequiométrica para a esquerda evidencia uma deficiência da relação ar/combustível e, para a direita, um excesso da relação ar/combustível. No eixo vertical esquerdo, têm-se os valores de O2, CO e CO2, em percentual de volume. No eixo vertical direito, têm-se os valores de NO, em 10 elevado a 3 partes por milhão em volume, e de HC como C6, em 10 elevado a 2 partes por milhão em volume. A curva de O2 inicia em zero por cento na razão 10 e aumenta até 5 por cento na razão 20. A curva de CO inicia em 12 por cento na razão 10 e diminui a zero por cento a partir da razão 17. A curva de CO2 inicia em 7 por cento na razão 10, aumenta até a razão 15 e depois diminui até 11 por cento na razão 20. A curva de NO inicia na concentração zero na razão 10, aumenta até 3,5 na razão 16 e depois diminui até 0,5 na razão 20. A curva de HC inicia na concentração 7 na razão 10 e diminui até 2 na razão 20. Na condição de razão ar/combustível igual a 18, haverá uma emissão
+
+Alternativas:
+A) baixa de O2 e alta de NO.
+B) baixa de NO e alta de HC.
+C) baixa de CO e alta de CO2.
+D) baixa de HC e alta de CO.
+E) baixa de CO2 e alta de HC.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+## [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+## [end of text]

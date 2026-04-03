@@ -1,0 +1,196 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## A negligência parental e a relação com a deficiência A pessoa com deficiência de qualquer modalidade — seja visual, auditiva, física ou mental — encontra-se em uma posição de grande vulnerabilidade em relação às pessoas sem deficiência, sendo frequentemente marcante a assimetria das relações de poder na interação entre ambas. Tal assimetria de relação hierárquica é multiplicada conforme a severidade de cada caso, sendo ampliada se a pessoa com necessidades especiais pertencer a um outro grupo de risco, por exemplo, se for mulher ou criança. A realidade abordada no texto indica a necessidade de se promover uma ética interpessoal centrada no
+
+Alternativas:
+A) cuidado, proteção e valorização dos indivíduos.
+B) entendimento, perdão e tolerância dos responsáveis.
+C) cerceamento, arregimentação e controle de entidades.
+D) regramento, legislação e responsabilização de culpados.
+E) ensimesmamento, interiorização e indulgência dos agentes.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ FINAL_ANSWER: <A|B|C|D|E>
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A questão é:
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valorização dos indivíduos.
+
+A) cuidado, proteção e valor
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

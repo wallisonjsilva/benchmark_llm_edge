@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Parque Solar Lapa entra em operação Em 2017, foi inaugurado, no estado da Bahia, o Parque Solar Lapa, composto por duas usinas (Bom Jesus da Lapa e Lapa) e capaz de gerar cerca de 300 gigawatts-hora de energia por ano. Considere que cada usina apresente potência igual a 75 megawatts, com o parque totalizando uma potência instalada de 150 megawatts. Considere ainda que a irradiância solar média é de 1 500 watts por metro quadrado e que a eficiência dos painéis é de 20 por cento. Nessas condições, a área total dos painéis solares que compõem o Parque Solar Lapa é mais próxima de:
+
+Alternativas:
+A) 1 000 000 de metros quadrados
+B) 500 000 metros quadrados
+C) 250 000 metros quadrados
+D) 100 000 metros quadrados
+E) 20 000 metros quadrados
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Desaia [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Desaia [end of text]

@@ -1,0 +1,136 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um jardineiro dispõe de k metros lineares de cerca baixa para fazer um jardim ornamental. O jardim, delimitado por essa cerca, deve ter a forma de um triângulo equilátero, um quadrado ou um hexágono regular. A escolha será pela forma que resulte na maior área. O jardineiro escolherá a forma de
+
+Alternativas:
+A) hexágono regular, pois a área do jardim, em metro quadrado, será fração, numerador k ao quadrado vezes raiz quadrada de 3, denominador 24.
+B) hexágono regular, pois a área do jardim, em metro quadrado, será fração, numerador 3 vezes k ao quadrado vezes raiz quadrada de 3, denominador 2.
+C) quadrado, pois a área do jardim, em metro quadrado, será fração, numerador k ao quadrado, denominador 16.
+D) triângulo equilátero, pois a área do jardim, em metro quadrado, será fração, numerador k ao quadrado vezes raiz quadrada de 3, denominador 36.
+E) triângulo equilátero, pois a área do jardim, em metro quadrado, será fração, numerador k ao quadrado vezes raiz quadrada de 3, denominador 4.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>Solução:</strong>
+A área do triângulo equilátero é $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+, a área do quadrado é $A=k^2$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=k^2[/tex3]</code>
+
+e a área do hexágono regular é $A=\frac{k^2\sqrt{3}}{2}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{2}[/tex3]</code>
+
+.
+
+A área do jardim será a menor entre essas três áreas.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}<k^2<k^2\sqrt{3}<k^2\frac{\sqrt{3}}{2}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}<k^2<k^2\sqrt{3}<k^2\frac{\sqrt{3}}{2}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\sqrt{3}}{4}[/tex3]</code>
+
+.
+
+A área do jardim será $A=\frac{k^2\sqrt{3}}{4}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]A=\frac{k^2\
+
+
+==================================================
+CLEAN OUTPUT:
+

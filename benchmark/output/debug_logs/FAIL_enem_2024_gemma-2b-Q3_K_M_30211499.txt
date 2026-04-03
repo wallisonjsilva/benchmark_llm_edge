@@ -1,0 +1,28 @@
+MODEL: gemma-2b-Q3_K_M.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Influenciadores negros têm recorrentemente chamado a atenção para o fato de terem muito menos repercussão em suas postagens e nas entregas do seu conteúdo quando comparados com os influenciadores brancos, mesmo se fotos, contextos e anúncios forem extremamente semelhantes. Segundo o site Negrê, a digital influencer e youtuber que criou o projeto digital Preta Pariu iniciou um experimento em uma plataforma. Após perceber a crescente queda nos índices de alcance digital, a paulista publicou fotografias de modelos brancas em seu perfil e analisou as métricas de engajamento. Surpreendentemente, a ferramenta de estatísticas aferiu um aumento de 6 000 por cento em seu alcance. A apresentação do dado estatístico ao final desse texto revela a intenção de
+
+Alternativas:
+A) demonstrar a repercussão de projetos como o Preta Pariu.
+B) informar o quantitativo de postagens da comunidade negra.
+C) potencializar o alcance de textos e imagens em sites como o Negrê.
+D) exaltar a qualidade das publicações sobre negritude em redes sociais.
+E) comprovar a relação entre o alcance de conteúdos digitais e o viés racial.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+[end of text]

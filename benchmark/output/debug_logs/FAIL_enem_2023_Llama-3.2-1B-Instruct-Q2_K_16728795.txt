@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## A Guerra da Palestina Escrito durante a Primeira Guerra Mundial, o seguinte trecho faz parte da carta enviada pelo secretário do exterior britânico, Sir Arthur James Balfour, ao banqueiro Lord Rotschild, presidente da Liga Sionista, em 2 de novembro de 1917, a carta ficou conhecida como Declaração Balfour: “O governo de Sua Majestade vê com aprovação o estabelecimento na Palestina de um lar nacional para o povo judeu, e fará todos os esforços para facilitar tal objetivo. Nada será feito que possa prejudicar os direitos civis e religiosos das comunidades não judaicas na Palestina.” A análise do resultado do processo em questão revela que o governo inglês foi incapaz de garantir seu objetivo de
+
+Alternativas:
+A) promover o bem-estar social.
+B) negociar o apoio muçulmano.
+C) mediar os conflitos territoriais.
+D) estimular a cooperação regional.
+E) combater os governos autocráticos.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Desculidão [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Desculidão [end of text]

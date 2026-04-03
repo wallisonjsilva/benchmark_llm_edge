@@ -1,0 +1,104 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Em uma empresa é comercializado um produto em embalagens em formato de cilindro circular reto, com raio medindo 3 centímetros, e altura medindo 15 centímetros. Essa empresa planeja comercializar o mesmo produto em embalagens em formato de cubo, com capacidade igual a 80 por cento da capacidade da embalagem cilíndrica utilizada atualmente. Use 3 como valor aproximado para pi. A medida da aresta da nova embalagem, em centímetro, deve ser
+
+Alternativas:
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ FINAL_ANSWER: <A|B|C|D|E>
+
+Eu fiz a seguinte equação:
+$V_{cubo}=80\pi\left(\frac{3}{2}\right)^3$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]V_{cubo}=80\pi\left(\frac{3}{2}\right)^3[/tex3]</code>
+
+= 113,106 cm³
+
+$V_{cil}=3\pi\left(\frac{3}{2}\right)^2\left(\frac{15}{2}\right)$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]V_{cil}=3\pi\left(\frac{3}{2}\right)^2\left(\frac{15}{2}\right)[/tex3]</code>
+
+= 113,106 cm³
+
+$V_{cil}=80\pi\left(\frac{3}{2}\right)^3$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]V_{cil}=80\pi\left(\frac{3}{2}\right)^3[/tex3]</code>
+
+= 113,106 cm³
+
+$V_{cil}=V_{cubo}$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]V_{cil}=V_{cubo}[/tex3]</code>
+
+$\rightarrow$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]\rightarrow[/tex3]</code>
+
+$\frac{3}{2}\left(\frac{3}{2}\right)^2\left(\frac{15}{2}\right)=80\pi\left(\frac{3}{2}\right)^3$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]\frac{3}{2}\left(\frac{3}{2}\right)^2\left(\frac{15}{2}\right)=80\pi\left(\frac{3}{2}\right)^3[/tex3]</code>
+
+$\rightarrow$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]\rightarrow[/tex3]</code>
+
+$\frac{3}{2}\left(\frac{3}{2}\right)^2\left(\frac{15}{2}\right)=80\pi\left(\frac{3}{2}\right)^3$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]\frac{3}{2}\left(\frac{3}{2}\right)^2\left(\frac{15}{2}\right)=80\pi\left(\frac{3}{2}\right)^3[/tex3]</code>
+
+$\rightarrow$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]\rightarrow[/tex3]</code>
+
+$\frac{3}{2}\left(\frac{3}{2}\right)^2\left(\frac{15}{2}\right)=80\pi\left(\frac{3}{2}\right)^3$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]\frac{3}{2}\left(\frac{3}{2}\right)^2\left(\frac{15}{2}\right)=80\pi\left(\frac{3}{2}\right)^3[/tex3]</code>
+
+$\rightarrow$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]\rightarrow[/tex3]</code>
+
+$\frac{3}{2}\left(\frac{3}{2}\right)^2\left(\frac{15}{2}\right)=80\pi\left(\frac{3}{2}\right)^3$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]\frac{3}{2}\left(\frac{3}{2}\right)^2\left(\frac{15}{2}\right)=80\pi\left(\frac{3}{2}\right)^3[/tex3]</code>
+
+$\rightarrow$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]\rightarrow[/tex3]</code>
+
+$\frac{3}{2}\left(\frac{3}{2}\right)^2\left(\frac{15}{2}\right)=80\pi\left(\frac{3}{2}\right)^3$
+
+Código: Selecionar tudoSHIFT+Click na eq = ZOOM
+<code>[tex3]\frac{3}{2}\left(\frac{3}{2}\right)^2\left(\frac
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

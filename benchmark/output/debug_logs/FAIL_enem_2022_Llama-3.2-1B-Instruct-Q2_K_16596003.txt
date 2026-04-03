@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Ela era linda. Gostava de dançar, fazia teatro em São Paulo e sonhava ser atriz em Hollywood. Tinha 13 anos quando ganhou uma câmera de vídeo — e uma irmã. As duas se tornaram suas companheiras de experimentações. Adolescente, Elena vivia a criar filminhos e se empenhava em dirigir a pequena Petra nas cenas que inventava. Era exigente com a irmã. E acreditava no potencial da menina para satisfazer seus arroubos de diretora precoce. Por cinco anos, integrou algumas das melhores companhias paulistanas de teatro e participou de preleções para filmes e trabalhos na TV. Nunca foi chamada. No início de 1990, Elena tinha 20 anos quando se mudou para Nova York para cursar artes cênicas e batalhar uma chance no mercado americano. Deslocada, ansiosa, frustrada após alguns testes de elenco malsucedidos, decepcionada com a ausência de reconhecimento e vitimada por uma depressão que se agravava com a falta de perspectivas, Elena pôs fim à vida no segundo semestre. Petra tinha 7 anos. Vinte anos depois, é ela, a irmã caçula, que volta a Nova York para percorrer os últimos passos da irmã, vasculhar seus arquivos e transformar suas memórias em imagem e poesia. Elena é um filme sobre a irmã que parte e sobre a irmã que fica. É um filme sobre a busca, a perda, a saudade, mas também sobre o encontro, o legado, a memória. Um filme sobre a Elena de Petra e sobre a Petra de Elena, sobre o que ficou de uma na outra e, essencialmente, um filme sobre a delicadeza. Otexto é exemplar de um gênero discursivo que cumpre a função social de
+
+Alternativas:
+A) narrar, por meio de imagem e poesia, cenas da vida das irmãs Petra e Elena.
+B) descrever, por meio das memórias de Petra, a separação de duas irmãs.
+C) sintetizar, por meio das principais cenas do filme, a história de Elena.
+D) lançar, por meio da história de vida do autor, um filme autobiográfico.
+E) avaliar, por meio de análise crítica, o filme em referência.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Desculter, por enquanto, uma lista das opções de film de azeria. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Desculter, por enquanto, uma lista das opções de film de azeria. [end of text]

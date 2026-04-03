@@ -1,0 +1,28 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: enem_2022
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Quarto de despejo: diário de uma favelada ### Carolina Maria de Jesus 10 de maio Fui na delegacia e falei com o tenente. Que homem amavel! Se eu soubesse que ele era tão amavel, eu teria ido na delegacia na primeira intimação. O tenente interessou-se pela educação dos meus filhos. Disse-me que a favela é um ambiente propenso, que as pessoas tem mais possibilidade de delinquir do que tornar-se util a patria e ao país. Pensei: se ele sabe disto, porque não faz um relatorio e envia para os politicos? O senhor Janio Quadros, o Kubstchek e o Dr. Adhemar de Barros? Agora falar para mim, que sou uma pobre lixeira. Não posso resolver nem as minhas dificuldades. ... O Brasil precisa ser dirigido por uma pessoa que já passou fome. A fome tambem é professora. Quem passa fome aprende a pensar no próximo, e nas crianças. A partir da intimação recebida pelo filho de 9 anos, a autora faz uma reflexão em que transparece a
+
+Alternativas:
+A) lição de vida comunicada pelo tenente.
+B) predisposição materna para se emocionar.
+C) atividade política marcante da comunidade.
+D) resposta irônica ante o discurso da autoridade.
+E) necessidade de revelar seus anseios mais íntimos.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+##############################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################
+
+
+==================================================
+CLEAN OUTPUT:
+

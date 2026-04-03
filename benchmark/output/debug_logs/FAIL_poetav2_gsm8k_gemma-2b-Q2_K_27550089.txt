@@ -1,0 +1,165 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+A tank of water has a depth of 17 feet on Monday. On Tuesday, the tank had 7 feet more water. On Wednesday, the depth of the water is two thirds of what it was on Tuesday. What is the tank’s water depth on Wednesday?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+
+<numero>
+
+#include "001_final_answer.h"
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.h"
+
+#include "001_final_answer.
+
+
+==================================================
+CLEAN OUTPUT:
+

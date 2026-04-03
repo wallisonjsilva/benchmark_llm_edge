@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um tipo de semente necessita de bastante água nos dois primeiros meses após o plantio. Um produtor pretende estabelecer o melhor momento para o plantio desse tipo de semente, nos meses de outubro a março. Após consultar a previsão do índice mensal de precipitação de chuva (ImPC) da região onde ocorrerá o plantio, para o período chuvoso de 2020 - 2021, ele obteve os seguintes dados: • outubro/2020: ImPC é igual a 250 milímetros; • novembro/2020: ImPC é igual a 150 milímetros; • dezembro/2020: ImPC é igual a 200 milímetros; • janeiro/2021: ImPC é igual a 450 milímetros; • fevereiro/2021: ImPC é igual a 100 milímetros; • março/2021: ImPC é igual a 200 milímetros. Com base nessas previsões, ele precisa escolher dois meses consecutivos em que a média mensal de precipitação seja a maior possível. No início de qual desses meses o produtor deverá plantar esse tipo de semente?
+
+Alternativas:
+A) Outubro.
+B) Novembro.
+C) Dezembro.
+D) Janeiro.
+E) Fevereiro.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Assinado, para o período de saída, você precisava saber: "Mês com o padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrica [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Assinado, para o período de saída, você precisava saber: "Mês com o padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrão Mês padrica [end of text]

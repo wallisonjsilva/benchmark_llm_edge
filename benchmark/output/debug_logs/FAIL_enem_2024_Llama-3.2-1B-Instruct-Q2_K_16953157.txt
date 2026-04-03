@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+O exoesqueleto dos crustáceos é formado por quitina e impregnações de sais calcários e, por isso, é mais duro quando comparado com o exoesqueleto de outros artrópodes. Esse revestimento externo confere proteção, mas, por ser duro, limita o crescimento desses animais. Para superar essa limitação, o exoesqueleto deve ser
+
+Alternativas:
+A) formado somente na fase adulta do animal.
+B) fragmentado para expansão nas áreas de articulação.
+C) modelado continuamente para ajuste ao tamanho do corpo.
+D) substituído por meio de mudas que ocorrem periodicamente.
+E) impregnado por pequena quantidade de sais para sua distensão.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Pois, você! [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Pois, você! [end of text]

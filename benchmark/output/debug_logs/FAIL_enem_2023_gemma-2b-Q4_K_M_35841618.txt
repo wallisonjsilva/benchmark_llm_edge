@@ -1,0 +1,84 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Avaliação de substâncias genotóxicas ### Micronúcleos em células tumorais: biologia e implicações para a tumorigênese O ensaio de micronúcleos é um teste de avaliação de genotoxicidade que associa a presença de micronúcleos (pequenos núcleos que aparecem próximo aos núcleos das células) com lesões genéticas. Os micronúcleos são fragmentos de DNA encapsulados, provenientes do fuso mitótico durante a divisão celular. Os micronúcleos se originam dos(as)
+
+Alternativas:
+A) nucléolos.
+B) lisossomos.
+C) ribossomos.
+D) mitocôndrias.
+E) cromossomos.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## Avaliação de substâncias genotóxicas ### Micronúcleos em células tumorais: biologia e implicações para a tumorigênese O ensaio de micronúcleos é um teste de avaliação de genotoxicidade que associa a presença de micronúcleos (pequenos núcleos que aparecem próximo aos núcleos das células) com lesões genéticas. Os micronúcleos são fragmentos de DNA encapsulados, provenientes do fuso mitótico durante a divisão celular. Os micronúcleos se originam dos(as)
+
+Alternativas:
+A) nucléolos.
+B) lisossomos.
+C) ribossomos.
+D) mitocôndrias.
+E) cromossomos.
+
+## Avaliação de substâncias genotóxicas ### Micronúcleos em células tumorais: biologia e implicações para a tumorigênese O ensaio de micronúcleos é um teste de avaliação de genotoxicidade que associa a presença de micronúcleos (pequenos núcleos que aparecem próximo aos núcleos das células) com lesões genéticas. Os micronúcleos são fragmentos de DNA encapsulados, provenientes do fuso mitótico durante a divisão celular. Os micronúcleos se originam dos(as)
+
+Alternativas:
+A) nucléolos.
+B) lisossomos.
+C) ribossomos.
+D) mitocôndrias.
+E) cromossomos.
+
+## Avaliação de substâncias genotóxicas ### Micronúcleos em células tumorais: biologia e implicações para a tumorigênese O ensaio de micronúcleos é um teste de avaliação de genotoxicidade que associa a presença de micronúcleos (pequenos núcleos que aparecem próximo aos núcleos das células) com lesões genéticas. Os micronúcleos são fragmentos de DNA encapsulados, provenientes do fuso mitótico durante a divisão celular. Os micronúcleos se originam dos(as)
+
+Alternativas:
+A) nucléolos.
+B) lisossomos.
+C) ribossomos.
+D) mitocôndrias.
+E) cromossomos.
+
+## Avaliação de substâncias genotóxicas ### Micronúcleos em células tumorais: biologia e implicações para a tumorigênese O ensaio de micronúcleos é um teste de avaliação de genotoxicidade que associa a presença de micronúcleos (pequenos núcleos que aparecem próximo aos núcleos das células) com lesões genéticas. Os micronúcleos são fragmentos de DNA encapsulados, provenientes do fuso mitótico durante a divisão celular. Os micronúcleos se originam dos(as)
+
+Alternativas:
+A) nucléolos.
+B) lisossomos.
+C) ribossomos.
+D) mitocôndrias.
+E) cromossomos.
+
+## Avaliação de substâncias genotóxicas ### Micronúcleos em células tumorais: biologia e implicações para a tumorigênese O ensaio de micronúcleos é um teste de avaliação de genotoxicidade que associa a presença de micronúcleos (pequenos núcleos que aparecem próximo aos núcleos das células) com lesões genéticas. Os micronúcleos são fragmentos de DNA encapsulados, provenientes do fuso mitótico durante a divisão celular. Os micronúcleos se originam dos(as)
+
+Alternativas:
+A) nucléolos.
+B) lisossomos.
+C) ribossomos.
+D) mitocôndrias.
+E) cromossomos.
+
+## Avaliação de substâncias genotóxicas ### Micronúcleos em células tumorais: biologia e implicações para a tumorigênese O ensaio de micronúcleos é um teste de avaliação de genotoxicidade que associa a presença de micronúcleos (pequenos núcleos que aparecem próximo aos núcleos das células) com lesões genéticas. Os micronúcleos são fragmentos de DNA encapsulados, provenientes do fuso mitótico durante a divisão celular. Os micronúcleos se originam dos(as)
+
+Alternativas:
+A) nucléolos.
+B) lisossomos.
+C) ribossomos.
+D) mitocôndrias.
+E) cromossomos.
+
+## Avaliação de substâncias genotóxicas ### Micronúcleos em células tumorais: biologia e implicações para a tumorigênese O ensaio de micronúcleos é um teste de avaliação de genotoxicidade que associa a presença de micronúcleos (pequenos núcleos que aparecem próximo aos núcleos das células) com lesões genéticas. Os micronúcleos são fragmentos de DNA encapsulados,
+
+
+==================================================
+CLEAN OUTPUT:
+## FINAL_ANSWER:

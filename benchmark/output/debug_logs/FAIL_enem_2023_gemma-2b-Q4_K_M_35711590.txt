@@ -1,0 +1,131 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+O metrô de um município oferece dois tipos de tíquetes com colorações diferentes, azul e vermelha, sendo vendidos em cartelas, cada qual com nove tíquetes da mesma cor e mesmo valor unitário. Duas cartelas de tíquetes azuis e uma cartela de tíquetes vermelhos são vendidas por 32,40 reais. Sabe-se que o preço de um tíquete azul menos o preço de um tíquete vermelho é igual ao preço de um tíquete vermelho mais cinco centavos. Qual o preço, em real, de uma cartela de tíquetes vermelhos?
+
+Alternativas:
+A) 4,68
+B) 6,30
+C) 9,30
+D) 10,50
+E) 10,65
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>Solução:</strong>
+O preço de um tíquete azul é $x$ e o preço de um tíquete vermelho é $y$.
+O preço de uma cartela de tíquetes azuis é $32,40$ e o preço de uma cartela de tíquetes vermelhos é $32,40+5=32,45$.
+O preço de um tíquete azul menos o preço de um tíquete vermelho é $x-y$.
+O preço de uma cartela de tíquetes azuis é $9x$ e o preço de uma cartela de tíquetes vermelhos é $9x+5$.
+O preço de uma cartela de tíquetes azuis é $32,40$ e o preço de uma cartela de tíquetes vermelhos é $32,40+5=32,45$.
+O preço de um tíquete azul menos o preço de um tíquete vermelho é $x-y=32,40-32,45=-0,05$.
+O preço de um tíquete azul menos o preço de um tíquete vermelho é igual ao preço de um tíquete vermelho mais cinco centavos.
+$x-y=-0,05=y+5$
+$x-y-5=0$
+$x-y=5$
+$x-y+y=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x=5+y$
+$x
+
+
+==================================================
+CLEAN OUTPUT:
+

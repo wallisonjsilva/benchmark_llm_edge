@@ -1,0 +1,117 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Atualmente, há telefones celulares com telas de diversos tamanhos e em formatos retangulares. Alguns deles apresentam telas medindo três inteiros e um meio polegadas, com determinadas especificações técnicas. Além disso, em muitos modelos, com a inclusão de novas funções no celular, suas telas ficaram maiores, sendo muito comum encontrarmos atualmente telas medindo quatro inteiros e cinco sextos polegadas, conforme a figura. Descrição da figura: Figura apresenta dois celulares: a tela do celular 1 tem uma diagonal que mede 3 inteiros e um meio polegadas; a tela do celular 2 mede 4 inteiros e cinco sextos polegadas. . A diferença de tamanho, em valor absoluto, entre as medidas, em polegada, das telas do celular 2 e do celular 1, representada apenas com uma casa decimal, é
+
+Alternativas:
+A) 0,1
+B) 0,5.
+C) 1,0.
+D) 1,3.
+E) 1,8.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ FINAL_ANSWER: <A|B|C|D|E>
+
+A) 0,1
+B) 0,5.
+C) 1,0.
+D) 1,3.
+E) 1,8.
+
+A resposta é a letra E.
+
+A diferença de tamanho, em valor absoluto, entre as medidas, em polegada, das telas do celular 2 e do celular 1, representada apenas com uma casa decimal, é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,8.
+
+A diferença de tamanho entre as telas do celular 2 e do celular 1 é 1,
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

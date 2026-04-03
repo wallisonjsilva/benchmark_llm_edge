@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Dialética do esclarecimento Theodor Adorno e Max Horkheimer A diversão é o prolongamento do trabalho sob o capitalismo tardio. Ela é procurada por quem quer escapar ao processo de trabalho mecanizado para se pôr de novo em condições de enfrentá-lo. Mas, ao mesmo tempo, a mecanização atingiu um tal poderio sobre a pessoa em seu lazer e sobre a sua felicidade, ela determina tão profundamente a fabricação das mercadorias destinadas à diversão que essa pessoa não pode mais perceber outra coisa senão as cópias que reproduzem o próprio processo de trabalho. No texto, o tempo livre é concebido como
+
+Alternativas:
+A) consumo de produtos culturais elaborados no mesmo sistema produtivo do capitalismo.
+B) forma de realizar as diversas potencialidades da natureza humana.
+C) alternativa para equilibrar tensões psicológicas do dia a dia.
+D) promoção da satisfação de necessidades artificiais.
+E) mecanismo de organização do ócio e do prazer.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Sua pergunta é um conceito de esclarecimento. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Sua pergunta é um conceito de esclarecimento. [end of text]

@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Existe no comércio um produto antimofo constituído por uma embalagem com tampa perfurada contendo cloreto de cálcio anidro, CaCl2. Uma vez aberto o lacre, essa substância absorve a umidade ambiente, transformando-se em cloreto de cálcio di-hidratado, fórmula CaCl2⋅2H2O. Considere a massa molar da água igual a 18 gramas por mol, e a massa molar do cloreto de cálcio anidro igual a 111 gramas por mol. Na hidratação da substância presente no antimofo, o ganho percentual, em massa, é mais próximo de
+
+Alternativas:
+A) 14%.
+B) 16%.
+C) 24%.
+D) 32%.
+E) 75%.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Desculidosa quantia de cálcio é mais pertoa de hidratação na água. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Desculidosa quantia de cálcio é mais pertoa de hidratação na água. [end of text]

@@ -1,0 +1,34 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Durante a evolução das plantas, ocorreu uma transição do ambiente aquático para o ambiente terrestre graças ao surgimento de algumas estruturas que as tornaram independentes da água. Esse fato permitiu maior dispersão desse grupo de seres vivos, sendo possível observá-los em diferentes ambientes na atualidade. Qual estrutura possibilitou a independência da água para a fecundação dos seres vivos citados acima?
+
+Alternativas:
+A) Fruto.
+B) Esporo.
+C) Semente.
+D) Tubo polínico.
+E) Vaso condutor.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>Solução:</strong>
+A. Fruto.
+
+<strong>Solução elaborada por:</strong> @juliano_silva
+<strong>Solução elaborada em:</strong> 09/01/2021 às 19:33 [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+

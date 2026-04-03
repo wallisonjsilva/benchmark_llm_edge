@@ -1,0 +1,204 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Com base em testes realizados em ratos, concluiu-se que os compostos nitrosos são substâncias mutagênicas, ou seja, produzem mutações nas células e possivelmente câncer. Esses compostos podem ser obtidos pela reação entre o nitrito de sódio, que é um conservante adicionado às carnes, e o ácido clorídrico. O ácido nitroso produzido irá reagir com compostos nitrogenados, como as aminas, dando origem aos compostos nitrosos. Em qual órgão esse processo será iniciado?
+
+Alternativas:
+A) Rim.
+B) Fígado.
+C) Intestino.
+D) Pâncreas.
+E) Estômago
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+A
+
+A resposta é a letra A.
+
+A reação é:
+$NaNO_2 + HCl \rightarrow HNO_2 + NaCl$
+
+Código: Selecionar tudoSHIFT+Click na eq
+￼(1)
+$NaNO_2 + HCl \rightarrow HNO_2 + NaCl$
+
+Código: Selecionar tudoSHIFT+Click na eq
+￼(2)
+
+Na reação (1) o nitrito de sódio (NaNO2) é oxidado pelo ácido clorídrico (HCl) e produz HNO2 (ácido nitroso).
+
+Na reação (2) o ácido nitroso (HNO2) é oxidado pelo nitrito de sódio (NaNO2) e produz NaCl (sal de sódio) e o ácido nitroso (HNO2).
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagên
+
+
+==================================================
+CLEAN OUTPUT:
+A
+
+A resposta é a letra A.
+
+A reação é:
+$NaNO_2 + HCl \rightarrow HNO_2 + NaCl$
+
+Código: Selecionar tudoSHIFT+Click na eq
+￼(1)
+$NaNO_2 + HCl \rightarrow HNO_2 + NaCl$
+
+Código: Selecionar tudoSHIFT+Click na eq
+￼(2)
+
+Na reação (1) o nitrito de sódio (NaNO2) é oxidado pelo ácido clorídrico (HCl) e produz HNO2 (ácido nitroso).
+
+Na reação (2) o ácido nitroso (HNO2) é oxidado pelo nitrito de sódio (NaNO2) e produz NaCl (sal de sódio) e o ácido nitroso (HNO2).
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagênico.
+
+O ácido nitroso (HNO2) é um composto nitroso, que é um composto mutagên

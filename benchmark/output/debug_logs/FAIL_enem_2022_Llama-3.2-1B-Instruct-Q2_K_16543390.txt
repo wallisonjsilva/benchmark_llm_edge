@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um minuto-luz é uma unidade de medida de distância que corresponde à distância percorrida pela luz durante 1 minuto. Uma outra unidade de medida é o parsec, descrita a seguir. Considere que a órbita da Terra seja circular e que o tempo que a luz do Sol demora para chegar à Terra seja de 8 minutos. Suponha que a Terra (T), o Sol (S) e uma estrela (E) formem um triângulo retângulo como na figura seguinte. Se o ângulo T, E, S medir 1 segundo (isto é, 1 grau dividido por 3 600) dizemos que a distância da estrela E ao sol S é de 1 parsec. Descrição da imagem:Figura representa um triângulo retângulo de vértices T, E e S, com ângulo reto em S. O cateto ST é o menor.Há uma circunferência tracejada, representando uma órbita, centrada em S, com raio ST e com T pertencente à circunferência. Use 5 vezes, abre parêntese, 10 elevado a menos 6, fecha parêntese, como valor aproximado para tangente de, abre parêntese, 1 grau dividido por 3 600, fecha parêntese. Quantos minutos-luz tem 10 parsec aproximadamente?
+
+Alternativas:
+A) 4 x 10^-5
+B) 4 x 10^-4
+C) 8 x 10^5
+D) 1,6 x 10^6
+E) 1,6 x 10^7
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Maior que uma resposta, um parântese: 4 x 10^-5 [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Maior que uma resposta, um parântese: 4 x 10^-5 [end of text]
