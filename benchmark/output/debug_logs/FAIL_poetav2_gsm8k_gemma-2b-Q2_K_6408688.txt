@@ -1,0 +1,115 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:
+
+
+==================================================
+CLEAN OUTPUT:
+

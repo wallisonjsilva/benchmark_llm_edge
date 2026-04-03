@@ -1,0 +1,28 @@
+MODEL: gemma-2b-Q3_K_M.gguf | FAMILY: generic
+DATASET: enem_2022
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Na figura está representado o mosaicismo em função da inativação aleatória de um dos cromossomos X, que ocorre em todas as mulheres sem alterações patológicas. Descrição da figura: Ilustração de um corpo humano feminino com as legendas Células com cromossomo X paterno inativado, em cor preta, e Células com cromossomo X materno inativado, em cor branca. Do corpo humano feminino partem setas que indicam amostras de células corporais (três em cor branca e três em cor preta). Ao lado estão representados o gameta masculino (22+X), por um espermatozoide em cor preta, e o gameta feminino (22+X), representado por um círculo em cor branca. Esses gametas se unem para formar o zigoto (44+XX), representado por uma célula com metade do núcleo em cor preta e metade em cor branca. Uma seta parte do zigoto indicando a formação da blástula (44+XX). A blástula é formada por algumas células em cor preta e outras em cor branca. Uma seta associa uma das células da blástula de cor preta a uma das amostras de células corporais em cor preta. Uma seta associa uma das células da blástula em cor branca a uma amostra de células corporais em cor branca. Entre mulheres heterozigotas para doenças determinadas por genes recessivos ligados ao sexo, essa inativação tem como consequência a ocorrência de
+
+Alternativas:
+A) pleiotropia.
+B) mutação gênica.
+C) interação gênica.
+D) penetrância incompleta.
+E) expressividade variável.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ FINAL_ANSWER: [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER: [end of text]

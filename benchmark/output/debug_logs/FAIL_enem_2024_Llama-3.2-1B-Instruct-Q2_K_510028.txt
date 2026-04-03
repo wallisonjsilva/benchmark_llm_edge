@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Os grupos dominantes são beneficiados em termos de credibilidade e podem, com isso, controlar falas de membros de outros grupos, descredibilizando seus testemunhos com base em concepções compartilhadas de preconceito de identidade (gênero e raça). Algumas formas de preconceito tornam as declarações das pessoas menos importantes devido ao seu pertencimento a determinado grupo social. Assim, um falante recebe menos credibilidade devido ao preconceito do ouvinte. Com base na reflexão suscitada no texto, o preconceito de identidade é responsável por um tipo de injustiça
+
+Alternativas:
+A) estética, que normatiza os padrões corporais.
+B) sensorial, que privilegia as habilidades visuais.
+C) afetiva, que impede as expressões emocionais.
+D) epistêmica, que prejudica as trocas informacionais.
+E) econômica, que perpetua as desigualdades materiais.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Sua altura é uma empresa que oferece consultas de marketing. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Sua altura é uma empresa que oferece consultas de marketing. [end of text]

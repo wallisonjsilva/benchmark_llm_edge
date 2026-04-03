@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um jardineiro dispõe de k metros lineares de cerca baixa para fazer um jardim ornamental. O jardim, delimitado por essa cerca, deve ter a forma de um triângulo equilátero, um quadrado ou um hexágono regular. A escolha será pela forma que resulte na maior área. O jardineiro escolherá a forma de
+
+Alternativas:
+A) hexágono regular, pois a área do jardim, em metro quadrado, será fração, numerador k ao quadrado vezes raiz quadrada de 3, denominador 24.
+B) hexágono regular, pois a área do jardim, em metro quadrado, será fração, numerador 3 vezes k ao quadrado vezes raiz quadrada de 3, denominador 2.
+C) quadrado, pois a área do jardim, em metro quadrado, será fração, numerador k ao quadrado, denominador 16.
+D) triângulo equilátero, pois a área do jardim, em metro quadrado, será fração, numerador k ao quadrado vezes raiz quadrada de 3, denominador 36.
+E) triângulo equilátero, pois a área do jardim, em metro quadrado, será fração, numerador k ao quadrado vezes raiz quadrada de 3, denominador 4.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Sua altura é 36. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Sua altura é 36. [end of text]

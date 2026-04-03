@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Eu sentia falta do futuro. É claro que eu sabia, muito mesmo antes da recorrência dele, que nunca envelheceria. Era muito provável que eu nunca mais fosse ver o oceano de uma altura de trinta mil pés de novo, uma distância tão grande que não dá nem para distinguir as ondas, nem nenhum barco, de um jeito que faz o oceano parecer um enorme e infinito monólito. Eu poderia imaginá-lo. Eu poderia me lembrar dele. Mas não poderia vê-lo de novo, e me ocorreu que a ambição voraz dos seres humanos nunca é saciada quando os sonhos são realizados, porque há sempre a sensação de que tudo poderia ter sido feito melhor e ser feito outra vez. O texto apresenta uma reflexão da personagem acerca de um problema característico da filosofia contemporânea, que trata da(s)
+
+Alternativas:
+A) implicações éticas.
+B) finitude humana.
+C) limitações da linguagem.
+D) pressuposição existencial.
+E) objetividade do conhecimento.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Só uma coisa para saber: o futuro. É claro que você não vai. É claro que você nunca vai. É claro que você não vai. É claro que você não vai. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Só uma coisa para saber: o futuro. É claro que você não vai. É claro que você nunca vai. É claro que você não vai. É claro que você não vai. [end of text]

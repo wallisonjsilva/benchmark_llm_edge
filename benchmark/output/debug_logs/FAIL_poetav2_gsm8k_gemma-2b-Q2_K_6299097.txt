@@ -1,0 +1,106 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Claire makes a 3 egg omelet every morning for breakfast.  How many dozens of eggs will she eat in 4 weeks?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+
+<numero>
+
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+#include "001_final.h"
+
+
+==================================================
+CLEAN OUTPUT:
+

@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+No ano de 2015 o Brasil enfrentou uma grave crise hídrica. O diretor da empresa de abastecimento de água e saneamento do estado de São Paulo afirmou, no dia 27 de janeiro de 2015, que não estava descartado um possível racionamento em toda a capital. Segundo o diretor, para ampliar a economia de água praticada durante esse período, em uma semana seria necessário escolher dois dias não consecutivos para fornecimento de água e nos demais cinco dias seria interrompido o fornecimento. De quantas maneiras diferentes podem ser escolhidos os dias para fornecimento e para interrupção de água nessa semana?
+
+Alternativas:
+A) 6
+B) 12
+C) 15
+D) 21
+E) 42
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Só, não foi grave em sua crise hídrica. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Só, não foi grave em sua crise hídrica. [end of text]

@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Técnica modifica proteína do veneno de cascavel e permite criar fármaco que modula a coagulação sanguínea O veneno da cascavel pode causar hemorragia com risco de morte a quem é picado pela serpente. No entanto, pesquisadores do Brasil e da Bélgica desenvolveram uma molécula de interesse farmacêutico, a PEG-collineína-1, a partir de uma proteína encontrada no veneno dessa cobra, capaz de modular a coagulação sanguínea. Embora a técnica não seja nova, foi a primeira vez que o método foi usado a partir de uma toxina animal na sua forma recombinante, ou seja, produzida em laboratório por um fungo geneticamente modificado. Esse novo medicamento apresenta potencial aplicação para
+
+Alternativas:
+A) impedir a formação de trombos, típicos em alguns casos de acidente vascular cerebral.
+B) tratar consequências da anemia profunda, em razão da perda de grande volume de sangue.
+C) evitar a manifestação de urticárias, comumente relacionadas a processos alérgicos.
+D) reduzir o inchaço dos linfonodos, parte da resposta imunitária de diferentes infecções.
+E) regular a oscilação da pressão arterial, característica dos quadros de hipertensão.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Desculida, não é possível, uma mão de 20-2. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Desculida, não é possível, uma mão de 20-2. [end of text]

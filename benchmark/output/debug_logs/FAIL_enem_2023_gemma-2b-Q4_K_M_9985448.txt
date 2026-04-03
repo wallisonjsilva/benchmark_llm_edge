@@ -1,0 +1,32 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Descrição da campanha publicitária: Foto de uma mulher, com semblante satisfeito, amamentando seu bebê. Sob o título Por que é tão importante amamentar?, o seguinte texto: “O bebê recebe os anticorpos da mãe para proteção contra diversas doenças, como diarreia e infecções, principalmente respiratórias. Diminui o risco de asma, diabetes e obesidade em crianças. É um ótimo exercício para o desenvolvimento da face do bebê e para o crescimento de dentes fortes e bonitos. Desenvolve a fala e uma boa respiração”. Essa campanha publicitária do Ministério da Saúde visa
+
+Alternativas:
+A) divulgar um conjunto de benefícios proporcionados pela amamentação.
+B) apresentar tratamentos para infecções respiratórias em bebês.
+C) defender o direito das mulheres de amamentar em público.
+D) orientar sobre os exercícios para uma boa amamentação.
+E) informar sobre o aumento de anticorpos nas mães.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <A|B|C|D|E>
+
+A resposta correta é:
+
+A. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+

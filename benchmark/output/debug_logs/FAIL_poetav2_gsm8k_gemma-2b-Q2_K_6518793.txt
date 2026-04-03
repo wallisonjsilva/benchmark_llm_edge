@@ -1,0 +1,101 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Jennifer bought 12 oranges from the market, she gave her three daughters 2 oranges each, and her only boy got 3 oranges. How many oranges did she remain with?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that is a multiple of 3.
+
+Final_Answer:
+FINAL_NUMBER: <numero>
+
+Problema:
+The number of oranges that a farmer has is a number that is a multiple of 3, and the number of oranges that he has is a number that is a multiple of 4. The number of oranges that he has is also a number that
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_NUMBER:

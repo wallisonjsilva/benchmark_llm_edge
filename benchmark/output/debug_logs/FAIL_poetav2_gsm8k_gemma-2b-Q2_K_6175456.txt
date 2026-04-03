@@ -1,0 +1,24 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Tony is painting a room with four walls. The north and south walls are 10 x 8 feet. The east and west walls are 5 x 8 feet. A gallon of paint can cover 20 square feet and cost $12. How much will it cost to paint the room?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+
+FINAL_ANSWER: <número final>
+
+#final_answer: <número final>
+ [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

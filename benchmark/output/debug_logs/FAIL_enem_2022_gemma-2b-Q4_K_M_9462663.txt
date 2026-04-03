@@ -1,0 +1,48 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2022
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Uma equipe de marketing digital foi contratada para aumentar as vendas de um produto ofertado em um site de comércio eletrônico. Para isso, elaborou um anúncio que, quando o cliente clica sobre ele, é direcionado para a página de vendas do produto. Esse anúncio foi divulgado em duas redes sociais, A e B, e foram obtidos os seguintes resultados: • rede social A: o anúncio foi visualizado por 3 000 pessoas; 10 por cento delas clicaram sobre o anúncio e foram redirecionadas para o site; 3 por cento das que clicaram sobre o anúncio compraram o produto. O investimento feito para a publicação do anúncio nessa rede foi de 100 reais; • rede social B: o anúncio foi visualizado por 1 000 pessoas; 30 por cento delas clicaram sobre o anúncio e foram redirecionadas para o site; 2 por cento das que clicaram sobre o anúncio compraram o produto. O investimento feito para a publicação do anúncio nessa rede foi de 200 reais. Por experiência, o pessoal da equipe de marketing considera que a quantidade de novas pessoas que verão o anúncio é diretamente proporcional ao investimento realizado, e que a quantidade de pessoas que comprarão o produto também se manterá proporcional à quantidade de pessoas que clicarão sobre o anúncio. O responsável pelo produto decidiu, então, investir mais 300 reais em cada uma das duas redes sociais para a divulgação desse anúncio e obteve, de fato, o aumento proporcional esperado na quantidade de clientes que compraram esse produto. Para classificar o aumento obtido na quantidade (Q) de compradores desse produto, em consequência dessa segunda divulgação, em relação aos resultados observados na primeira divulgação, o responsável pelo produto adotou o seguinte critério: • Q menor ou igual a 60 por cento: não satisfatório; • 60 por cento menor que Q menor ou igual a 100 por cento: regular; • 100 por cento menor que Q menor ou igual a 150 por cento: bom; • 150 por cento menor que Q menor ou igual a 190 por cento: muito bom; • 190 por cento menor que Q menor ou igual a 200 por cento: excelente. O aumento na quantidade de compradores, em consequência dessa segunda divulgação, em relação ao que foi registrado com a primeira divulgação, foi classificado como
+
+Alternativas:
+A) não satisfatório.
+B) regular.
+C) bom.
+D) muito bom.
+E) excelente.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <A|B|C|D|E>
+
+A) não satisfatório.
+B) regular.
+C) bom.
+D) muito bom.
+E) excelente.
+
+A resposta é a letra E.
+
+A equipe de marketing digital foi contratada para aumentar as vendas de um produto ofertado em um site de comércio eletrônico. Para isso, elaborou um anúncio que, quando o cliente clica sobre ele, é direcionado para a página de vendas do produto. Esse anúncio foi divulgado em duas redes sociais, A e B, e foram obtidos os seguintes resultados: • rede social A: o anúncio foi visualizado por 3 000 pessoas; 10 por cento delas clicaram sobre o anúncio e foram redirecionadas para o site; 3 por cento das que clicaram sobre o anúncio compraram o produto. O investimento feito para a publicação do anúncio nessa rede foi de 100 reais; • rede social B: o anúncio foi visualizado por 1 000 pessoas; 30 por cento delas clicaram sobre o anúncio e foram redirecionadas para o site; 2 por cento das que clicaram sobre o anúncio compraram o produto. O investimento feito para a publicação do anúncio nessa rede foi de 200 reais. Por experiência, o pessoal da equipe de marketing considera que a quantidade de novas pessoas que verão o anúncio é diretamente proporcional ao investimento realizado, e que a quantidade de pessoas que comprarão o produto também se manterá proporcional à quantidade de pessoas que clicarão sobre o anúncio. O responsável pelo produto decidiu, então, investir mais 300 reais em cada uma das duas redes sociais para a divulgação desse anúncio e obteve, de fato, o aumento proporcional esperado na quantidade de clientes que compraram esse produto. Para classificar o aumento obtido na quantidade (Q) de compradores desse produto, em consequência dessa segunda divulgação, em relação aos resultados observados na primeira divulgação, o responsável pelo produto adotou o seguinte critério: • Q menor ou igual a 60 por cento: não satisfatório; • 60 por cento menor que Q menor ou igual a 100 por cento: regular; • 100 por cento menor que Q menor ou igual a 150 por cento: bom; • 150 por cento menor que Q menor ou igual a 190 por cento: muito bom; • 190 por cento menor que Q menor ou igual a 200 por cento: excelente. O aumento na quantidade de compradores, em consequência dessa segunda divulgação, em relação ao que foi registrado com a primeira divulgação, foi classificado como
+
+Alternativas:
+A) não satisfatório.
+B) regular.
+C) bom.
+D) muito bom.
+E) excelente.
+
+A resposta é a letra E.
+
+A equipe de marketing digital foi contratada para aumentar as vendas de um produto ofertado em um site de comércio eletrônico. Para isso, elaborou um anúncio que, quando o cliente clica sobre ele, é direcionado para a página de vendas do produto. Esse anúncio foi divulgado em duas redes sociais, A e B, e foram obtidos os seguintes resultados: • rede social A: o anúncio foi visualizado por 3 000 pessoas; 10 por cento delas clicaram sobre o anúncio e foram redirecionadas para o site; 3 por cento das que clicaram sobre o anúncio compraram o produto. O investimento feito para a publicação do anúncio nessa rede foi de 100 reais; • rede social B: o anúncio foi visualizado por 1 000 pessoas; 30 por cento delas clicaram sobre o anúncio e foram redirecionadas para o site; 2 por cento das que clicaram sobre o anúncio compraram o produto. O investimento feito para a publicação do anúncio nessa rede foi de 200 reais. Por experiência, o pessoal da equipe de marketing considera que a quantidade de novas pessoas que verão o anúncio é diretamente proporcional ao investimento realizado, e que a quantidade de pessoas que comprarão o produto também se manterá proporcional à quantidade de pessoas que clicarão sobre o anúncio. O responsável pelo produto decidiu, então, investir mais 300 reais em cada uma das duas redes sociais para a divulgação desse anúncio e obteve, de fato, o aumento proporcional esperado na quantidade de clientes que compraram esse produto. Para classificar o aumento obtido na quantidade (Q) de compradores desse produto, em consequência dessa segunda divulgação, em relação aos resultados observados na primeira divulgação, o responsável pelo produto adotou o seguinte critério: • Q menor ou igual a 60 por cento: não satisfatório; • 60 por cento menor que Q menor ou igual a 100 por cento: regular; • 100 por cento menor que Q menor ou igual a 150
+
+
+==================================================
+CLEAN OUTPUT:
+

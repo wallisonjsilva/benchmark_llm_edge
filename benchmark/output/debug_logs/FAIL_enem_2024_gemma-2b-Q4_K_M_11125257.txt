@@ -1,0 +1,208 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Uma imobiliária iniciou uma campanha de divulgação para promover a venda de apartamentos que podem ser pagos em 100 parcelas mensais. O valor da primeira delas é fixado no momento da compra, com o pagamento dessa primeira parcela. A partir da segunda parcela, o valor é determinado pela aplicação de um acréscimo percentual fixo ao valor da parcela anterior. Como atrativo, a imobiliária fará o pagamento de todas as parcelas correspondentes ao mês de aniversário do comprador. Um cliente, que faz aniversário no mês de maio, decidiu comprar um desses apartamentos por meio do financiamento oferecido pela imobiliária, e pretende escolher o mês mais adequado para realizar essa compra, de modo que o valor total dos pagamentos seja o menor possível. Qual é o mês que esse cliente deverá escolher para realizar a compra do apartamento?
+
+Alternativas:
+A) 0Fevereiro.
+B) Abril.
+C) Maio.
+D) Junho.
+E) Agosto.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+A
+
+A resposta é a letra A.
+
+A imobiliária oferece o financiamento de 100 parcelas mensais, com o valor da primeira parcela fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fix
+
+
+==================================================
+CLEAN OUTPUT:
+A
+
+A resposta é a letra A.
+
+A imobiliária oferece o financiamento de 100 parcelas mensais, com o valor da primeira parcela fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fixo.
+
+O valor da parcela seguinte será o valor da parcela anterior mais um acréscimo percentual fix

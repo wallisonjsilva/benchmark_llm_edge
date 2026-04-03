@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+A extinção de espécies é uma ameaça real que afeta diversas regiões do país. A introdução de espécies exóticas pode ser considerada um fator maximizador desse processo. A jaqueira (Artocarpus heterophyllus), por exemplo, é uma árvore originária da Índia e de regiões do Sudeste Asiático que foi introduzida ainda na era colonial e se aclimatou muito bem em praticamente todo o território nacional. Casos como o dessa árvore podem provocar a redução da biodiversidade, pois elas
+
+Alternativas:
+A) ocupam áreas de vegetação nativa e substituem parcialmente a flora original.
+B) estimulam a competição por seus frutos entre animais típicos da região e eliminam as espécies perdedoras.
+C) alteram os nichos e aumentam o número de possibilidades de relações entre os seres vivos daquele ambiente.
+D) apresentam alta taxa de reprodução e se mantêm com um número de indivíduos superior à capacidade suporte do ambiente.
+E) diminuem a relação de competição entre os polinizadores e facilitam a ação de dispersores de sementes de espécies nativas.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Error [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Error [end of text]

@@ -1,0 +1,28 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+A Cavalgada de Sant’Ana é uma expressão da devoção dos vaqueiros à padroeira de Caicó (RN). Nas décadas de 1950 a 1970, esse evento, então denominado Cavalaria, era celebrado pelas pessoas que residiam na zona rural do município de Caicó. Essas pessoas usavam os animais (jegues, mulas e cavalos) como único meio de transporte, sobretudo para se dirigirem à cidade nos dias de feiras, trazendo seus produtos para comercializarem. Estando em Caicó no período da Festa de Sant’Ana, esses agricultores se organizavam em cavalgada até o pátio da Catedral de Sant’Ana para louvar a santa e receber bênção para seus animais. Por volta da década de 1970, com a chegada do automóvel à zona rural do município, essa expressão cultural foi extinta. O meio de transporte utilizando os animais passou a ser substituído por carros, sobretudo caminhonetes e caminhões, que transportavam os camponeses para a cidade em dias de feiras e festas. Desde 2002, um grupo de caicoenses retomou essa expressão cultural e, em conjunto com a associação dos vaqueiros, realiza no primeiro domingo da Festa a Cavalgada de Sant’Ana. O evento, além de contar com a participação dos cavaleiros que residem nas zonas rurais, atrai também pessoas que residem em Caicó, cidades vizinhas e amantes das vaquejadas. As mudanças culturais mencionadas no texto caracterizam-se pela presença de
+
+Alternativas:
+A) elementos tradicionais e modernos em torno de uma crença religiosa.
+B) argumentos teológicos e históricos em consequência de uma ordem papal.
+C) fundamentos estéticos e etnográficos em função de uma cerimônia clerical.
+D) práticas corporais e esportivas em decorrência de uma imposição eclesiástica.
+E) discursos filosóficos e antropológicos em resultado de uma determinação paroquial.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+

@@ -1,0 +1,73 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2022
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Uma montadora de automóveis divulgou que oferta a seus clientes mais de 1 000 configurações diferentes de carro, variando o modelo, a motorização, os opcionais e a cor do veículo. Atualmente, ela oferece 7 modelos de carros com 2 tipos de motores: 1.0 e 1.6. Já em relação aos opcionais, existem 3 escolhas possíveis: central multimídia, rodas de liga leve e bancos de couro, podendo o cliente optar por incluir um, dois, três ou nenhum dos opcionais disponíveis. Para ser fiel à divulgação feita, a quantidade mínima de cores que a montadora deverá disponibilizar a seus clientes é
+
+Alternativas:
+A) 8.
+B) 9.
+C) 11.
+D) 18.
+E) 24.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>Solução:</strong>
+A montadora oferece 7 modelos de carros com 2 tipos de motores: 1.0 e 1.6.
+A montadora oferece 3 escolhas possíveis: central multimídia, rodas de liga leve e bancos de couro, podendo o cliente optar por incluir um, dois, três ou nenhum dos opcionais disponíveis.
+Para ser fiel à divulgação feita, a quantidade mínima de cores que a montadora deverá disponibilizar a seus clientes é 8.
+
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>, 13 de Julho de 2013 at 19:36
+<strong>Tradução</strong>:
+A montadora oferece 7 modelos de carros com 2 tipos de motores: 1.0 e 1.6.
+A montadora oferece 3 escolhas possíveis: central multimídia, rodas de liga leve e bancos de couro, podendo o cliente optar por incluir um, dois, três ou nenhum dos opcionais disponíveis.
+Para ser fiel à divulgação feita, a quantidade mínima de cores que a montadora deverá disponibilizar a seus clientes é 8.
+
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>, 13 de Julho de 2013 at 19:36
+<strong>Tradução</strong>:
+A montadora oferece 7 modelos de carros com 2 tipos de motores: 1.0 e 1.6.
+A montadora oferece 3 escolhas possíveis: central multimídia, rodas de liga leve e bancos de couro, podendo o cliente optar por incluir um, dois, três ou nenhum dos opcionais disponíveis.
+Para ser fiel à divulgação feita, a quantidade mínima de cores que a montadora deverá disponibilizar a seus clientes é 8.
+
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>, 13 de Julho de 2013 at 19:36
+<strong>Tradução</strong>:
+A montadora oferece 7 modelos de carros com 2 tipos de motores: 1.0 e 1.6.
+A montadora oferece 3 escolhas possíveis: central multimídia, rodas de liga leve e bancos de couro, podendo o cliente optar por incluir um, dois, três ou nenhum dos opcionais disponíveis.
+Para ser fiel à divulgação feita, a quantidade mínima de cores que a montadora deverá disponibilizar a seus clientes é 8.
+
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>, 13 de Julho de 2013 at 19:36
+<strong>Tradução</strong>:
+A montadora oferece 7 modelos de carros com 2 tipos de motores: 1.0 e 1.6.
+A montadora oferece 3 escolhas possíveis: central multimídia, rodas de liga leve e bancos de couro, podendo o cliente optar por incluir um, dois, três ou nenhum dos opcionais disponíveis.
+Para ser fiel à divulgação feita, a quantidade mínima de cores que a montadora deverá disponibilizar a seus clientes é 8.
+
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>, 13 de Julho de 2013 at 19:36
+<strong>Tradução</strong>:
+A montadora oferece 7 modelos de carros com 2 tipos de motores: 1.0 e 1.6.
+A montadora oferece 3 escolhas possíveis: central multimídia, rodas de liga leve e bancos de couro, podendo o cliente optar por incluir um, dois, três ou nenhum dos opcionais disponíveis.
+Para ser fiel à divulgação feita, a quantidade mínima de cores que a montadora deverá disponibilizar a seus clientes é 8.
+
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>, 13 de Julho de 2013 at 19:36
+<strong>Tradução</strong>:
+A montadora oferece 7 modelos de carros com 2 tipos de motores: 1.0 e 1.6.
+A montadora oferece 3 escolhas possíveis: central multimídia, rodas de liga leve e bancos de couro, podendo o cliente optar por incluir um, dois, três ou nenhum dos opcionais disponíveis.
+Para ser fiel à divulgação feita, a quantidade mínima de cores que a montadora deverá disponibilizar a seus clientes é 8.
+
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>, 13 de Julho de 2013 at 19:36
+<strong>Tradução</strong>:
+A montadora oferece 7 modelos de carros com 2 tipos de motores: 1.0 e 1.6.
+A montadora oferece 3
+
+
+==================================================
+CLEAN OUTPUT:
+

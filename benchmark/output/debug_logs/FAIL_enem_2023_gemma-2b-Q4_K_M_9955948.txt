@@ -1,0 +1,91 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Uma pessoa caminha por 30 minutos e utiliza um aplicativo instalado em seu celular para monitorar a variação da intensidade do sinal de internet recebido pelo aparelho durante o deslocamento. Chegando ao seu destino, o aplicativo forneceu este gráfico: Descrição do gráfico: Gráfico cartesiano sobre uma malha quadriculada, em que o eixo horizontal representa o tempo, em minuto, graduado de 0 a 30, de 2 em 2 unidades; e o eixo vertical representa a intensidade do sinal de internet. Os segmentos de reta que formam o gráfico são: Segmento 1: une os pontos (0; 5) a (2; 5); Segmento 2: une os pontos (2; 5) a (6; 2); Segmento 3: une os pontos (6; 2) a (8; 2); Segmento 4: une os pontos (8; 2) a (10; 0); Segmento 5: une os pontos (10; 0) a (12; 0); Segmento 6: une os pontos (12; 0) a (14; 4); Segmento 7: une os pontos (14; 4) a (16; 0); Segmento 8: une os pontos (16; 0) a (20; 0); Segmento 9: une os pontos (20; 0) a (22; 3); Segmento 10: une os pontos (22; 3) a (24; 3); Segmento 11: une os pontos (24; 3) a (26; 2); Segmento 12: une os pontos (26; 2) a (28; 5); Segmento 13: une os pontos (28; 5) a (30; 5). Por quantos minutos, durante essa caminhada, o celular dessa pessoa ficou sem receber sinal de internet?
+
+Alternativas:
+A) 6
+B) 8
+C) 10
+D) 14
+E) 24
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>Solução:</strong>
+A pessoa caminha 30 minutos.
+O gráfico mostra que o celular ficou sem sinal de internet durante 14 minutos.
+A alternativa correta é a letra A.
+
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>Gabriel</strong>, 17 anos</strong>
+<strong>Solução elaborada por <strong>
+
+
+==================================================
+CLEAN OUTPUT:
+

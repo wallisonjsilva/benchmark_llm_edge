@@ -1,0 +1,224 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um professor, para promover a aprendizagem dos estudantes em estatística, propôs uma atividade. O objetivo era verificar o percentual de estudantes com massa corporal abaixo da média e altura acima da média de um grupo de estudantes. Para isso, usando uma balança e uma fita métrica, avaliou uma amostra de dez estudantes, anotando as medidas observadas. O gráfico apresenta a massa corporal, em quilograma, e a altura, em metro, obtidas na atividade. Descrição do gráfico: Gráfico de pontos com o eixo horizontal indicando a massa corporal, em quilograma; e o eixo vertical, a altura, em metro. Os pontos do gráfico têm as seguintes coordenadas: Ponto 1: (50; 1,6). Ponto 2: (58; 1,65). Ponto 3: (60; 1,65). Ponto 4: (65; 1,68). Ponto 5: (70; 1,7). Ponto 6: (88; 1,5). Ponto 7: (88; 1,65). Ponto 8: (93; 1,63). Ponto 9: (108; 1,75). Ponto 10: (120; 1,7) Após a coleta dos dados, os estudantes calcularam a média dos valores obtidos, referentes à massa corporal e à altura, obtendo, respectivamente, 80 quilogramas e 1,65 metro. Qual é o percentual de estudantes dessa amostra com massa corporal abaixo da média e altura acima da média?
+
+Alternativas:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D) 50
+E) 70
+
+Resposta final (uma letra):
+<A|B|C|D|E>
+
+Questão:
+A) 10
+B) 20
+C) 30
+D)
+
+
+==================================================
+CLEAN OUTPUT:
+

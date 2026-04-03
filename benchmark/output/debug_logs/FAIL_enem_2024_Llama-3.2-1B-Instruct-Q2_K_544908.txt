@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+A criptografia refere-se à construção e análise de protocolos que impedem terceiros de lerem mensagens privadas. Júlio César, imperador romano, utilizava um código para proteger as mensagens enviadas a seus generais. Assim, se a mensagem caísse em mãos inimigas, a informação não poderia ser compreendida. Nesse código, cada letra do alfabeto era substituída pela letra três posições à frente, ou seja, o “A” era substituído pelo “D”, o “B” pelo “E”, o “C” pelo “F”, e assim sucessivamente. Descrição da figura: Figura que mostra uma possível relação entre letras do alfabeto para realizar a criptografia usando a Cifra de César: a letra A é substituída pela letra D, a letra B é substituída pela letra E, a letra C é substituída pela letra F, e assim sucessivamente, até que a letra W é substituída pela letra Z, a letra X é substituída pela letra A, a letra Y é substituída pela letra B e a letra Z é substituída pela letra C. Qualquer código que tenha um padrão de substituição de letras como o descrito é considerado uma Cifra de César ou um Código de César. Note que, para decifrar uma Cifra de César, basta descobrir por qual letra o “A” foi substituído, pois isso define todas as demais substituições a serem feitas. Uma mensagem, em um alfabeto de 26 letras, foi codificada usando uma Cifra de César. Considere a probabilidade de se descobrir, aleatoriamente, o padrão utilizado nessa codificação, e que uma tentativa frustrada deverá ser eliminada nas tentativas seguintes. A probabilidade de se descobrir o padrão dessa Cifra de César apenas na terceira tentativa é dada por
+
+Alternativas:
+A) um vinte e cinco avos mais um vinte e cinco avos mais um vinte e cinco avos
+B) vinte e quatro vinte e cinco avos mais vinte e três vinte e quatro avos mais um vinte e três avos
+C) um vinte e cinco avos vezes um vinte e quatro avos vezes um vinte e três avos
+D) vinte e quatro vinte e cinco avos vezes vinte e três vinte e cinco avos vezes um vinte e cinco avos
+E) vinte e quatro vinte e cinco avos vezes vinte e três vinte e quatro avos vezes um vinte e três avos
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Sua melhor tentativa foi correta. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Sua melhor tentativa foi correta. [end of text]

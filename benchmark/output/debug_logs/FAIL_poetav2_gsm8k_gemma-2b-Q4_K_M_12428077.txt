@@ -1,0 +1,79 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Jennifer bought 12 oranges from the market, she gave her three daughters 2 oranges each, and her only boy got 3 oranges. How many oranges did she remain with?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+ 3
+
+Solución:
+Let's call the number of oranges Jennifer had before buying them.
+Let's call the number of oranges Jennifer had after buying them.
+Let's call the number of oranges Jennifer gave to her daughters.
+Let's call the number of oranges Jennifer gave to her boy.
+Let's call the number of oranges Jennifer had after giving to her daughters and boy.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself
+
+
+==================================================
+CLEAN OUTPUT:
+3
+
+Solución:
+Let's call the number of oranges Jennifer had before buying them.
+Let's call the number of oranges Jennifer had after buying them.
+Let's call the number of oranges Jennifer gave to her daughters.
+Let's call the number of oranges Jennifer gave to her boy.
+Let's call the number of oranges Jennifer had after giving to her daughters and boy.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself and herself.
+Let's call the number of oranges Jennifer had after giving to her daughters, boy and herself and her boy and herself and herself and herself and herself and herself and herself

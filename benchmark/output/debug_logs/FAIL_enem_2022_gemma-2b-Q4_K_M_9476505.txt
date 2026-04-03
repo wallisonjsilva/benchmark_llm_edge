@@ -1,0 +1,78 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2022
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Uma pessoa precisa contratar um operário para fazer um serviço em sua casa. Para isso, ela postou um anúncio em uma rede social. Cinco pessoas responderam informando preços por hora trabalhada, gasto diário com transporte e tempo necessário para conclusão do serviço, conforme valores apresentados no quadro. | Operário | Preço por hora (real) | Preço do transporte (real) | Tempo até conclusão (hora) | |:------------|-------------------------:|:------------------------------|------------------------------:| | I | 120 | 0,00 | 8 | | II | 180 | 0,00 | 6 | | III | 170 | 20,00 | 6 | | IV | 110 | 10,00 | 9 | | V | 110 | 0,00 | 10 | Se a pessoa pretende gastar o mínimo possível com essa contratação, irá contratar o operário
+
+Alternativas:
+A) 1
+B) 2
+C) 3
+D) 4
+E) 5
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>Solução:</strong>
+A pessoa precisa contratar um operário para fazer um serviço em sua casa. Para isso, ela postou um anúncio em uma rede social. Cinco pessoas responderam informando preços por hora trabalhada, gasto diário com transporte e tempo necessário para conclusão do serviço, conforme valores apresentados no quadro.
+| Operário | Preço por hora (real) | Preço do transporte (real) | Tempo até conclusão (hora) |
+| :------------|-------------------------:|:------------------------------|------------------------------:|
+| I | 120 | 0,00 | 8 |
+| II | 180 | 0,00 | 6 |
+| III | 170 | 20,00 | 6 |
+| IV | 110 | 10,00 | 9 |
+| V | 110 | 0,00 | 10 |
+Se a pessoa pretende gastar o mínimo possível com essa contratação, irá contratar o operário.
+
+<strong>Solução:</strong>
+A pessoa precisa contratar um operário para fazer um serviço em sua casa. Para isso, ela postou um anúncio em uma rede social. Cinco pessoas responderam informando preços por hora trabalhada, gasto diário com transporte e tempo necessário para conclusão do serviço, conforme valores apresentados no quadro.
+| Operário | Preço por hora (real) | Preço do transporte (real) | Tempo até conclusão (hora) |
+| :------------|-------------------------:|:------------------------------|------------------------------:|
+| I | 120 | 0,00 | 8 |
+| II | 180 | 0,00 | 6 |
+| III | 170 | 20,00 | 6 |
+| IV | 110 | 10,00 | 9 |
+| V | 110 | 0,00 | 10 |
+Se a pessoa pretende gastar o mínimo possível com essa contratação, irá contratar o operário.
+
+<strong>Solução:</strong>
+A pessoa precisa contratar um operário para fazer um serviço em sua casa. Para isso, ela postou um anúncio em uma rede social. Cinco pessoas responderam informando preços por hora trabalhada, gasto diário com transporte e tempo necessário para conclusão do serviço, conforme valores apresentados no quadro.
+| Operário | Preço por hora (real) | Preço do transporte (real) | Tempo até conclusão (hora) |
+| :------------|-------------------------:|:------------------------------|------------------------------:|
+| I | 120 | 0,00 | 8 |
+| II | 180 | 0,00 | 6 |
+| III | 170 | 20,00 | 6 |
+| IV | 110 | 10,00 | 9 |
+| V | 110 | 0,00 | 10 |
+Se a pessoa pretende gastar o mínimo possível com essa contratação, irá contratar o operário.
+
+<strong>Solução:</strong>
+A pessoa precisa contratar um operário para fazer um serviço em sua casa. Para isso, ela postou um anúncio em uma rede social. Cinco pessoas responderam informando preços por hora trabalhada, gasto diário com transporte e tempo necessário para conclusão do serviço, conforme valores apresentados no quadro.
+| Operário | Preço por hora (real) | Preço do transporte (real) | Tempo até conclusão (hora) |
+| :------------|-------------------------:|:------------------------------|------------------------------:|
+| I | 120 | 0,00 | 8 |
+| II | 180 | 0,00 | 6 |
+| III | 170 | 20,00 | 6 |
+| IV | 110 | 10,00 | 9 |
+| V | 110 | 0,00 | 10 |
+Se a pessoa pretende gastar o mínimo possível com essa contratação, irá contratar o operário.
+
+<strong>Solução:</strong>
+A pessoa precisa contratar um operário para fazer um serviço em sua casa. Para isso, ela postou um anúncio em uma rede social. Cinco pessoas responderam informando preços por hora trabalhada, gasto diário com transporte e tempo necessário para conclusão do serviço, conforme valores apresentados no quadro.
+| Operário | Preço por hora (real) | Preço do transporte (real) | Tempo até conclusão (hora) |
+| :------------|-------------------------:|:------------------------------|------------------------------:|
+| I | 120 | 0,00 | 8 |
+| II | 
+
+
+==================================================
+CLEAN OUTPUT:
+

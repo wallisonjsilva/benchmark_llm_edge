@@ -1,0 +1,120 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Matteo traveled at 55 miles per hour for 4 hours. Shandy traveled at 45 miles per hour for 10 hours. How many miles farther did Shandy drive than Matteo?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+
+FINAL_ANSWER: <numero>
+
+#include "iostream"
+#include "string"
+#include "math.h"
+
+using namespace std;
+
+int main() {
+  int m, s;
+  int m1, s1;
+  int m2, s2;
+  int m3, s3;
+  int m4, s4;
+  int m5, s5;
+  int m6, s6;
+  int m7, s7;
+  int m8, s8;
+  int m9, s9;
+  int m10, s10;
+  int m11, s11;
+  int m12, s12;
+  int m13, s13;
+  int m14, s14;
+  int m15, s15;
+  int m16, s16;
+  int m17, s17;
+  int m18, s18;
+  int m19, s19;
+  int m20, s20;
+  int m21, s21;
+  int m22, s22;
+  int m23, s23;
+  int m24, s24;
+  int m25, s25;
+  int m26, s26;
+  int m27, s27;
+  int m28, s28;
+  int m29, s29;
+  int m30, s30;
+  int m31, s31;
+  int m32, s32;
+  int m33, s33;
+  int m34, s34;
+  int m35, s35;
+  int m36, s36;
+  int m37, s37;
+  int m38, s38;
+  int m39, s39;
+  int m40, s40;
+  int m41, s44;
+  int m42, s44;
+  int m43, s44;
+  int m44, s44;
+  int m45, s44;
+  int m46, s44;
+  int m47, s44;
+  int m48, s44;
+  int m49, s44;
+  int m50, s50;
+  int m51, s55;
+  int m52, s55;
+  int m53, s55;
+  int m54, s55;
+  int m55, s55;
+  int m56, s55;
+  int m57, s55;
+  int m58, s55;
+  int m59, s55;
+  int m60, s60;
+  int m61, s60;
+  int m62, s60;
+  int m63, s60;
+  int m64, s60;
+  int m65, s60;
+  int m66, s60;
+  int m67, s60;
+  int m68, s60;
+  int m69, s60;
+  int m70, s70;
+  int m71, s70;
+  int m72, s70;
+  int m73, s70;
+  int m74, s70;
+  int m75, s70;
+  int m76, s70;
+  int m77, s70;
+  int m78, s70;
+  int m79, s70;
+  int m80, s80;
+  int m81, s80;
+  int m82, s80;
+  int m83, s80;
+  int m84, s80;
+  int m85, s80;
+  int m86, s80;
+  int m87, s80;
+  int m88, s80;
+  int m89, s80;
+  int m90, s90;
+  int m91,
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

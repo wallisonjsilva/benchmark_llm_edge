@@ -1,0 +1,157 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Em uma empresa é comercializado um produto em embalagens em formato de cilindro circular reto, com raio medindo 3 centímetros, e altura medindo 15 centímetros. Essa empresa planeja comercializar o mesmo produto em embalagens em formato de cubo, com capacidade igual a 80 por cento da capacidade da embalagem cilíndrica utilizada atualmente. Use 3 como valor aproximado para pi. A medida da aresta da nova embalagem, em centímetro, deve ser
+
+Alternativas:
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+B) 18
+C) 6 vezes raiz quadrada de 6
+D) 6 vezes raiz cúbica de 6
+E) 3 vezes raiz cúbica de 12
+
+<strong>Solução:</strong>
+A) 6
+
+
+
+==================================================
+CLEAN OUTPUT:
+

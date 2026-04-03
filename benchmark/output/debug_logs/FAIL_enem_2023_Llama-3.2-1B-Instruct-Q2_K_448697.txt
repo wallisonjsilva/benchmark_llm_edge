@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Descrição da fotografia: Tecido bordado em linhas coloridas com a estampa de uma senhora no centro da imagem. A estampa está rodeada pelo desenho de um recorte espacial do Sertão e, abaixo, no tecido, está escrita a seguinte definição: “Sertão é a avó bordando caminhos com linhas coloridas”. Fotografia da avó bordada A definição de Sertão descrita no bordado associa esse recorte espacial a
+
+Alternativas:
+A) percursos e roteiros turísticos.
+B) trajetos e movimentos holísticos.
+C) vivências e itinerários socioafetivos.
+D) fronteiras e demarcações territoriais.
+E) profissões e interesses econômicos.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Pois, você pode fazer isso! [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Pois, você pode fazer isso! [end of text]

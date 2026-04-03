@@ -1,0 +1,185 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Uma piscina tem capacidade de 2500000 litros. Seu sistema de abastecimento foi regulado para ter uma vazão constante de 6000 litros de água por minuto. O mesmo sistema foi instalado em uma segunda piscina, com capacidade de 2750000 litros, e regulado para ter uma vazão, também constante, capaz de enchê-la em um tempo 20 por cento maior que o gasto para encher a primeira piscina. A vazão do sistema de abastecimento da segunda piscina, em litro por minuto, é
+
+Alternativas:
+A) 8250
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+<5545>
+
+Questão (2):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (3):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (4):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (5):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (6):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (7):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (8):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (9):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (10):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (11):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (12):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (13):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (14):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (15):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (16):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280.
+
+Resposta final (uma letra):
+<6545>
+
+Questão (17):
+A) 5545.
+B) 7920.
+C) 6545.
+D) 5500.
+E) 5280
+
+
+==================================================
+CLEAN OUTPUT:
+

@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Para obter um sólido de revolução (rotação de 360 graus em torno de um eixo fixo), uma professora realizou as seguintes etapas: •recortou o trapézio retângulo PQRS de um material rígido; •afixou o lado PS do trapézio em uma vareta fixa retilínea (eixo de rotação); •girou o trapézio 360 graus em torno da vareta e obteve um sólido de revolução. Observe a figura que apresenta o trapézio afixado na vareta e o sentido de giro. Descrição da figura: Trapézio PQRS, de lados PQ e RS perpendiculares ao lado SP, e PQ paralelo a RS. O lado SP está sobreposto a um segmento de reta representando uma vareta, em torno da qual será executado um giro no sentido anti-horário. O sólido obtido foi um(a)
+
+Alternativas:
+A) cone.
+B) cilindro.
+C) pirâmide.
+D) tronco de cone.
+E) tronco de pirâmide.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Só, é um tronco de cone. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Só, é um tronco de cone. [end of text]

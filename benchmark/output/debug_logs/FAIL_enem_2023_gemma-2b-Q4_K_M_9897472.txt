@@ -1,0 +1,150 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Descrição da charge: A charge, da artista Laerte, apresenta três quadrinhos de uma mulher sentada no chão segurando uma lâmpada mágica do Gênio. No primeiro quadrinho, a mulher pede para a lâmpada: “Eu queria poder.”. No segundo quadrinho, a lâmpada questiona: “Força? Visão de raio X? Telecinese? Telepatia?”. No terceiro quadrinho, a mulher responde: “Poder político.”. A charge ilustra um anseio presente na sociedade contemporânea, que se caracteriza pela
+
+Alternativas:
+A) situação de revolta individual.
+B) satisfação de desejos pessoais.
+C) participação em ações decisórias.
+D) permanência em passividade social.
+E) conivência em interesses partidários.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+B. Satisfação de desejos pessoais.
+C. Participação em ações decisórias.
+D. Permanência em passividade social.
+E. Conivência em interesses partidários.
+
+<strong>Solução:</strong>
+A. Situação de revolta individual.
+
+
+
+==================================================
+CLEAN OUTPUT:
+

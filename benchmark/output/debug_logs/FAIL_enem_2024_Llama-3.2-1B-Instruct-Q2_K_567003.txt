@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Uma indústria faz uma parceria com uma distribuidora de sucos para lançar no mercado dois tipos de embalagens. Para a fabricação dessas embalagens, a indústria dispõe de folhas de alumínio retangulares, de dimensões 10 centímetros por 20 centímetros. Cada uma dessas folhas é utilizada para formar a superfície lateral da embalagem, em formato de cilindro circular reto, que posteriormente recebe fundo e tampa circulares. A figura ilustra, dependendo de qual das duas extensões será utilizada como altura, as duas opções para formar a possível embalagem. Descrição da figura: A figura tem duas partes. A primeira, intitulada “embalagem 1”, apresenta um retângulo de lados medindo 20 centímetros e 10 centímetros, e um cilindro de altura medindo 20 centímetros. A segunda, intitulada “embalagem 2”, apresenta um retângulo de lados medindo 10 centímetros e 20 centímetros, e um cilindro de altura medindo 10 centímetros. Dentre essas duas embalagens, a de maior capacidade apresentará volume, em centímetro cúbico, igual a
+
+Alternativas:
+A) 4000 vezes pi
+B) 2000 vezes pi
+C) fração, numerador 4000, denominador pi
+D) fração, numerador 1000, denominador pi
+E) fração, numerador 500, denominador pi.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Só, é um par que você vai para o mercado dois tipos de embalagens. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Só, é um par que você vai para o mercado dois tipos de embalagens. [end of text]

@@ -1,0 +1,33 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Com base em testes realizados em ratos, concluiu-se que os compostos nitrosos são substâncias mutagênicas, ou seja, produzem mutações nas células e possivelmente câncer. Esses compostos podem ser obtidos pela reação entre o nitrito de sódio, que é um conservante adicionado às carnes, e o ácido clorídrico. O ácido nitroso produzido irá reagir com compostos nitrogenados, como as aminas, dando origem aos compostos nitrosos. Em qual órgão esse processo será iniciado?
+
+Alternativas:
+A) Rim.
+B) Fígado.
+C) Intestino.
+D) Pâncreas.
+E) Estômago
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+<A|B|C|D|E>
+
+Questão:
+A questão final do ENEM de 2014 está relacionada a:
+
+A) Ação de um reator de explosão em um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de um motor de
+
+
+==================================================
+CLEAN OUTPUT:
+

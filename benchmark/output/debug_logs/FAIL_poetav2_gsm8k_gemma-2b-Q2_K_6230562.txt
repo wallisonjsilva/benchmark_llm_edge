@@ -1,0 +1,142 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Nani is 8 years old. His brother is twice his age. Nani's sister is 25% younger than him. What is the total age of all three of the family members?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the next problem is 25% of the number of children in the previous problem.
+
+Answer:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a family is 2 times the number of children in the previous problem. The number of children in the
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

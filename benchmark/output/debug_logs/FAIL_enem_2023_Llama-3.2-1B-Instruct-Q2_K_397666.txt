@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Descrição da charge: A charge, da artista Laerte, apresenta três quadrinhos de uma mulher sentada no chão segurando uma lâmpada mágica do Gênio. No primeiro quadrinho, a mulher pede para a lâmpada: “Eu queria poder.”. No segundo quadrinho, a lâmpada questiona: “Força? Visão de raio X? Telecinese? Telepatia?”. No terceiro quadrinho, a mulher responde: “Poder político.”. A charge ilustra um anseio presente na sociedade contemporânea, que se caracteriza pela
+
+Alternativas:
+A) situação de revolta individual.
+B) satisfação de desejos pessoais.
+C) participação em ações decisórias.
+D) permanência em passividade social.
+E) conivência em interesses partidários.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Desculida, não é possível, você não me dispara. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Desculida, não é possível, você não me dispara. [end of text]

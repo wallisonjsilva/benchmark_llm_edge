@@ -1,0 +1,121 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2022
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## TEXTO 1 Em março de 1889, quando apareceram as primeiras romarias atraídas pelos milagres da beata Maria de Araújo, Juazeiro inseriu-se no rol da fundação do espaço religioso. Construía-se mais um centro, como Aparecida do Norte, Canindé ou Lourdes. ## TEXTO 2 Não sabemos ao certo quantas pessoas estavam presentes na capela no momento em que a hóstia sangrou na boca de Maria de Araújo. O Padre Cícero nos conta que o fato surpreendeu não só aos presentes, mas a própria beata parecia atordoada com o ocorrido. O fenômeno continuou acontecendo todas as quartas e sextas na Capela de Nossa Senhora das Dores a partir daquele dia. Os paninhos manchados do sangue que escorria da hóstia e da boca da beata, a princípio, ficaram sob a guarda do Padre Cícero, mas logo foram expostos à visitação pública e, além disso, o sangramento foi proclamado como milagre sem o conhecimento e sem a autorização do bispo diocesano. As práticas religiosas mencionadas nos textos estão associadas, respectivamente, à:
+
+Alternativas:
+A) Delimitação de paisagens urbanas e abandono de componentes espiritualistas.
+B) Demarcação de patrimônios afetivos e apropriação de elementos judaizantes.
+C) Expansão de fronteiras regionais e subjetivação do cristianismo medieval.
+D) Circunscrição de bens simbólicos e admissão de cerimônias ecumênicas.
+E) Criação de lugares místicos e experiências do catolicismo popular.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>A)</strong> Delimitação de paisagens urbanas e abandono de componentes espiritualistas.
+
+<strong>B)</strong> Demarcação de patrimônios afetivos e apropriação de elementos judaizantes.
+
+<strong>C)</strong> Expansão de fronteiras regionais e subjetivação do cristianismo medieval.
+
+<strong>D)</strong> Circunscrição de bens simbólicos e admissão de cerimônias ecumênicas.
+
+<strong>E)</strong> Criação de lugares místicos e experiências do catolicismo popular.
+
+<strong>A)</strong> Delimitação de paisagens urbanas e abandono de componentes espiritualistas.
+
+<strong>B)</strong> Demarcação de patrimônios afetivos e apropriação de elementos judaizantes.
+
+<strong>C)</strong> Expansão de fronteiras regionais e subjetivação do cristianismo medieval.
+
+<strong>D)</strong> Circunscrição de bens simbólicos e admissão de cerimônias ecumênicas.
+
+<strong>E)</strong> Criação de lugares místicos e experiências do catolicismo popular.
+
+<strong>A)</strong> Delimitação de paisagens urbanas e abandono de componentes espiritualistas.
+
+<strong>B)</strong> Demarcação de patrimônios afetivos e apropriação de elementos judaizantes.
+
+<strong>C)</strong> Expansão de fronteiras regionais e subjetivação do cristianismo medieval.
+
+<strong>D)</strong> Circunscrição de bens simbólicos e admissão de cerimônias ecumênicas.
+
+<strong>E)</strong> Criação de lugares místicos e experiências do catolicismo popular.
+
+<strong>A)</strong> Delimitação de paisagens urbanas e abandono de componentes espiritualistas.
+
+<strong>B)</strong> Demarcação de patrimônios afetivos e apropriação de elementos judaizantes.
+
+<strong>C)</strong> Expansão de fronteiras regionais e subjetivação do cristianismo medieval.
+
+<strong>D)</strong> Circunscrição de bens simbólicos e admissão de cerimônias ecumênicas.
+
+<strong>E)</strong> Criação de lugares místicos e experiências do catolicismo popular.
+
+<strong>A)</strong> Delimitação de paisagens urbanas e abandono de componentes espiritualistas.
+
+<strong>B)</strong> Demarcação de patrimônios afetivos e apropriação de elementos judaizantes.
+
+<strong>C)</strong> Expansão de fronteiras regionais e subjetivação do cristianismo medieval.
+
+<strong>D)</strong> Circunscrição de bens simbólicos e admissão de cerimônias ecumênicas.
+
+<strong>E)</strong> Criação de lugares místicos e experiências do catolicismo popular.
+
+<strong>A)</strong> Delimitação de paisagens urbanas e abandono de componentes espiritualistas.
+
+<strong>B)</strong> Demarcação de patrimônios afetivos e apropriação de elementos judaizantes.
+
+<strong>C)</strong> Expansão de fronteiras regionais e subjetivação do cristianismo medieval.
+
+<strong>D)</strong> Circunscrição de bens simbólicos e admissão de cerimônias ecumênicas.
+
+<strong>E)</strong> Criação de lugares místicos e experiências do catolicismo popular.
+
+<strong>A)</strong> Delimitação de paisagens urbanas e abandono de componentes espiritualistas.
+
+<strong>B)</strong> Demarcação de patrimônios afetivos e apropriação de elementos judaizantes.
+
+<strong>C)</strong> Expansão de fronteiras regionais e subjetivação do cristianismo medieval.
+
+<strong>D)</strong> Circunscrição de bens simbólicos e admissão de cerimônias ecumênicas.
+
+<strong>E)</strong> Criação de lugares místicos e experiências do catolicismo popular.
+
+<strong>A)</strong> Delimitação de paisagens urbanas e abandono de componentes espiritualistas.
+
+<strong>B)</strong> Demarcação de patrimônios afetivos e apropriação de elementos judaizantes.
+
+<strong>C)</strong> Expansão de fronteiras regionais e subjetivação do cristianismo medieval.
+
+<strong>D)</strong> Circunscrição de bens simbólicos e admissão de cerimônias ecumênicas.
+
+<strong>E)</strong> Criação de lugares místicos e experiências do catolicismo popular.
+
+<strong>A)</strong> Delimitação de paisagens urbanas e abandono de componentes espiritualistas.
+
+<strong>B)</strong> Demarcação de patrimônios afetivos e apropriação de elementos judaizantes.
+
+<strong>C)</strong> Expansão de fronteiras regionais e subjetivação do cristianismo medieval.
+
+<strong>D)</strong> Circunscrição de bens simbólicos e admissão de cerimônias ecumênicas.
+
+<strong>E)</strong> Criação de lugares místicos e experiências do catolicismo popular.
+
+<strong>A)</strong> Delimitação de paisagens urbanas e abandono de componentes espiritualistas.
+
+<strong>B)</strong> Demarcação de patrimônios afetivos e apropriação de elementos
+
+
+==================================================
+CLEAN OUTPUT:
+

@@ -1,0 +1,29 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Memórias póstumas de Brás Cubas Machado de Assis Não tinha outra filosofia. Nem eu. Não digo que a Universidade me não tivesse ensinado alguma; mas eu decorei-lhe só as fórmulas, o vocabulário, o esqueleto. Tratei-a como tratei o latim; embolsei três versos de Virgílio, dois de Horácio, uma dúzia de locuções morais e políticas, para as despesas da conversação. Tratei-os como tratei a história e a jurisprudência. Colhi de todas as cousas a fraseologia, a casca, a ornamentação. A descrição crítica do personagem de Machado de Assis assemelha-se às características dos sofistas, contestados pelos filósofos gregos da Antiguidade, porque se mostra alinhada à
+
+Alternativas:
+A) elaboração conceitual de entendimentos.
+B) utilização persuasiva do discurso.
+C) narração alegórica dos rapsodos.
+D) investigação empírica da physis.
+E) expressão pictográfica da pólis.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+## [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+## [end of text]
