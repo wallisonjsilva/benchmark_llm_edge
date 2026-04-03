@@ -1,0 +1,28 @@
+MODEL: gemma-2b-fp16.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Por trás do universo “masculino” das lutas, é cada vez mais notório o aumento da participação de mulheres nessa prática corporal. Algumas situações reforçam esse fenômeno de ocupação em ambientes de lutas: a inclusão de mulheres em combates de artes marciais mistas, ou MMA, a transmissão televisiva de lutas de mulheres e a criação de horários específicos para elas em academias que ensinam lutas. Uma pesquisa científica mostrou menor participação e mobilização das meninas em comparação com os meninos nas aulas de Educação Física. Entre as justificativas discentes para essa situação está o fato de que eles relacionam a luta como uma expressão corporal masculina e, por consequência, não adequada aos interesses femininos. Dessa forma, o ensino de lutas nas aulas de Educação Física é atravessado por tensões relacionadas às questões de gênero e sexualidade, o que, por sua vez, pode favorecer a sua exclusão do conteúdo próprio da disciplina. Segundo o texto, apesar do aumento da participação de mulheres em lutas, a realidade na escola ainda é diferente em razão do(a)
+
+Alternativas:
+A) esportivização desse conteúdo.
+B) masculinização dessa modalidade.
+C) enfoque desses eventos pela mídia.
+D) trato pedagógico dessa manifestação.
+E) marginalização desse tema pela Educação Física.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+[end of text]

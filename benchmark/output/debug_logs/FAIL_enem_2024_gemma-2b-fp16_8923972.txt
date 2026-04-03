@@ -1,0 +1,28 @@
+MODEL: gemma-2b-fp16.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Em 1960, a primeira pílula anticoncepcional foi comercializada nos EUA, e, em poucos anos, o método contraceptivo se difundiu pelo mundo, inclusive no Brasil. Em nosso país, a chegada das pílulas anticoncepcionais foi simultânea às discussões neomalthusianas sobre a crise demográfica, à aceleração dos processos de modernização e ao boom da indústria farmacêutica multinacional. Qual foi o efeito social resultante do avanço tecnológico mencionado no texto?
+
+Alternativas:
+A) O afastamento da autoridade médica na regulação da fecundidade.
+B) A superação do discurso da moralidade pela ação da mídia estatal.
+C) A ampliação do debate público sobre o planejamento familiar.
+D) A centralização da pesquisa científica pelo sistema privado de saúde.
+E) O enrijecimento das doutrinas religiosas sobre a organização da vida doméstica.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+[end of text]

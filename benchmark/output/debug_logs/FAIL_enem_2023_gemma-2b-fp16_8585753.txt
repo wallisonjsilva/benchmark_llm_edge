@@ -1,0 +1,28 @@
+MODEL: gemma-2b-fp16.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+O Marabaixo é uma expressão artístico-cultural formada nas tradições e na identificação cultural entre as comunidades negras do Amapá. O nome remonta às mortes de escravizados em navios negreiros que eram jogados na água. Em sua homenagem, hinos de lamento eram cantados mar abaixo, mar acima. Posteriormente, o Marabaixo se integrou à vivência das comunidades negras em um ciclo de danças, cantorias com tambores e festas religiosas, recebendo, em 2018, o título de Patrimônio Cultural do Brasil. A manifestação do Marabaixo se constituiu em expressão de arte e cultura, exercendo função de
+
+Alternativas:
+A) ressignificar episódios dramáticos em novas práticas culturais.
+B) adaptar coreografias como imitação dos movimentos do mar.
+C) lembrar dos mortos no passado escravista como forma de lamento.
+D) perpetuar uma narrativa de apagamento dos fatos históricos traumáticos.
+E) ritualizar a passagem de atos fúnebres nas produções coletivas com espírito festivo.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+[end of text]

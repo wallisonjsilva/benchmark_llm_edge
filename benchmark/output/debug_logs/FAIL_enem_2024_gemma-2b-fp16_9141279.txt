@@ -1,0 +1,28 @@
+MODEL: gemma-2b-fp16.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+A tuberculose é uma doença infecciosa causada pela bactéria Mycobacterium tuberculosis. O principal reservatório é o homem, e a sua transmissão ocorre principalmente pela inalação de aerossóis. No Brasil, a doença representa um sério problema de saúde pública e, muitas vezes, está ligada às precárias condições socioeconômicas e sanitárias. Para prevenir a doença, é essencial a adoção de medidas dirigidas ao homem e ao ambiente. Que práticas são eficazes para evitar essa doença?
+
+Alternativas:
+A) Utilizar seringas descartáveis e realizar a coleta de lixo com frequência.
+B) Tratar pessoas doentes e melhorar a ventilação nos ambientes fechados.
+C) Proteger a boca ao tossir e usar telas em portas e janelas nas moradias.
+D) Vacinar crianças recém-nascidas e dar destino adequado ao esgoto domiciliar.
+E) Monitorar os contatos que convivem com o doente e melhorar a qualidade da água.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+[end of text]

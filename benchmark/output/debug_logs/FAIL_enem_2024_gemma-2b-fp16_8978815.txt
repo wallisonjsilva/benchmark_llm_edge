@@ -1,0 +1,28 @@
+MODEL: gemma-2b-fp16.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Descrição da pintura: Intitulada Três meninas no jardim, a obra, em óleo sobre tela, de Eliseu D’Angelo Visconti, apresenta contornos imprecisos. Há três meninas em um jardim com flores vermelhas, com destaque para duas delas, que brincam juntas em uma área mais iluminada, enquanto são observadas pela terceira, um pouco mais atrás. A paisagem é rica em vegetação, no meio da qual é possível observar parte do telhado de uma casa; e ao fundo, montanhas. O céu está azul e com poucas nuvens. VISCONTI, E. Três meninas no jardim. Óleo sobre tela, 81 ⋅ 65 cm. Museu Nacional de Belas Artes, Rio de Janeiro, 1935. Eliseu D’Angelo Visconti (1866-1944) desenvolveu diversas obras no Brasil, com grande influência das escolas europeias. Em sua pintura Três meninas no jardim, há
+
+Alternativas:
+A) culto à fluidez e ao progresso, nos moldes do ideário futurista.
+B) valorização de formas decompostas, a exemplo do estilo cubista.
+C) efeitos fugazes de luz e movimento, que remetem à estética impressionista.
+D) expressão do sonho e do inconsciente, que dialoga com a proposta surrealista.
+E) tematização de elementos cotidianos, que resgata modelos de representação da arte realista.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+[end of text]
