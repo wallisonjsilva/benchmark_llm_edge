@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Uma equipe de segurança do transporte de uma empresa avalia o comportamento das tensões que aparecem em duas cordas horizontais, 1 e 2, usadas para prender uma carga de massa M igual a 200 quilogramas na carroceria, conforme a ilustração. Quando o caminhão parte do repouso, sua aceleração é constante e igual a 3 metros por segundo ao quadrado e, quando ele é freado bruscamente, sua frenagem é constante e igual a 5 metros por segundo ao quadrado. Em ambas as situações, a carga encontra-se na iminência de movimento, e o sentido do movimento do caminhão está indicado na figura. O coeficiente de atrito estático entre a caixa e o assoalho da carroceria é igual a 0,2. Considere a aceleração da gravidade igual a 10 metros por segundo ao quadrado, as tensões iniciais nas cordas iguais a zero e as duas cordas ideais. Descrição da figura: Um caminhão com velocidade na horizontal para a direita (representada pelo vetor V). Na superfície central da sua carroceria encontra-se apoiada uma caixa M. A caixa está presa à parte traseira da carroceria pela corda horizontal 1 e, à parte dianteira, pela corda horizontal 2. Nas situações de aceleração e frenagem do caminhão, as tensões nas cordas 1 e 2, em newton, serão
+
+Alternativas:
+A) aceleração: T1 = 0 e T2 = 200; frenagem: T1 = 600 e T2 = 0.
+B) aceleração: T1 = 0 e T2 = 200; frenagem: T1 = 1 400 e T2 = 0.
+C) aceleração: T1 = 0 e T2 = 600; frenagem: T1 = 600 e T2 = 0.
+D) aceleração: T1 = 560 e T2 = 0; frenagem: T1 = 0 e T2 = 960.
+E) aceleração: T1 = 640 e T2 = 0; frenagem: T1 = 0 e T2 = 1 040.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <B> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

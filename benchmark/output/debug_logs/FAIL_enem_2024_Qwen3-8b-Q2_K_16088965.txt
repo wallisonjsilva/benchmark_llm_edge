@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Na construção de uma varanda retangular, com 5 metros de largura e 6 metros de comprimento, decidiu-se usar dois tipos de pedras para revestir o piso. Uma das pedras é quadrada, com 1 metro de lado, e a outra é retangular, com 0,25 metro de largura e 0,50 metro de comprimento. Serão utilizadas 10 pedras quadradas para decorar parte do piso, e o restante da área será revestida com pedras retangulares. A pedra do tipo retangular é vendida somente em caixas de 30 unidades. Quantas caixas da pedra retangular deverão ser compradas?
+
+Alternativas:
+A) 4
+B) 5
+C) 6
+D) 8
+E) 11
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <D> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

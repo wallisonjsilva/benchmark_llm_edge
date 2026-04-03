@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## TEXTO 1 Logo no início de Gira, um grupo de sete bailarinas ocupa o centro da cena. Mãos cruzadas sobre a lateral esquerda do quadril, olhos fechados, troncos que pendulam sobre si mesmos em vaguíssimas órbitas, tudo nelas sugere o transe. Está estabelecido o caráter volátil do que se passará no palco dali para frente. Mas engana-se quem pensa que vai assistir a uma representação mimética dos cultos afro-brasileiros. ## TEXTO 2 Descrição da fotografia: Um grupo de bailarinos, homens e mulheres, que preenchem todo o espaço de um palco com fundo escuro. Todos têm o dorso aparentemente nu e vestem saia de tecido leve e de cor clara. Com os braços em diferentes inclinações, os bailarinos perfazem movimentos de giro variados. No diálogo que estabelece com religiões afro-brasileiras, sintetizado na descrição e na imagem do espetáculo, a dança exprime uma
+
+Alternativas:
+A) crítica aos movimentos padronizados do balé clássico.
+B) representação contemporânea de rituais ancestrais extintos.
+C) reelaboração estética erudita de práticas religiosas populares.
+D) releitura irônica da atmosfera mística presente no culto a entidades.
+E) oposição entre o resgate de tradições e a efemeridade da vida humana.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

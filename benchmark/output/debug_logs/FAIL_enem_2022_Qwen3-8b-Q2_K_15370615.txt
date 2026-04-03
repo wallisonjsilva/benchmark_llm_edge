@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+A biomassa celulósica pode ser utilizada para a produção de etanol de segunda geração. Entretanto, é necessário que os polissacarídeos sejam convertidos em mono e dissacarídeos, processo que pode ser conduzido em meio ácido, conforme mostra o esquema: Descrição do esquema: Estrutura química de um polissacarídeo, com os grupos funcionais C ligação simples OH e C ligação simples O, ligação simples C, com foco nas ligações entre hidrogênio e oxigênio. Esse polissacarídeo é convertido, em três etapas, em mono e dissacarídeos, envolvendo a participação do íon H, de carga positiva, como reagente na primeira etapa e como produto na última etapa. Nessa conversão de polissacarídeos, a função do íon H de carga positiva é
+
+Alternativas:
+A) dissolver os reagentes.
+B) deslocar o equilíbrio químico.
+C) aumentar a velocidade da reação.
+D) mudar a constante de equilíbrio da reação.
+E) formar ligações de hidrogênio com o polissacarídeo.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

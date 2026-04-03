@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+A foto mostra a construção de uma cisterna destinada ao armazenamento de água. Uma cisterna como essa, na forma de cilindro circular reto com 3 metros quadrados de área da base, foi abastecida por um curso-d’água com vazão constante. O seu proprietário registrou a altura do nível da água no interior da cisterna durante o abastecimento em diferentes momentos de um mesmo dia, conforme o quadro. Descrição da foto: Foto em preto e branco de pessoas construindo uma cisterna em frente a uma casa. Qual foi a vazão, em metro cúbico por hora, do curso-d’água que abasteceu a cisterna?
+
+Alternativas:
+A) 0,3
+B) 0,5
+C) 0,9
+D) 1,8
+E) 2,7
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

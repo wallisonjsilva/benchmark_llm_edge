@@ -1,0 +1,29 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+George, a grade six teacher, ordered 600 burritos for the sixth-grade class picnic. If there were 50 students at the picnic, and each student was given ten burritos, with Mr. George eating 20 of them, calculate the total number of leftover burritos from the picnic?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Okay, let's see. The problem is about calculating the leftover burritos after the picnic. George ordered 600 burritos. There are 50 students, each getting 10 burritos. Plus, Mr. George eats 20. Wait, the question is to find the total number of leftover burritos.
+
+First, let's check the total burritos given out. Each student gets 10 burritos. So 50 students * 10 burritos per student = 500 burritos. Then, Mr. George eats 20 burritos. Wait, but the problem says "each student was given ten burritos, with Mr. George eating 20 of them." Wait, maybe the 20 is the total for Mr. George? Or per student?
+
+Wait, the problem says "each student was given ten burritos, with Mr. George eating 20 of them." So, maybe the total burritos given to students is 50 * 10 = 500. Then, Mr. George eats 20 burritos. So total burritos given out is 500 + 20 = 520? Wait, but the total burritos ordered is 600. So leftover is 600 - 520 = 80? Wait, but wait, maybe the 20 is per student? Wait, the problem says "each student was given ten burritos, with Mr. George eating 20 of them." So, maybe each student gets 10, and Mr. George eats 20? Wait, but that would be 50 students * 10 = 500, plus 20 for Mr. George? Wait, but that would be 500 + 20 = 520. Then, total burritos is 600. So leftover is 600 - 520 = 80. So answer is 80. But wait, maybe the 20 is per student? Wait, the problem says "each student was given ten burritos, with Mr. George eating 20 of them." So, maybe each student gets 10, and Mr. George eats 20? Wait, but that would be 50 students * 10 = 500, plus 20 for Mr. George? Wait, but that would be 500 + 20 = 520. Then, total burritos is 600. So leftover is 600 - 520 = 80. So answer is 80. But wait, maybe the 20 is per student? Wait, the problem says "each student was given ten burritos, with Mr. George eating 20 of them." So, maybe each student gets 10, and Mr. George eats 20? Wait, but that would be 50 students * 10 = 500, plus 20 for Mr. George? Wait, but that would be 500 + 20 = 520. Then, total burritos is 600. So leftover is 600 - 520 = 80. So answer is 80. But wait, maybe the 20 is per student? Wait, the problem says "each student was given ten burritos, with Mr. George eating 20 of them." So, maybe each student gets 10, and Mr. George eats 20? Wait, but that would be 50 students * 10 = 500, plus 20 for Mr. George? Wait, but that would be 500 + 20 = 520. Then, total burritos is 600. So leftover is 600 - 520 = 80. So answer is 80. But wait, maybe the 20 is per student? Wait, the problem says "each student was given ten burritos, with Mr. George eating 20 of them." So, maybe each student gets 10, and Mr. George eats 20? Wait, but that would be 50 students * 10 = 500, plus 20 for Mr. George? Wait, but that would be 500 + 20 = 520. Then, total burritos is 600. So leftover is 600 - 520 = 80. So answer is 80. But wait, maybe the 20 is per student? Wait, the problem says "each student was given ten burritos, with Mr. George eating 20 of them." So, maybe
+
+
+==================================================
+CLEAN OUTPUT:
+

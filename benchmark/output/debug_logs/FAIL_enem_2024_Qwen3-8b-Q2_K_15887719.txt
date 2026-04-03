@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Para obter um sólido de revolução (rotação de 360 graus em torno de um eixo fixo), uma professora realizou as seguintes etapas: •recortou o trapézio retângulo PQRS de um material rígido; •afixou o lado PS do trapézio em uma vareta fixa retilínea (eixo de rotação); •girou o trapézio 360 graus em torno da vareta e obteve um sólido de revolução. Observe a figura que apresenta o trapézio afixado na vareta e o sentido de giro. Descrição da figura: Trapézio PQRS, de lados PQ e RS perpendiculares ao lado SP, e PQ paralelo a RS. O lado SP está sobreposto a um segmento de reta representando uma vareta, em torno da qual será executado um giro no sentido anti-horário. O sólido obtido foi um(a)
+
+Alternativas:
+A) cone.
+B) cilindro.
+C) pirâmide.
+D) tronco de cone.
+E) tronco de pirâmide.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <B> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

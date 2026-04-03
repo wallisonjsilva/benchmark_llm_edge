@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Mammalian Sexuality: The Act of Mating and the Evolution of Reproduction Apesar de os animais representados no cladograma compartilharem um mesmo ancestral, eles se caracterizam por distintos padrões de reprodução ou de nutrição dos embriões e descendentes. Descrição do cladograma: O ancestral comum mammalia está na base do cladograma. Ele se divide em dois ramos: Prototheria e theria. O ramo prototheria origina monotremata, representado por um ornitorrinco. O ramo theria se divide em dois novos ramos: Metatheria e eutheria. O ramo metatheria origina marsupialia, representado por um canguru. O ramo eutheria origina placentalia, representado por um elefante. Ao longo do processo evolutivo, percebem-se, entre esses animais, perdas e ganhos nos padrões citados que envolvem o(a)
+
+Alternativas:
+A) aumento no número de descendentes por ninhada.
+B) mudança no tipo de fecundação de externa para interna.
+C) redução da versatilidade de reprodução, que se torna unicamente sexuada.
+D) desenvolvimento embrionário, que passa do meio aquático para o terrestre.
+E) diminuição da vesícula vitelínica, associada ao desenvolvimento da lactação.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <B> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

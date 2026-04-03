@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Utilizando-se um mesmo meio nutritivo, três gêneros bacterianos diferentes foram submetidos ao cultivo em tubos de ensaio. Após certo período de crescimento da cultura bacteriana em condições físico-químicas ideais, observou-se que o padrão de distribuição das células (representadas por pontos na figura) ao longo dos tubos era diferente em cada um dos casos. Descrição da figura: Três tubos de ensaio com células em meio nutritivo. Tubo 1: Concentração de células próximo à superfície do meio nutritivo. Tubo 2: Concentração de células no fundo do tubo. Tubo 3: Concentração de células próximo à superfície do meio nutritivo e células espalhadas por todo o meio nutritivo. Em relação ao metabolismo energético, os microrganismos presentes nos tubos 1, 2 e 3 são classificados, respectivamente, como
+
+Alternativas:
+A) anaeróbio facultativo, anaeróbio estrito e aeróbio estrito.
+B) anaeróbio facultativo, aeróbio estrito e anaeróbio estrito.
+C) aeróbio estrito, anaeróbio estrito e anaeróbio facultativo.
+D) anaeróbio estrito, aeróbio estrito e anaeróbio facultativo.
+E) aeróbio estrito, anaeróbio facultativo e anaeróbio estrito.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

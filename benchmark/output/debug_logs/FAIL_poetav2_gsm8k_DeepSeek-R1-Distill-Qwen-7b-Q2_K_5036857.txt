@@ -1,0 +1,29 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Matteo traveled at 55 miles per hour for 4 hours. Shandy traveled at 45 miles per hour for 10 hours. How many miles farther did Shandy drive than Matteo?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Matteo viu 55 milhas por hora durante 4 horas, o que é 220 milhas. Shandy viu 45 milhas por hora durante 10 horas, o que é 450 milhas. A diferença é 450 - 220 = 230 milhas.
+</think>
+
+FINAL_ANSWER: <230> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

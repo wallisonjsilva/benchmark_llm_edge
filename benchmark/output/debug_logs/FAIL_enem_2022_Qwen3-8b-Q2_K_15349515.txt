@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+O esquema representa o ciclo do nitrogênio: Descrição da imagem: Esquema com decompositores, um coelho e duas plantas (com foco na parte aérea e subterrânea delas). De uma planta, partem duas setas, uma para o coelho e outra para os decompositores (fungos e bactérias aeróbicas e anaeróbicas). Do coelho, também parte uma seta para esses mesmos decompositores. De decompositores, parte uma seta para amônia (NH3) e amônio (NH4 de carga positiva). As bactérias nitrificantes fazem a nitrificação da amônia e amônio com uma seta que vai para nitritos (NO2 de carga negativa). As bactérias nitrificantes transformam nitritos em nitratos (NO3 de carga negativa). Dos nitratos, partem duas setas, uma que indica assimilação pelas plantas e outra que indica bactérias desnitrificantes. Das bactérias desnitrificantes, a seta continua para o ar e retorna ao ciclo para bactérias fixadoras de N2, nos nódulos das raízes de leguminosas. Dessas mesmas bactérias, uma seta indica que elas farão, no solo, a amonificação, seguindo a seta para amônia (NH3) e amônio (NH4 de carga positiva), fechando o ciclo. A chuva ácida interfere no ciclo do nitrogênio, principalmente, por proporcionar uma diminuição do pH do solo e da atmosfera, alterando a concentração dos compostos presentes nesse ciclo. Em um solo de menor pH, será favorecida a formação de:
+
+Alternativas:
+A) N2
+B) NH3
+C) NH4 de carga positiva
+D) NO2 de carga negativa
+E) NO3 de carga negativa
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

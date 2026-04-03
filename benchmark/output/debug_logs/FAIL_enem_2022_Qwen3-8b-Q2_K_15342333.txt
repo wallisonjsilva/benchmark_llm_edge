@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+O manual de uma ducha elétrica informa que seus três níveis de aquecimento (morno, quente e superquente) apresentam as seguintes variações de temperatura da água em função de sua vazão: | Vazão (L/min) | delta T(°C) | Unnamed: 2 | Unnamed: 3 | |-----------------------:|:----------|:-------------|:-------------| | nan | Morno | Quente | Superquente | | 3 | 10 | 20 | 30 | | 6 | 5 | 10 | 15 | Utiliza-se um disjuntor para proteger o circuito dessa ducha contra sobrecargas elétricas em qualquer nível de aquecimento. Por padrão, o disjuntor é especificado pela corrente nominal igual ao múltiplo de 5 ampères imediatamente superior à corrente máxima do circuito. Considere que a ducha deve ser ligada em 220 volts e que toda a energia é dissipada através da resistência do chuveiro e convertida em energia térmica transferida para a água, que apresenta calor específico de 4,2 joules por grama por grau Celsius e densidade de 1 000 gramas por litro. O disjuntor adequado para a proteção dessa ducha é especificado por:
+
+Alternativas:
+A) 60 ampères
+B) 30 ampères
+C) 20 ampères
+D) 10 ampères
+E) 5 ampères
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <C> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

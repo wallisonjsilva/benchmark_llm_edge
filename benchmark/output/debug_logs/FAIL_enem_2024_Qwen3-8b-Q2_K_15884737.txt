@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Para abrir a porta de uma empresa, cada funcionário deve cadastrar uma senha utilizando um teclado alfanumérico como o representado na figura. Descrição da figura: Teclado alfanumérico composto por 12 teclas, dispostas em 4 linhas e 3 colunas, apresentando a seguinte configuração: Na primeira linha, a primeira coluna indica 1; a segunda indica 2, A, B, C; e a terceira 3, D, E, F; Na segunda linha, a primeira coluna indica 4, G, H, I; a segunda indica 5, J, K, L; e a terceira 6, M, N, O; Na terceira linha, a primeira coluna indica 7, P, Q, R, S; a segunda indica 8, T, U, V; e a terceira 9, W, X, Y, Z. Na quarta linha, a primeira coluna indica traço horizontal; a segunda indica zero; e a terceira traço horizontal. Por exemplo: a tecla que contém o número 2 traz as letras correlacionadas A, B e C. Cada toque nessa tecla mostra, sequencialmente, os seguintes caracteres: 2, A, B e C. Para os próximos toques, essa sequência se repete. As demais teclas funcionam da mesma maneira. As senhas a serem cadastradas pelos funcionários devem conter 5 caracteres, sendo 2 algarismos distintos seguidos de 3 letras diferentes, nessa ordem. Um funcionário irá cadastrar a sua primeira senha, podendo escolher entre as teclas que apresentam os números 1, 2, 5, 7 e 0 e as respectivas letras correlacionadas, quando houver. O número de possibilidades diferentes que esse funcionário tem para cadastrar sua senha é
+
+Alternativas:
+A) 11520.
+B) 14400.
+C) 18000.
+D) 312000.
+E) 390000.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <E> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

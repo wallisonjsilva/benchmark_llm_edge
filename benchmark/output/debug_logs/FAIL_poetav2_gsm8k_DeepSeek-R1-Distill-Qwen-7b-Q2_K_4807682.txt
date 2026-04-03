@@ -1,0 +1,31 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Randy has 9 oatmeal cookies, 4 chocolate chip cookies, and 5 sugar cookies. He ate 3 cookies for an early day snack, one of each flavor. He ate 2 oatmeal cookies for lunch. He gives 2 sugar cookies to his friends. Then, he bakes 4 of each flavor for dinner. How many cookies does he have now?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Randy starts with 9 oatmeal, 4 chocolate chip, and 5 sugar cookies. He eats 3 cookies for the early snack, one of each flavor, so he has 8 oatmeal, 3 chocolate chip, and 4 sugar cookies left. Then he eats 2 oatmeal for lunch, leaving him with 6 oatmeal, 3 chocolate chip, and 4 sugar cookies. He gives 2 sugar cookies to his friends, reducing sugar to 2. For dinner, he bakes 4 of each flavor, adding 4 to each type. Now he has 10 oatmeal, 7 chocolate chip, and 6 sugar cookies. In total, he has 23 cookies.
+</think>
+
+Randy starts with 9 oatmeal, 4 chocolate chip, and 5 sugar cookies. After eating 3 cookies for the early snack (1 of each flavor), he has 8, 3, and 4 cookies respectively. For lunch, he eats 2 oatmeal, leaving him with 6, 3, and 4. After giving 2 sugar cookies to his friends, he has 6, 3, and 2. For dinner, he bakes 4 of each, adding 4 to each type. Now he has 10, 7, and 6 cookies. In total, he has 23 cookies.
+
+Final Answer: <23> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+

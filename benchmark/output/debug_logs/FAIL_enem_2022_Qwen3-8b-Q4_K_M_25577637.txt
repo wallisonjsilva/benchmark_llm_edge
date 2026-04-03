@@ -1,0 +1,79 @@
+MODEL: Qwen3-8b-Q4_K_M.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um parque tem dois circuitos de tamanhos diferentes para corridas. Um corredor treina nesse parque e, no primeiro dia, inicia seu treino percorrendo 3 voltas em torno do circuito maior e 2 voltas em torno do menor, perfazendo um total de 1 800 metros. Em seguida, dando continuidade a seu treino, corre mais 2 voltas em torno do circuito maior e 1 volta em torno do menor, percorrendo mais 1 100 metros. No segundo dia, ele pretende percorrer 5 000 metros nos circuitos do parque, fazendo um número inteiro de voltas em torno deles e de modo que o número de voltas seja o maior possível. A soma do número de voltas em torno dos dois circuitos, no segundo dia, será
+
+Alternativas:
+A) 10.
+B) 13.
+C) 14.
+D) 15.
+E) 16.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Okay, let's tackle this ENEM question. So, there's a park with two different circuits for races. A runner trains there, and on the first day, he does 3 laps on the bigger circuit and 2 on the smaller, totaling 1800 meters. Then he does 2 more laps on the bigger and 1 on the smaller, adding up to 1100 meters. On the second day, he wants to run 5000 meters, making an integer number of laps on both circuits, and the number of laps should be as high as possible. We need to find the sum of the laps on both circuits that day.
+
+First, I need to figure out the lengths of the two circuits. Let me denote the length of the bigger circuit as B and the smaller as S. 
+
+From the first day: 3B + 2S = 1800 meters.
+From the second part of the first day: 2B + 1S = 1100 meters.
+
+So, we have two equations:
+1) 3B + 2S = 1800
+2) 2B + S = 1100
+
+I can solve these equations to find B and S. Let me use substitution or elimination. Let's use elimination. If I multiply the second equation by 2, I get 4B + 2S = 2200. Then subtract the first equation from this result:
+
+(4B + 2S) - (3B + 2S) = 2200 - 1800
+Which simplifies to B = 400 meters.
+
+Now plug B = 400 into the second equation: 2*400 + S = 1100 → 800 + S = 1100 → S = 300 meters.
+
+So the bigger circuit is 400m, the smaller is 300m.
+
+Now, on the second day, he wants to run 5000 meters, using integer laps on both circuits, and maximize the total number of laps. So, we need to find integers x and y such that 400x + 300y = 5000, and x + y is as large as possible.
+
+To maximize x + y, we need to minimize the "cost" per lap. Since 300m is cheaper per lap than 400m, we should do as many laps on the smaller circuit as possible. But let's check.
+
+Let me rewrite the equation: 400x + 300y = 5000. Divide all terms by 100: 4x + 3y = 50.
+
+We need integer solutions (x, y) to 4x + 3y = 50, and maximize x + y.
+
+Let me express y in terms of x: 3y = 50 - 4x → y = (50 - 4x)/3. Since y must be an integer, (50 - 4x) must be divisible by 3. Let's find x such that 50 - 4x is divisible by 3.
+
+Alternatively, we can look for x and y that satisfy the equation. Let's try different values of x.
+
+Start with x as large as possible. Since 4x ≤ 50, x ≤ 12.5, so max x is 12. Let's check x=12: 4*12=48, so 3y=50-48=2 → y=2/3, not integer. Not valid.
+
+x=11: 4*11=44 → 3y=6 → y=2. So x=11, y=2. Total laps: 13. Let's check if there's a higher total.
+
+Wait, maybe there's a higher total. Let's see. Let's try x=10: 4*10=40 → 3y=10 → y≈3.33, not integer.
+
+x=9: 4*9=36 → 3y=14 → y≈4.666, nope.
+
+x=8: 32 → 3y=18 → y=6. Total laps: 8+6=14. That's higher than 13.
+
+x=7: 28 → 3y=22 → nope.
+
+x=6: 24 → 3y=26 → nope.
+
+x=5: 20 → 3y=30 → y=10. Total laps: 5+10=15
+
+
+==================================================
+CLEAN OUTPUT:
+
