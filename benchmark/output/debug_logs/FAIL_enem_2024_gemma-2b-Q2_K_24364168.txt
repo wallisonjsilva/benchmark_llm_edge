@@ -1,0 +1,28 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+### TEXTO 1 A linguagem visual dos adornos transmite informações sobre prestígio e transgressão, direito e dever, pois só é permitido ao indivíduo o uso de adornos de sua linhagem. Quando diretamente vinculadas aos conceitos cosmológicos, as artes indígenas convertem-se antes em prismas que refletem as concepções acerca da composição do universo e dos componentes que o povoam. ### TEXTO 2 Descrição da fotografia: fotografia de um cocar intitulada diadema, da etnia indígena Kayapó (originária dos estados do Mato Grosso e do Pará), composto de penas coloridas de pássaros trançadas com fibras vegetais. Diadema (etnia Kayapó). Estados do Mato Grosso e Pará. Museu de Arte Indígena, s.d. Pela leitura desses textos, infere-se que a compreensão da arte plumária indígena requer a consideração da
+
+Alternativas:
+A) indistinção hierárquica entre os membros de um mesmo grupo social.
+B) prevalência dos elementos do mundo natural sobre as relações humanas.
+C) reconfiguração constante das representações coletivas acerca do universo.
+D) indeterminação entre as noções de identidade individual e de identidade cultural.
+E) indissociabilidade entre objetos ritualísticos e os papéis dos indivíduos na comunidade.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+### TEXTO 3 A etnia Kayapó (etnia do Brasil) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado do Mato-Grosso) (originária do estado
+
+
+==================================================
+CLEAN OUTPUT:
+

@@ -1,0 +1,115 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Ben has 4 tubes of blue paint and 3 tubes of yellow paint. Jasper has half as many tubes of blue paint as Ben, and three times as many tubes of yellow paint as Ben. How many tubes of paint does Jasper have?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+
+<numero>
+
+#include "stdio.h"
+#include "math.h"
+
+int main() {
+  int num_blue_paint, num_yellow_paint, num_tubes_blue_paint, num_tubes_yellow_paint;
+
+  num_tubes_blue_paint = 3;
+  num_tubes_yellow_paint = 3;
+  num_blue_paint = 3;
+  num_yellow_paint = 3;
+  num_blue_paint = 3;
+  num_yellow_paint = 3;
+  num_blue_paint = 3;
+  num_yellow_paint = 3;
+  num_blue_paint = 3;
+  num_yellow_paint = 3;
+  num_blue_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint = 3;
+  num_yellow_paint
+
+
+==================================================
+CLEAN OUTPUT:
+

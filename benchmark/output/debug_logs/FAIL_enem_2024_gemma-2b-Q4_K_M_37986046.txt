@@ -1,0 +1,67 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## TEXTO 1 Um terremoto de magnitude 5,9 atingiu a cidade de Valparaíso, na costa chilena. O terremoto ocorreu a uma profundidade de 112 quilômetros. ## TEXTO 2 Um tremor de terra de magnitude 4,8 foi registrado no município de Atalaia do Norte, no interior do estado do Amazonas. O abalo é de magnitude considerada mediana para os níveis do Brasil. Os eventos dessa região costumam ser resultado das atividades da placa de Nazca. ## TEXTO 3 Moradores usaram as redes sociais para relatar tremores de terra no interior de São Paulo. As atividades foram registradas nas cidades de Júlio Mesquita e Guaimbê e tiveram magnitude 3,0 na escala Richter, o que é considerado pequeno e sem previsão de danos. As diferenças entre os eventos geológicos relatados decorrem de distintas posições geográficas das cidades em relação a:
+
+Alternativas:
+A) Planícies costeiras.
+B) Bacias continentais.
+C) Zonas de subducção.
+D) Áreas de denudação.
+E) Vertentes escarpadas.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>A)</strong>
+
+A região de Valparaíso está situada na placa Nazca, que se desloca sobre a placa da América do Sul. A região de Atalaia do Norte está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Júlio Mesquita está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Guaimbê está situada na placa da América do Sul, que se desloca sobre a placa da Nazca.
+
+<strong>B)</strong>
+
+A região de Valparaíso está situada na placa Nazca, que se desloca sobre a placa da América do Sul. A região de Atalaia do Norte está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Júlio Mesquita está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Guaimbê está situada na placa da América do Sul, que se desloca sobre a placa da Nazca.
+
+<strong>C)</strong>
+
+A região de Valparaíso está situada na placa Nazca, que se desloca sobre a placa da América do Sul. A região de Atalaia do Norte está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Júlio Mesquita está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Guaimbê está situada na placa da América do Sul, que se desloca sobre a placa da Nazca.
+
+<strong>D)</strong>
+
+A região de Valparaíso está situada na placa Nazca, que se desloca sobre a placa da América do Sul. A região de Atalaia do Norte está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Júlio Mesquita está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Guaimbê está situada na placa da América do Sul, que se desloca sobre a placa da Nazca.
+
+<strong>E)</strong>
+
+A região de Valparaíso está situada na placa Nazca, que se desloca sobre a placa da América do Sul. A região de Atalaia do Norte está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Júlio Mesquita está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Guaimbê está situada na placa da América do Sul, que se desloca sobre a placa da Nazca.
+
+<strong>F)</strong>
+
+A região de Valparaíso está situada na placa Nazca, que se desloca sobre a placa da América do Sul. A região de Atalaia do Norte está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Júlio Mesquita está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Guaimbê está situada na placa da América do Sul, que se desloca sobre a placa da Nazca.
+
+<strong>G)</strong>
+
+A região de Valparaíso está situada na placa Nazca, que se desloca sobre a placa da América do Sul. A região de Atalaia do Norte está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Júlio Mesquita está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Guaimbê está situada na placa da América do Sul, que se desloca sobre a placa da Nazca.
+
+<strong>H)</strong>
+
+A região de Valparaíso está situada na placa Nazca, que se desloca sobre a placa da América do Sul. A região de Atalaia do Norte está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Júlio Mesquita está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Guaimbê está situada na placa da América do Sul, que se desloca sobre a placa da Nazca.
+
+<strong>I)</strong>
+
+A região de Valparaíso está situada na placa Nazca, que se desloca sobre a placa da América do Sul. A região de Atalaia do Norte está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Júlio Mesquita está situada na placa da América do Sul, que se desloca sobre a placa da Nazca. A região de Guaimbê está situada na placa da América do Sul, que se desloca sobre a placa da Nazca.
+
+<strong>J)</strong>
+
+A região de Valparaíso está situada na placa Nazca, que se des
+
+
+==================================================
+CLEAN OUTPUT:
+

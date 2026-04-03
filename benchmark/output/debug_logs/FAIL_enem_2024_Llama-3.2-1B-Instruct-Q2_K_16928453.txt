@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Xilogravura: os percursos da criação popular As capas dos folhetos de cordel, já então ilustradas por postais fotográficos, desenhos ou fotogramas de filmes, demoravam mais de uma semana para serem transformadas em clichês em Recife ou Fortaleza, o que levou a que santeiros e artesãos locais fossem requisitados para cortar na umburana — madeira preferida para o taco xilográfico pela facilidade do talhe e abundância — princesas, dragões, cangaceiros. No início do século 20, a incorporação da técnica de produção descrita no texto promoveu uma renovação da
+
+Alternativas:
+A) manifestação jornalística.
+B) narrativa literária.
+C) indústria regional.
+D) estética editorial.
+E) cultura erudita.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Desculida [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Desculida [end of text]

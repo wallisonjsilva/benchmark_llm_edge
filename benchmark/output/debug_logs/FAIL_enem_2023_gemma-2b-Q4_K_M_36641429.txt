@@ -1,0 +1,137 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Descrição do gráfico: Intitulado Taxa de fecundidade no Brasil, o gráfico de barras verticais indica o número de filhos por mulher, a cada década, de 1960 até 2050. Há um recorte no gráfico destacando que, nas décadas de 1960 até 2020, o número de filhos por mulher diminuiu de 6,3 para 1,5. Qual fator foi determinante para a mudança do indicador apresentado no gráfico?
+
+Alternativas:
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C) Crescimento dos casos de gravidez precoce.
+D) Participação feminina no mercado de trabalho.
+E) Diminuição dos benefícios na licença-maternidade.
+
+<strong>Solução:</strong>
+A) Flexibilização legal da prática de aborto.
+B) Envelhecimento da população brasileira.
+C
+
+
+==================================================
+CLEAN OUTPUT:
+

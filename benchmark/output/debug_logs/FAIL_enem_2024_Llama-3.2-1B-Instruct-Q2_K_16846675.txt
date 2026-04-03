@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Vida: a ciência da biologia O esquema representa um experimento feito com células do protozoário Amoeba proteus. Nele, um grupo de células foi tratado com a droga citocalasina B, enquanto outro grupo não foi tratado, servindo como controle. O formato e o movimento das células tratadas foram comprometidos. Descrição do esquema: Representação do experimento com uma ameba do grupo controle e outra do grupo tratado com citocalasina B. No grupo controle, sem tratamento, a ameba mantém seu formato característico, com muitos prolongamentos citoplasmáticos. No grupo tratado com citocalasina B, a ameba, após tratamento, adquire formato arredondado, sem prolongamentos. Qual componente celular foi afetado pela droga utilizada no experimento?
+
+Alternativas:
+A) Vacúolos.
+B) Mitocôndrias.
+C) Microfilamentos.
+D) Material genético.
+E) Membrana plasmática.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Descar carel [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Descar carel [end of text]

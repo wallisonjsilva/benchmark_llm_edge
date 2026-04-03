@@ -1,0 +1,167 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Melissa is summoned to jury duty. She spends 6 hours a day for 3 days listening to a court case. If Melissa is paid $15 per day but also has to pay $3 for parking each day, how much jury pay does she make per hour after expenses?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+ 1.25
+
+Seja x a quantidade de horas que ela ganha por hora.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha por dia.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha por dia.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha por dia.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha por dia.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha por dia.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha
+
+
+==================================================
+CLEAN OUTPUT:
+1.25
+
+Seja x a quantidade de horas que ela ganha por hora.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha por dia.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha por dia.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha por dia.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha por dia.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha por dia.
+Seja y a quantidade de horas que ela ganha por dia.
+Seja z a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja p a quantidade de horas que ela ganha por dia.
+Seja q a quantidade de horas que ela ganha por dia.
+Seja r a quantidade de horas que ela ganha por dia.
+Seja s a quantidade de horas que ela ganha por dia.
+Seja t a quantidade de horas que ela ganha por dia.
+Seja u a quantidade de horas que ela ganha por dia.
+Seja v a quantidade de horas que ela ganha por dia.
+Seja w a quantidade de horas que ela ganha por dia.
+Seja x a quantidade de horas que ela ganha

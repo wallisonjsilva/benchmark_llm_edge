@@ -1,0 +1,48 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um aeroporto disponibiliza o serviço de transporte gratuito entre seus dois terminais utilizando os ônibus A e B, que partem simultaneamente, de hora em hora, de terminais diferentes. A distância entre os terminais é de 9 000 metros, e o percurso total dos ônibus, de um terminal ao outro, é monitorado por um sistema de cinco câmeras que cobrem diferentes partes do trecho, conforme o esquema. Descrição da figura: Figura que apresenta um segmento de reta, em seu início está indicado Terminal 1 e ao seu término está indicado Terminal 2. O segmento é dividido em cinco partes, cada uma servindo de base para um triângulo isósceles. Os vértices dos triângulos que não se encontram sobre o segmento de reta indicam as posições das câmeras, numeradas de 1 a 5, e as áreas desses triângulos representam as regiões monitoradas por cada câmera. O alcance de cada uma das cinco câmeras é: •câmera 1: um quinto do percurso; •câmera 2: três décimos do percurso; •câmera 3: um décimo do percurso; •câmera 4: um décimo do percurso; •câmera 5: três décimos do percurso. Em determinado horário, o ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto. Qual câmera registra o momento em que os ônibus A e B se encontram?
+
+Alternativas:
+A) 1
+B) 2
+C) 3
+D) 4
+E) 5
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ <strong>A</strong>
+
+<strong>Solução:</strong>
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 metros por minuto; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 metros por minuto.
+O ônibus A parte do
+
+
+==================================================
+CLEAN OUTPUT:
+

@@ -1,0 +1,32 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2023
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Na fertilização in vitro, espermatozoides são adicionados aos gametas femininos retirados de uma mulher. Após o período de incubação, a fecundação é favorecida pela ação de enzimas. Em um procedimento realizado, observou-se que nenhum dos gametas femininos foi fertilizado e, posteriormente, verificou-se que havia sido adicionado, equivocadamente, um coquetel de inibidores das enzimas do acrossomo, no lugar de um dos nutrientes constituintes do meio de cultura. O coquetel de inibidores impediu o(a)
+
+Alternativas:
+A) formação do pronúcleo masculino.
+B) início da divisão mitótica do zigoto.
+C) término da segunda divisão meiótica do ovócito.
+D) passagem do espermatozoide pela corona radiata e zona pelúcida.
+E) fusão das membranas plasmáticas do ovócito e do espermatozoide.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+ FINAL_ANSWER: <A|B|C|D|E>
+
+A resposta correta é:
+
+A) formação do pronúcleo masculino. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

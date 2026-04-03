@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Descrição da imagem: Mapa do Brasil intitulado Radiação solar global horizontal — média anual apresenta manchas que mensuram a gradação de quilowatt-hora por metro quadrado e mostra a menor gradação na Amazônia e na região litorânea, gradação média na região central e a maior gradação no interior da Região Nordeste, norte de Minas Gerais, Goiás e sul do Tocantins. Uma característica regional que justifica o maior potencial anual médio para o aproveitamento da energia solar é a reduzida
+
+Alternativas:
+A) declividade do relevo.
+B) extensão longitudinal.
+C) nebulosidade atmosférica.
+D) irregularidade pluviométrica.
+E) influência da continentalidade.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Desculida, não tenho dados disponais para essa questão. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Desculida, não tenho dados disponais para essa questão. [end of text]

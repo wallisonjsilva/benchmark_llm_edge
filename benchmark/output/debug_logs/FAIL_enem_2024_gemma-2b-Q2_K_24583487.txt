@@ -1,0 +1,226 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## O vírus linfotrópico de células T humanas tipo 1 (HTLV-1): quando suspeitar da infecção? O vírus linfotrópico de células T humanas tipo 1 (HTLV-1) é um retrovírus do mesmo grupo do vírus da imunodeficiência humana (HIV). Ambos são transmitidos da mesma forma e infectam as mesmas células de defesa do organismo, os linfócitos T. A diferença entre eles é que o HTLV-1 estimula o aumento da produção desses linfócitos, enquanto o HIV causa destruição dessas células. Uma possível consequência da infecção por HTLV-1 é o desenvolvimento de
+
+Alternativas:
+A) aids.
+B) câncer.
+C) diabetes.
+D) hepatite B.
+E) hemorragia.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+## O vírus linfotrópico de células T humanas tipo 1 (HTLV-1) é um retrovírus do mesmo grupo do vírus da imunodeficiência humana (HIV). Ambos são transmitidos da mesma forma e infectam as mesmas células de defesa do organismo, as células do sistema linfático. A diferença entre eles é que o HIV causa destruição das células do sistema do organismo, enquanto o l'v-1 não. Uma possível consequência da infecção por l'v-1 é o desenvolvimento de l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um
+
+
+==================================================
+CLEAN OUTPUT:
+## O vírus linfotrópico de células T humanas tipo 1 (HTLV-1) é um retrovírus do mesmo grupo do vírus da imunodeficiência humana (HIV). Ambos são transmitidos da mesma forma e infectam as mesmas células de defesa do organismo, as células do sistema linfático. A diferença entre eles é que o HIV causa destruição das células do sistema do organismo, enquanto o l'v-1 não. Uma possível consequência da infecção por l'v-1 é o desenvolvimento de l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Resposta final (uma letra):
+## O l'v-1 é um retrovírus do mesmo grupo do l'v-1.
+
+Questão:
+## O l'v-1 é um

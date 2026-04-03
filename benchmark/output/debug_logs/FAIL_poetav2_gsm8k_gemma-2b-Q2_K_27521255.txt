@@ -1,0 +1,23 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Gloria is shoe shopping when she comes across a pair of boots that fit her shoe budget. However, she has to choose between the boots and two pairs of high heels that together cost five dollars less than the boots. If one pair of heels costs $33 and the other costs twice as much, how many dollars are the boots?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of children in a row is 30. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The number of rows is 10. The number of children in a row is 30. The
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

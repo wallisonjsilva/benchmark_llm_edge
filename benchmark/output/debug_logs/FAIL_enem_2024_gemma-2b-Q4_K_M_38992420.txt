@@ -1,0 +1,148 @@
+MODEL: gemma-2b-Q4_K_M.gguf | FAMILY: generic
+DATASET: enem_2024
+==================================================
+PROMPT:
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## O vírus linfotrópico de células T humanas tipo 1 (HTLV-1): quando suspeitar da infecção? O vírus linfotrópico de células T humanas tipo 1 (HTLV-1) é um retrovírus do mesmo grupo do vírus da imunodeficiência humana (HIV). Ambos são transmitidos da mesma forma e infectam as mesmas células de defesa do organismo, os linfócitos T. A diferença entre eles é que o HTLV-1 estimula o aumento da produção desses linfócitos, enquanto o HIV causa destruição dessas células. Uma possível consequência da infecção por HTLV-1 é o desenvolvimento de
+
+Alternativas:
+A) aids.
+B) câncer.
+C) diabetes.
+D) hepatite B.
+E) hemorragia.
+
+Resposta final (uma letra):
+==================================================
+RAW OUTPUT:
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_ANSWER: <A|B|C|D|E>
+
+## FINAL_
+
+
+==================================================
+CLEAN OUTPUT:
+## FINAL_ANSWER:

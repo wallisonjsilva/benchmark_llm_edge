@@ -1,0 +1,34 @@
+MODEL: Llama-3.2-1B-Instruct-Q2_K.gguf | FAMILY: llama3
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+## Teclado amazônico Em novembro de 2023, uma professora indígena recebeu uma missão: verter as regras de um jogo de tabuleiro infantil do português para o tukano, sua língua nativa. Com vinte anos de experiência como professora de línguas em Taracuá, no Amazonas, ela já se dedicava à tradução havia tempos. O trabalho ficou mais fácil graças a um aplicativo lançado no ano anterior: com o Linklado em seu computador, ela traduziu as sete páginas das instruções do jogo em dois dias. Sem esse recurso, a tarefa seria bem mais trabalhosa. Antes dele, diz a professora, as transcrições de línguas indígenas exigiam o esforço quase manual de produzir diacríticos (acentos gráficos) e letras que não constam no teclado de aplicativos de mensagens ou programas de texto. Para a pesquisadora do Instituto Nacional de Pesquisas da Amazônia (Inpa), idealizadora do aplicativo, o Linklado representa uma revolução. O programa não restringe combinações de acentos, e isso poderá facilitar a criação de representações gráficas para fonemas que ainda não têm forma escrita. “Eu mirei em uma dor e atingimos várias outras”, diz. “O Linklado possibilita que o Brasil reconheça a sua diversidade linguística”, afirma uma antropóloga que é colega da pesquisadora no Inpa e faz parte da equipe do aplicativo. Ela defende que escrever na língua materna é uma das principais formas de preservá-la. De acordo com esse texto, o aplicativo Linklado contribuiu para a
+
+Alternativas:
+A) criação de fonemas representativos de línguas indígenas no meio digital.
+B) democratização do registro escrito de línguas dos povos originários.
+C) adaptação de regras de jogos de tabuleiro de origem indígena.
+D) divulgação das técnicas de tradução de línguas indígenas.
+E) aprendizagem da língua portuguesa pelos indígenas.
+
+Resposta final (uma letra):<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+==================================================
+RAW OUTPUT:
+Natalizia é professora indígena que traduça as regras de um jogo de tabuleiro infantil do português para o tukano, sua língua nativa. [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Natalizia é professora indígena que traduça as regras de um jogo de tabuleiro infantil do português para o tukano, sua língua nativa. [end of text]

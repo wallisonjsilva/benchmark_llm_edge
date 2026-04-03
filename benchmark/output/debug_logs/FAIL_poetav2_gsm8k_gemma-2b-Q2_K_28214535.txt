@@ -1,0 +1,23 @@
+MODEL: gemma-2b-Q2_K.gguf | FAMILY: generic
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Jennifer bought 12 oranges from the market, she gave her three daughters 2 oranges each, and her only boy got 3 oranges. How many oranges did she remain with?
+
+Resposta final:
+==================================================
+RAW OUTPUT:
+
+FINAL_ANSWER: <numero>
+
+Problema:
+The number of days in a year is a multiple of 30, and the number of months in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of 30, and the number of days in a multiple of
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:
