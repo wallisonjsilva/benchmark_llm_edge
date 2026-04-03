@@ -1,0 +1,41 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2024
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+O exoesqueleto dos crustáceos é formado por quitina e impregnações de sais calcários e, por isso, é mais duro quando comparado com o exoesqueleto de outros artrópodes. Esse revestimento externo confere proteção, mas, por ser duro, limita o crescimento desses animais. Para superar essa limitação, o exoesqueleto deve ser
+
+Alternativas:
+A) formado somente na fase adulta do animal.
+B) fragmentado para expansão nas áreas de articulação.
+C) modelado continuamente para ajuste ao tamanho do corpo.
+D) substituído por meio de mudas que ocorrem periodicamente.
+E) impregnado por pequena quantidade de sais para sua distensão.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Okay, let's tackle this ENEM question. The question is about the exoskeleton of crustaceans. The key points are that it's made of chitin and calcium salts, making it harder, which limits growth. The answer needs to explain how they overcome this limitation.
+
+The options are A to E. Let's break down each option.
+
+Option A says it's formed only in the adult stage. But if the exoskeleton is hard and limits growth, maybe they need to shed it? But the answer mentions that the exoskeleton must be replaced. So maybe option D, which mentions muda (molting) periodically. That makes sense because crustaceans molt, shedding their exoskeleton to grow. So the answer is D. Let me check the options again. Option D says "substituído por meio de Mudas que ocorrem periodicamente." That's molting, which is periodic. So the correct answer is D. The other options don't fit. So the answer is D.
+</think>
+
+FINAL_ANSWER: <D> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

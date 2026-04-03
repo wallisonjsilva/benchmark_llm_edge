@@ -1,0 +1,45 @@
+MODEL: Qwen3-8b-Q4_K_M.gguf | FAMILY: qwen
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um pescador tem um custo fixo diário de 900 reais com combustível, iscas, manutenção de seu barco e outras pequenas despesas. Ele vende cada quilograma de peixe por 5 reais. Sua meta é obter um lucro mínimo de 800 reais por dia. Sozinho, ele consegue, ao final de um dia de trabalho, pescar 180 quilogramas de peixe, o que é suficiente apenas para cobrir o custo fixo diário. Portanto, precisa contratar ajudantes, pagando para cada um 250 reais por dia de trabalho. Além desse valor, 4 por cento da receita obtida pela venda de peixe é repartida igualmente entre os ajudantes. Considerando o tamanho de seu barco, ele pode contratar até 5 ajudantes. Ele sabe que com um ajudante a pesca diária é de 300 quilogramas e que, a partir do segundo ajudante contratado, aumenta-se em 100 quilogramas a quantidade de peixe pescada por ajudante em um dia de trabalho. A quantidade mínima de ajudantes que esse pescador precisa contratar para conseguir o lucro diário pretendido é
+
+Alternativas:
+A) 1.
+B) 2.
+C) 3.
+D) 4.
+E) 5.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Okay, let's tackle this ENEM question. So, the fisherman has fixed daily costs of 900 reais. He sells each kilogram of fish for 5 reais. His goal is a minimum profit of 800 reais per day. Alone, he can catch 180 kg, which only covers the fixed costs. So he needs to hire helpers. Each helper costs 250 reais per day, and 4% of the revenue from fish sales is split equally among the helpers. The boat can take up to 5 helpers. With one helper, he catches 300 kg. Starting from the second helper, each additional helper adds 100 kg per helper. We need to find the minimum number of helpers required to achieve the desired profit.
+
+First, let's understand the variables. Let's denote the number of helpers as n. The total cost includes fixed costs (900) plus the cost of helpers (250*n) plus 4% of the revenue as shared with helpers. The revenue is 5 times the total kg caught. The total kg caught depends on n. 
+
+For n=1: total kg is 300. Revenue is 300*5=1500. 4% of that is 60, shared among 1 helper, so 60. Total cost is 900 + 250*1 + 60 = 900 + 250 + 60 = 1210. Profit is 1500 - 1210 = 290. Not enough.
+
+n=2: Each helper after the first adds 100 kg. So second helper adds 100 kg per helper? Wait, the question says "a partir do segundo ajudante contratado, aumenta-se em 100 quilogramas a quantidade de peixe pescada por ajudante em um dia de trabalho." So maybe the second helper adds 100 kg per helper? Wait, the wording is a bit confusing. Let me parse it again.
+
+Original: "a partir do segundo ajudante contratado, aumenta-se em 100 quilogramas a quantidade de peixe pescada por ajudante em um dia de trabalho." So starting from the second helper, each helper adds 100 kg. Wait, maybe the total kg caught increases by 100 kg per helper after the first. For example, with 1 helper, total kg is 300. With 2 helpers, it's 300 + 100*2? Or maybe each helper after the first adds 100 kg? Wait, the original says "a partir do segundo ajudante contratado, aumenta-se em 100 quilogramas a quantidade de peixe pescada por ajudante em um dia de trabalho." So maybe the second helper adds 100 kg per helper? Or maybe the total kg increases by 100 kg for each additional helper beyond the first. Let me think.
+
+If with 1 helper, total kg is 300. Then, for each additional helper (starting from the second), each helper adds 100 kg. Wait, maybe the total kg is 300 + 100*(n-1). For example, n=1: 300. n=2: 300 + 100*(2-1) = 400. n=3: 300 + 100*(3-1) = 500. Wait, but the question says "a partir do segundo ajudante contratado, aumenta-se em 100 quilogramas a quantidade de peixe pescada por ajudante em um dia de trabalho." So maybe each helper after the first adds 100 kg per helper. So for n helpers, total kg is 300 + 100*(n-1). Let me check with n=2: 300 + 100*(2-1) = 400. For n=3: 300 + 100*(3-1) = 500. That seems to fit.
+
+So total kg = 300 + 100*(n-1) = 300 + 100n - 100 = 200 + 100n. Wait, no: 300 + 100*(n-1) = 300 + 100n - 100 = 200 + 100n? Wait, 300 + 100*(n-1) = 300
+
+
+==================================================
+CLEAN OUTPUT:
+

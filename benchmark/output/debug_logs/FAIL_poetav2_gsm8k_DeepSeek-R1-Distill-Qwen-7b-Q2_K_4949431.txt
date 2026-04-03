@@ -1,0 +1,33 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Mike needed a new pair of jeans.  When he got to the mall he saw that his favorite jeans were advertised 25% off.  The original price of the jeans was $40.  How much money will Mike have left over if he pays with a $50.00 bill?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Primeiro, identifico que o preço original dos calçados Mike era $40. Com um desconto de 25%, o valor descontado será 25% de $40, que é $10. Portanto, o novo preço dos calçados será $40 -10 = $30.
+
+Em seguida, Mike paga com um $50,00. O valor que Mike terá em lixo é a diferença entre o valor pago e o valor total das calçados, ou seja, $50 -30 = $20.
+
+Assim, o número final que Mike terá em lixo é $20.
+</think>
+
+FINAL_ANSWER: <50.00 - (40.00 * 0.25) = 20.00> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

@@ -1,0 +1,42 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Tim makes a special honey and jam mix.  To make 1 jar of the mixture it takes 2 pounds of passion fruit and 1.5 pounds of jackfruit.  It also takes 2 pounds of special honey.  The passion fruit costs $6 per pound, the jackfruit is $8 per pound, and the honey is $10 per pound.  He sells each jar for $50.  How much profit does he make selling 10 jars?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Primeiro, calculo os custos totais dos ingredientes por jar. O passos são:
+
+1. **Passos de cálculo dos custos por jar:**
+   - **Passion fruit:** 2 libras x $6/libra = $12.
+   - **Jackfruit:** 1,5 libras x $8/libra = $12.
+   - **Honey:** 2 libras x $10/libra = $20.
+   - **Custo total por jar:** $12 + $12 + $20 = $44.
+
+2. **Calculo do lucro por jar:**
+   - **Venda por jar:** $50.
+   - **Lucro por jar:** $50 - $44 = $6.
+
+3. **Calculo total de lucro por 10 jars:**
+   - **Lucro total:** $6 x 10 = $60.
+</think>
+
+FINAL_ANSWER: <60> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

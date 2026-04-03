@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+No período de 2005 a 2013, o valor de venda dos imóveis em uma cidade apresentou alta, o que resultou no aumento dos aluguéis. Os gráficos apresentam a evolução desses valores, para um mesmo imóvel, no mercado imobiliário dessa cidade. Descrição da imagem: Dois gráficos de coluna. O primeiro gráfico, que apresenta os anos no eixo horizontal e o valor mensal do aluguel em real no eixo vertical, mostra os seguintes dados: 2005: 630; 2007: 960; 2009: 1 350; 2011: 1 800; 2013: 3 240. O segundo gráfico, que apresenta os anos no eixo horizontal e o valor de mercado do imóvel, em milhar de reais no eixo vertical, mostra os seguintes dados: 2005: 90; 2007: 120; 2009: 270; 2011: 450; 2013: 540. A rentabilidade do aluguel de um imóvel é calculada pela razão entre o valor mensal de aluguel e o valor de mercado desse imóvel. Com base nos dados fornecidos, em que ano a rentabilidade do aluguel foi maior?
+
+Alternativas:
+A) 2005
+B) 2007
+C) 2009
+D) 2011
+E) 2013
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <E> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

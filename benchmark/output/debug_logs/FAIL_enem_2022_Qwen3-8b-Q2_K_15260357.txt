@@ -1,0 +1,43 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Descrição da imagem: Mapa do Brasil intitulado Radiação solar global horizontal — média anual apresenta manchas que mensuram a gradação de quilowatt-hora por metro quadrado e mostra a menor gradação na Amazônia e na região litorânea, gradação média na região central e a maior gradação no interior da Região Nordeste, norte de Minas Gerais, Goiás e sul do Tocantins. Uma característica regional que justifica o maior potencial anual médio para o aproveitamento da energia solar é a reduzida
+
+Alternativas:
+A) declividade do relevo.
+B) extensão longitudinal.
+C) nebulosidade atmosférica.
+D) irregularidade pluviométrica.
+E) influência da continentalidade.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Okay, let's tackle this ENEM question. The question is about a map of Brazil showing solar radiation data, specifically the average annual Global Horizontal Irradiance in kWh per square meter. The image mentions that the least radiation is in the Amazon and coastal regions, medium in the central region, and the highest in the Northeast, northern Minas Gerais, Goiás, and southern Tocantins. The question is asking which regional Characteristic justifies the highest annual solar Energy Potential.
+
+The options are A) Relief's Slope, B) Longitudinal Extent, C) Atmospheric Cloudiness, D) Precipitation Irregularity, E) Continental Influence.
+
+The answer needs to be one of the letters A-E. The correct answer is E) Continental Influence. Because the continental influence would affect the solar radiation, as the interior regions (Northeast, Minas Gerais, Goiás, Tocantins) would have higher solar radiation due to less cloud cover and more direct sunlight, which is a characteristic of continental interiors. So, the answer is E.
+
+Final Answer: <E>
+</think>
+
+Final_ANSWER: <E> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+Final_ANSWER:

@@ -1,0 +1,45 @@
+MODEL: Qwen3-8b-Q3_K_M.gguf | FAMILY: qwen
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um pescador tem um custo fixo diário de 900 reais com combustível, iscas, manutenção de seu barco e outras pequenas despesas. Ele vende cada quilograma de peixe por 5 reais. Sua meta é obter um lucro mínimo de 800 reais por dia. Sozinho, ele consegue, ao final de um dia de trabalho, pescar 180 quilogramas de peixe, o que é suficiente apenas para cobrir o custo fixo diário. Portanto, precisa contratar ajudantes, pagando para cada um 250 reais por dia de trabalho. Além desse valor, 4 por cento da receita obtida pela venda de peixe é repartida igualmente entre os ajudantes. Considerando o tamanho de seu barco, ele pode contratar até 5 ajudantes. Ele sabe que com um ajudante a pesca diária é de 300 quilogramas e que, a partir do segundo ajudante contratado, aumenta-se em 100 quilogramas a quantidade de peixe pescada por ajudante em um dia de trabalho. A quantidade mínima de ajudantes que esse pescador precisa contratar para conseguir o lucro diário pretendido é
+
+Alternativas:
+A) 1.
+B) 2.
+C) 3.
+D) 4.
+E) 5.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Okay, let's tackle this ENEM question. Hmm, the pescador needs a minimum profit of 800 reais per day. His fixed costs are 900 reais daily. So, just with his own fishing, he gets 180 kg, which only covers the fixed costs. That means his profit is zero because 180 kg * 5 reais/kg = 900 reais, which exactly covers the 900 reais fixed costs. So he needs to hire helpers to get more profit.
+
+Each helper costs 250 reais per day. Plus, 4% of the revenue from fish sales is split equally among the helpers. The question is, how many helpers does he need to hire to get at least 800 reais profit?
+
+Let me break it down. Let's consider each option from A to E. Let's start with option A: 1 helper. 
+
+If he hires 1 helper, the total cost would be 250 reais (for the helper) plus 4% of the revenue. Wait, the 4% is split among the helpers. So for 1 helper, 4% of the revenue is divided by 1, so 4% goes to the helper. Wait, no. Wait, the problem says "4 por cento da receita obtida pela venda de peixe é repartida igualmente entre os ajudantes." So, the 4% is split equally among the helpers. So if he hires 1 helper, then 4% of the revenue is split between 1 helper, meaning that helper gets 4% of the revenue. But the helper's wage is 250 reais per day. Wait, but the 250 reais is the payment for the helper, and then 4% of the revenue is also split among the helpers. Wait, maybe the 4% is in addition to the helper's wage? Or is it part of the wage?
+
+Wait, the problem says: "além desse valor, 4 por cento da receita obtida pela venda de peixe é repartida igualmente entre os ajudantes." So, "além desse valor" meaning in addition to the 250 reais per helper. So, the 250 reais is the fixed cost for the helper, and then 4% of the revenue is split among the helpers. So, for each helper, the total cost is 250 reais plus their share of the 4% of revenue. Wait, no. Wait, the 4% is repartida igualmente entre os ajudantes. So, if there are N helpers, each helper gets 4% / N of the revenue. But the 250 reais is the wage for the helper. So, the total cost for each helper is 250 reais plus their share of the 4% of revenue. Wait, but maybe the 4% is a separate cost? Let me re-read the problem.
+
+The problem says: "além desse valor, 4 por cento da receita obtida pela venda de peixe é repartida igualmente entre os ajudantes." So, "além desse valor" meaning in addition to the 250 reais per helper. So, the 250 reais is the wage for the helper, and then 4% of the revenue is split among the helpers. So, the total cost for the helpers is 250*N (for N helpers) plus 4% of the revenue divided by N per helper? Or is the 4% a separate cost that is split among the helpers? Wait, maybe the 4% is a deduction from the revenue, which is then split among the helpers. So, the total revenue is (kg * 5 reais). Then, 4% of that is given to the helpers, and the rest is the pescador's profit. But the helpers are paid 250 reais each, and also get their share of the 4% of the revenue. Wait, this is confusing. Let me try to model it.
+
+Let me think again. The pescador's total cost per day is fixed costs (900 reais) plus the wage for the helpers (250 reais per helper) plus the 4% of the revenue that is split among the helpers. Wait, no. The 4% is part of the revenue, so the total revenue is (kg * 5). Then, 4% of that is given to the helpers, and the rest is the pescador's profit. But the helpers are also paid 250 reais each. Wait, maybe the 4% is in addition to the 250 reais? Or is the 4% part
+
+
+==================================================
+CLEAN OUTPUT:
+

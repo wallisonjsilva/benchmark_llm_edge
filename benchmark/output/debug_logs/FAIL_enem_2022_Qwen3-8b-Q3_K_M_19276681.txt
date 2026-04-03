@@ -1,0 +1,67 @@
+MODEL: Qwen3-8b-Q3_K_M.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+É ruivo? Tem olhos azuis? É homem ou mulher? Usa chapéu? Quem jogou Cara a Cara na infância sabe de cor o roteiro de perguntas para adivinhar quem é o personagem misterioso do seu oponente. Agora, o jogo está prestes a ganhar uma nova versão. A designer polonesa Zuzia Kozerska-Girard está desenvolvendo uma variação do Guess Who? (nome do Cara a Cara em inglês), em que as personalidades do tabuleiro são, na verdade, mulheres notáveis da história e da atualidade, como a artista Frida Kahlo, a ativista Malala Yousafzai, a astronauta Valentina Tereshkova e a aviadora Amelia Earhart. O Who’s She? (“Quem é ela?”, em português) traz, no total, vinte e oito mulheres que representam diversas profissões, nacionalidades e idades. A ideia é que, em vez de perguntar sobre a aparência das personagens, as questões sejam direcionadas aos feitos delas: ganhou algum Nobel, fez alguma descoberta? Para cada personagem há um cartão com fatos divertidos e interessantes sobre sua vida. Uma campanha entrou no ar com o objetivo de arrecadar dinheiro para desenvolver o Who’s She?. A meta inicial era reunir dezessete mil dólares. Oito dias antes de a campanha acabar, o projeto já angariou quase trezentos e cinquenta mil dólares. A chegada do jogo à casa do comprador varia de acordo com a quantia doada — quanto mais você doou, mais rápido vai poder jogar. Ao divulgar a adaptação do jogo para questões relativas a ações e habilidades de mulheres notáveis, o texto busca
+
+Alternativas:
+A) contribuir para a formação cidadã dos jogadores.
+B) refutar modelos estereotipados de beleza e elegância.
+C) estimular a competitividade entre potenciais compradores.
+D) exemplificar estratégias de arrecadação financeira pela internet.
+E) desenvolver conhecimentos lúdicos específicos dos tempos atuais.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Okay, let's tackle this ENEM question. The question is about a text that describes a new version of the Guess Who game called Who’s She?, which features notable women from history and current times. The text mentions that the game focuses on their achievements rather than appearance, and there's a crowdfunding campaign to develop it. The options are A to E, and I need to pick the correct answer.
+
+First, I need to understand the main purpose of the text. The text is explaining the new game, its features, and the crowdfunding campaign. The key points are that the game highlights women's achievements, not their looks, and the campaign's goal is to raise funds. The question is asking what the text is trying to do.
+
+Looking at the options:
+
+A) Contribuir para a formação cidadã dos jogadores. (Contribute to the civic education of players)
+B) Refutar modelos estereotipados de beleza e elegância. (Refute stereotypical models of beauty and elegance)
+C) Estimular a competitividade entre potenciais compradores. (Stimulate competitiveness among potential buyers)
+D) Exemplificar estratégias de arrecadação financeira pela internet. (Exemplify internet fundraising strategies)
+E) Desenvolver conhecimentos lúdicos específicos dos tempos atuais. (Develop ludic knowledge specific to current times)
+
+The text's main goal seems to be promoting the game and its purpose, which is to highlight women's achievements. The crowdfunding part is about raising money, but the main idea is about the game's content. The text is not just about fundraising strategies (D), but rather about the game's purpose. 
+
+Option A talks about civic education. The game's focus on achievements might contribute to players' understanding of historical and contemporary women, which could be part of civic education. However, the text is more about the game's adaptation and its purpose rather than directly contributing to civic education. 
+
+Option B mentions refuting stereotypes. The game avoids focusing on appearance (like hair color, eye color, etc.) and instead focuses on achievements, which might challenge stereotypes about women's roles. But the text doesn't explicitly say it's refuting stereotypes; it's more about the game's content.
+
+Option E says developing ludic knowledge of current times. The game includes women from various professions, nationalities, and ages, which might be considered as developing knowledge about current times. But the term "ludic knowledge" is a bit vague here. 
+
+Alternatively, the text's purpose is to present the game's adaptation that focuses on actions and skills of women, which could be seen as contributing to civic education (A) by educating players about notable women. However, the crowdfunding part is about raising funds, but the main message is about the game's content. 
+
+Wait, the question says the text is adapting the game to focus on actions and skills of women, which aims to challenge stereotypes about women's roles. So maybe B is the answer? But the text doesn't explicitly say it's refuting stereotypes. Alternatively, the main purpose is to present the game's purpose, which is about achievements, so maybe A or E. 
+
+Alternatively, the text is promoting the game's idea, which is to focus on achievements, so the purpose is to contribute to civic education (A) by making players learn about these women. But the text is more about the game's adaptation and its crowdfunding. 
+
+Alternatively, the answer might be A, as the game's purpose is to educate players about women's achievements, contributing to their civic education. But I'm not sure. Alternatively, the answer could be E, as it's about developing knowledge through the game. 
+
+Wait, the original question is about the text's purpose. The text is explaining the game's adaptation, which is about women's achievements, and the crowdfunding. The main purpose is to present the game's idea, which is to focus on achievements, so the answer might be A or E. 
+
+Alternatively, the answer is A, contributing to civic education. But I'm not 100% sure. Let me check again. The text says the game's questions are directed to their achievements, not appearance. The purpose is to highlight their achievements, which could be part of civic education. So A might be correct. But the text also mentions the crowdfunding, but the main purpose is the game's adaptation. 
+
+Alternatively, the answer is E, as it's about developing knowledge through the game. But the options are in Portuguese. Let me think again. The text is about the game's adaptation that focuses on women's achievements, so the purpose is to contribute to players' knowledge about these women, which could be part of civic education (A) or ludic knowledge (E). 
+
+The term "formação cidadã" (civic education) might be more about teaching about society, while "conhecimentos lúdicos específicos dos tempos atuais" (lud
+
+
+==================================================
+CLEAN OUTPUT:
+

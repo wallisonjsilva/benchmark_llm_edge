@@ -1,0 +1,38 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Justin has a jar with many coins in it. The jar has 32 quarters, 95 dimes, 120 nickels, and 750 pennies. What is the total dollar amount in the jar?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Para resolver o problema, preciso somar o valor total de cada tipo de coinha. 
+
+Primeiro, calculo o valor dos cromes:
+- 32 cromes × 0,01 dollar = 0,32 dollar.
+- 95 dímeros × 0,05 dollar = 4,75 dollar.
+- 120 nickelizes × 0,01dollar = 1,20dollar.
+- 750 penns × 0,001dollar = 0,75dollar.
+
+Em seguida, somo todos os valores juntos:
+0,32 + 4,75 + 1,20 + 0,75 = 7,01dollar.
+</think>
+
+FINAL_ANSWER: <7.01> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:

@@ -1,0 +1,25 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: poetav2_gsm8k
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Resolva o problema e devolva apenas o número final.
+Formato obrigatório: FINAL_ANSWER: <numero>
+
+Problema:
+Jayden had $70 from selling pictures he took as a hobby.  His sister Ava gave him half of her $90 allowance to help him buy a new camera that costs $200. How much more does Jayden need to buy the camera?
+
+Resposta final:<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Okay, let's see. Jayden has $70 from selling pictures. His sister Ava gave him half of her $90 allowance. So, half of $90 is $45. So Jayden gets $45 from Ava. So total money Jayden has is $70 + $45 = $115. But the camera costs $200. So how much more does he need? 200 - 115 = 85. So the answer is 85. Wait, but the problem says "how much more does Jayden need to buy the camera?" So, the answer is $85. So the final answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer is 85. So the answer
+
+
+==================================================
+CLEAN OUTPUT:
+

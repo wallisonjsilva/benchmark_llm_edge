@@ -1,0 +1,36 @@
+MODEL: Qwen3-8b-Q2_K.gguf | FAMILY: qwen
+DATASET: enem_2022
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Uma máquina em operação tem sua temperatura T monitorada por meio de um registro gráfico, ao longo do tempo t. Essa máquina possui um pistão cuja velocidade V varia com a temperatura T da máquina, de acordo com a expressão V é igual a T ao quadrado menos 4. Após a máquina funcionar durante o intervalo de tempo de 10 horas, o seu operador analisa o registro gráfico, apresentado na figura, para avaliar a necessidade de eventuais ajustes, sabendo que a máquina apresenta falhas de funcionamento quando a velocidade do pistão se anula. Descrição da imagem: Figura representa um sistema de coordenadas cartesianas, com eixo horizontal t, em hora, e eixo vertical T, em grau Celsius. No eixo horizontal, estão indicadas as abscissas 0 e 10. No eixo vertical, estão indicadas as ordenadas −2, 0, 2 e 4. O traçado do gráfico é uma curva contínua, iniciando num ponto de abscissa 0 e ordenada maior que 2 e menor que 4. Cresce até um ponto de ordenada 4, decresce até um ponto de ordenada −2, cresce até um ponto de ordenada 0, decresce até um ponto com ordenada −2, cresce até um ponto com ordenada 0, decresce até um ponto de ordenada −2, cresce até um ponto de ordenada maior que 2 e menor que 4, e decresce até o ponto de abscissa 10 e ordenada maior que 2 e menor que 4, finalizando nesse ponto. Quantas vezes a velocidade do pistão se anulou durante as 10 horas de funcionamento?
+
+Alternativas:
+A) 1
+B) 2
+C) 3
+D) 4
+E) 5
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+</think>
+
+FINAL_ANSWER: <B> [end of text]
+
+
+
+==================================================
+CLEAN OUTPUT:
+FINAL_ANSWER:
