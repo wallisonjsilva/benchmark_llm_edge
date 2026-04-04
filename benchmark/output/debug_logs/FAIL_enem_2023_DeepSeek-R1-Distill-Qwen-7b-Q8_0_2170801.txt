@@ -1,0 +1,79 @@
+MODEL: DeepSeek-R1-Distill-Qwen-7b-Q8_0.gguf | FAMILY: qwen
+DATASET: enem_2023
+==================================================
+PROMPT:
+<|im_start|>system
+You are a helpful assistant that follows instructions precisely. Answer concisely. Do not explain your reasoning.<|im_end|>
+<|im_start|>user
+Responda à questão do ENEM.
+Formato obrigatório de saída: FINAL_ANSWER: <A|B|C|D|E>
+Retorne SOMENTE essa linha final, sem explicações.
+
+Questão:
+Um pescador tem um custo fixo diário de 900 reais com combustível, iscas, manutenção de seu barco e outras pequenas despesas. Ele vende cada quilograma de peixe por 5 reais. Sua meta é obter um lucro mínimo de 800 reais por dia. Sozinho, ele consegue, ao final de um dia de trabalho, pescar 180 quilogramas de peixe, o que é suficiente apenas para cobrir o custo fixo diário. Portanto, precisa contratar ajudantes, pagando para cada um 250 reais por dia de trabalho. Além desse valor, 4 por cento da receita obtida pela venda de peixe é repartida igualmente entre os ajudantes. Considerando o tamanho de seu barco, ele pode contratar até 5 ajudantes. Ele sabe que com um ajudante a pesca diária é de 300 quilogramas e que, a partir do segundo ajudante contratado, aumenta-se em 100 quilogramas a quantidade de peixe pescada por ajudante em um dia de trabalho. A quantidade mínima de ajudantes que esse pescador precisa contratar para conseguir o lucro diário pretendido é
+
+Alternativas:
+A) 1.
+B) 2.
+C) 3.
+D) 4.
+E) 5.
+
+Resposta final (uma letra):<|im_end|>
+<|im_start|>assistant
+
+==================================================
+RAW OUTPUT:
+<think>
+Okay, let's try to figure out how many helpers the fisherman needs to make an 800 reais profit. 
+
+First, his fixed costs are 900 reais. Without any helpers, he can catch 180 kg, which just covers the fixed costs, so he makes 0 profit. He needs an extra 800 reais.
+
+Each helper costs him 250 reais per day. Also, 4% of his revenue is split among the helpers. His revenue comes from selling the fish he catches. 
+
+Let's denote the number of helpers as H. Each helper can catch a certain amount of fish. The first helper catches 300 kg. Each additional helper after the first catches 100 kg more than the previous one. So, the second helper catches 400 kg, the third 500 kg, and so on.
+
+The total fish caught would be 300 + (300+100) + (300+200) + ... up to H helpers. Wait, no, actually, the first helper is 300, the second is 400, third 500, etc. So the total is 300 + 400 + 500 + ... for H helpers.
+
+But wait, the initial 180 kg without helpers is just to cover fixed costs. So with helpers, he catches more. Let me think again.
+
+Actually, the problem says that without helpers, he catches 180 kg, which covers fixed costs. So with helpers, he catches more. Each helper adds to the total catch. 
+
+So the total fish caught with H helpers is 180 + (300*(H) + 100*(H*(H-1)/2)). Wait, no, that might not be right. Let me clarify.
+
+Wait, the problem says that with one helper, he catches 300 kg. From the second onwards, each additional helper increases the catch by 100 kg. So for H helpers, the total catch is 300 + 400 + 500 + ... up to H terms. 
+
+Wait, no. If he has H helpers, the first helper catches 300 kg, the second 400, third 500, etc. So the total is the sum from 300 to (300 + 100*(H-1)).
+
+The sum of an arithmetic series is n/2 * (first term + last term). So total fish = H/2 * [300 + (300 + 100*(H-1))] = H/2 * [600 + 100*(H-1)] = H/2 * [600 + 100H -100] = H/2 * (500 + 100H) = H*(250 + 50H).
+
+So total fish = 50H² + 250H.
+
+He sells each kg for 5 reais, so revenue R = 5*(50H² + 250H) = 250H² + 1250H.
+
+His expenses are fixed costs plus helpers' wages. Fixed costs are 900 reais, helpers cost 250H reais each, so total expenses E = 900 + 250H.
+
+His profit is R - E - 4% of R (since 4% is given to helpers). So profit P = R - E - 0.04R = 0.96R - E.
+
+He needs P >= 800.
+
+So, 0.96*(250H² + 1250H) - (900 + 250H) >= 800.
+
+Let's compute this:
+
+0.96*(250H² + 1250H) = 0.96*250H² + 0.96*1250H = 240H² + 1200H.
+
+Subtracting expenses: 240H² + 1200H - 900 - 250H = 240H² + 950H - 900.
+
+Set this >= 800:
+
+240H² + 950H - 900 >= 800.
+
+240H² + 950H - 1700 >= 0.
+
+Divide all terms by 10 to simplify: 24H² + 95
+
+
+==================================================
+CLEAN OUTPUT:
+
