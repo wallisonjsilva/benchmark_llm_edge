@@ -1,0 +1,642 @@
+[
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Meta-Llama-3.1-8B-Instruct-Q8_0.gguf"
+        },
+        "params": {
+            "model_name": "Meta-Llama-3.1-8B-Instruct-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 8.63,
+            "peak_tps": 8.63,
+            "avg_ttft_ms": 127.95,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 6.77,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.974
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Qwen3-8b-Q4_1.gguf"
+        },
+        "params": {
+            "model_name": "Qwen3-8b-Q4_1.gguf",
+            "quantization": "Q4_1",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 39.74,
+            "peak_tps": 39.74,
+            "avg_ttft_ms": 30.6,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 0.96,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.6389
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "DeepSeek-R1-Distill-Qwen-7b-Q5_0.gguf"
+        },
+        "params": {
+            "model_name": "DeepSeek-R1-Distill-Qwen-7b-Q5_0.gguf",
+            "quantization": "Q5_0",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 34.21,
+            "peak_tps": 34.21,
+            "avg_ttft_ms": 32.37,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 0.73,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.4167
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Sabia-7b-Q5_1.gguf"
+        },
+        "params": {
+            "model_name": "Sabia-7b-Q5_1.gguf",
+            "quantization": "Q5_1",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 8.3,
+            "peak_tps": 8.3,
+            "avg_ttft_ms": 127.34,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 4.44,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.614
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Sabia-7b-Q5_0.gguf"
+        },
+        "params": {
+            "model_name": "Sabia-7b-Q5_0.gguf",
+            "quantization": "Q5_0",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 23.93,
+            "peak_tps": 23.93,
+            "avg_ttft_ms": 55.29,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 1.62,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.6451
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Meta-Llama-3.1-8B-Instruct-Q4_1.gguf"
+        },
+        "params": {
+            "model_name": "Meta-Llama-3.1-8B-Instruct-Q4_1.gguf",
+            "quantization": "Q4_1",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 40.88,
+            "peak_tps": 40.88,
+            "avg_ttft_ms": 38.82,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 1.72,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 1.1718
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Sabia-7b-Q8_0.gguf"
+        },
+        "params": {
+            "model_name": "Sabia-7b-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 8.33,
+            "peak_tps": 8.33,
+            "avg_ttft_ms": 135.24,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 3.98,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.5529
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "DeepSeek-R1-Distill-Qwen-7b-Q4_K_M.gguf"
+        },
+        "params": {
+            "model_name": "DeepSeek-R1-Distill-Qwen-7b-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 30.86,
+            "peak_tps": 30.86,
+            "avg_ttft_ms": 34.56,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 0.69,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.3528
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Sabia-7b-Q4_1.gguf"
+        },
+        "params": {
+            "model_name": "Sabia-7b-Q4_1.gguf",
+            "quantization": "Q4_1",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 27.78,
+            "peak_tps": 27.78,
+            "avg_ttft_ms": 48.42,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 0.75,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.3476
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "DeepSeek-R1-Distill-Qwen-7b-Q4_1.gguf"
+        },
+        "params": {
+            "model_name": "DeepSeek-R1-Distill-Qwen-7b-Q4_1.gguf",
+            "quantization": "Q4_1",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 9.34,
+            "peak_tps": 9.34,
+            "avg_ttft_ms": 134.17,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 4.15,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.6457
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Qwen3-8b-Q4_K_M.gguf"
+        },
+        "params": {
+            "model_name": "Qwen3-8b-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 5.29,
+            "peak_tps": 5.29,
+            "avg_ttft_ms": 216.39,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 4.74,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.4182
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Qwen3-8b-Q5_1.gguf"
+        },
+        "params": {
+            "model_name": "Qwen3-8b-Q5_1.gguf",
+            "quantization": "Q5_1",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 2.77,
+            "peak_tps": 2.77,
+            "avg_ttft_ms": 368.65,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 5.67,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.2617
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Qwen3-8b-Q8_0.gguf"
+        },
+        "params": {
+            "model_name": "Qwen3-8b-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 2.13,
+            "peak_tps": 2.13,
+            "avg_ttft_ms": 499.53,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 8.06,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.2861
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Qwen3-8b-Q5_0.gguf"
+        },
+        "params": {
+            "model_name": "Qwen3-8b-Q5_0.gguf",
+            "quantization": "Q5_0",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 3.77,
+            "peak_tps": 3.77,
+            "avg_ttft_ms": 282.99,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 5.34,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.3358
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Sabia-7b-Q4_K_M.gguf"
+        },
+        "params": {
+            "model_name": "Sabia-7b-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 5.46,
+            "peak_tps": 5.46,
+            "avg_ttft_ms": 188.34,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 5.48,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.4984
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "DeepSeek-R1-Distill-Qwen-7b-Q5_1.gguf"
+        },
+        "params": {
+            "model_name": "DeepSeek-R1-Distill-Qwen-7b-Q5_1.gguf",
+            "quantization": "Q5_1",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 3.42,
+            "peak_tps": 3.42,
+            "avg_ttft_ms": 315.85,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 5.21,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.2968
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"
+        },
+        "params": {
+            "model_name": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 28.79,
+            "peak_tps": 28.79,
+            "avg_ttft_ms": 108.9,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 2.77,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 1.3289
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "DeepSeek-R1-Distill-Qwen-7b-Q8_0.gguf"
+        },
+        "params": {
+            "model_name": "DeepSeek-R1-Distill-Qwen-7b-Q8_0.gguf",
+            "quantization": "Q8_0",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 10.33,
+            "peak_tps": 10.33,
+            "avg_ttft_ms": 96.87,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 4.22,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.7274
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Meta-Llama-3.1-8B-Instruct-Q5_1.gguf"
+        },
+        "params": {
+            "model_name": "Meta-Llama-3.1-8B-Instruct-Q5_1.gguf",
+            "quantization": "Q5_1",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 32.62,
+            "peak_tps": 32.62,
+            "avg_ttft_ms": 32.52,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 2.1,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 1.1427
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    },
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Meta-Llama-3.1-8B-Instruct-Q5_0.gguf"
+        },
+        "params": {
+            "model_name": "Meta-Llama-3.1-8B-Instruct-Q5_0.gguf",
+            "quantization": "Q5_0",
+            "hardware": "Samsung S24 (Snapdragon 8 Gen 3)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "metrics": {
+            "avg_tps": 34.22,
+            "peak_tps": 34.22,
+            "avg_ttft_ms": 30.84,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 1.64,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 1.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 0.9362
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    }
+]

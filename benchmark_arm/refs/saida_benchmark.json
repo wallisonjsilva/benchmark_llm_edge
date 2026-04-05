@@ -1,0 +1,51 @@
+[
+    {
+        "run_info": {
+            "experiment_name": "ELIB_Edge_Benchmark",
+            "run_name": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"
+        },
+        "params": {
+            "model_name": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+            "quantization": "Q4_K_M",
+            "hardware": "Desktop PC (CachyOS)",
+            "context_window": 512,
+            "backend": "llama.cpp",
+            "sample_size_enem": 5,
+            "sample_size_poeta": 5,
+            "sample_size_bbq": 5
+        },
+        "benchmark_params": {
+            "iteration": 15,
+            "batch_size": 1,
+            "top_k": 40,
+            "top_n": 10,
+            "repeat_last_n": 64
+        },
+        "device_params": {
+            "thread_number": 4,
+            "NEON": false,
+            "AVX": true,
+            "BLAS": "None",
+            "GPU": "ROCm"
+        },
+        "metrics": {
+            "avg_tps": 40.3,
+            "peak_tps": 40.3,
+            "avg_ttft_ms": 24.81,
+            "vram_peak_gb": 0.0,
+            "ram_peak_gb": 4.77,
+            "thermal_avg_c": 0.0,
+            "accuracy_enem": 0.0,
+            "accuracy_poeta": 0.0,
+            "accuracy_bbq": 1.0,
+            "mbu": 4.2685,
+            "inference_success_rate": 0.67,
+            "perplexity": 0.0,
+            "total_benchmark_time_s": 18.05
+        },
+        "tags": {
+            "method": "ELIB",
+            "status": "completed"
+        }
+    }
+]
